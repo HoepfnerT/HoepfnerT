@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upcoming Math Events G&ouml;ttingen</title>
+    <style>
+        /* CSS styles */
+        .tabs {
+            display: flex;
+            padding-left: 20%;
+            padding-right: 20%;
+            padding-bottom: 20px;
+        }
+
+        .tab-button {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+            .tab-button.active {
+                background-color: #ccc;
+            }
+
+        .tab {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+
+        .event {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+
+        .event-title {
+            font-weight: bold;
+        }
+
+        .event-details {
+            margin-top: 0px;
+        }
+
+        .event-details-hidden {
+            display: none;
+        }
+
+        .toggle-details {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+        }
+
+        #show-more-button-container {
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mathe Events in G&ouml;ttingen</h1>
+    <div class="tabs">
+        <!-- Tab buttons for switching between upcoming talks and defenses -->
+        <button id="talks-tab" class="tab-button active" onclick="openTab('talks-tab', 'talks')">Upcoming Talks</button>
+        <button id="defenses-tab" class="tab-button" onclick="openTab('defenses-tab', 'defenses')">Upcoming PhD Defenses</button>
+    </div>
+    <div id="talks" class="tab">
+        <div class="event">
+            <h3>Link to the institute's calender: <a href='https://www.uni-goettingen.de/de/129041.html'> https://www.uni-goettingen.de/de/129041.html </a> </h3>
+        </div>
+        <div id="events"></div>
+        <div id="show-more-button-container">
+            <button id="show-more-button" onclick="showMoreTalks()">Show More Talks</button>
+        </div>
+    </div>
+    <div id="defenses" class="tab">
+        <div class="event">
+            <h3>Link to GAUSS calender: <a href='https://www.uni-goettingen.de/en/586297.html'> https://www.uni-goettingen.de/en/586297.html </a> </h3>
+        </div>
+        <!-- Instructions and Python code for displaying upcoming math defenses -->
+        <div class="event">
+            <h3>To see upcoming math defenses, run the following Python Code:</h3>
+            <pre><code class="language-python">import re, urllib.request, bs4
+url = "https://ggnb.gwdg.de/disputationen/promotionen.php"
+data = urllib.request.urlopen(url)
+soup = bs4.BeautifulSoup(data, features="lxml")
+for entry in soup.find_all("table"):
+    infos = [re.sub(r"\s+", " ", info.get_text()) for info in entry.find_all("td")]
+    if "Math" in infos[3]:
+        print(re.sub(r":", "\n", infos[0]) + "".join(f"\n{info}" for info in infos[1:-1]) + "\n\n")</code></pre>
+        </div>
+        <p align="center">
+            <iframe src="https://ggnb.gwdg.de/disputationen/promotionen.php" width="100%" height="400" class="event"></iframe>
+        </p>
+    </div>
+    <script>
+        /* JavaScript functions for managing the tabs and fetching/updating upcoming talks */
+        let numWeeksToShow = 2;
+        openTab('talks-tab', 'talks')
+
+        // Check if a given date is within the next 'numWeeks' weeks
+        function isWithinNextWeeks(dateTimeString, numWeeks) {
+            const now = new Date();
+            const endDate = new Date(now.getTime() + numWeeks * 7 * 24 * 60 * 60 * 1000);
+            const eventDate = new Date(dateTimeString);
+            return eventDate >= now && eventDate <= endDate;
+        }
+
+        // Format a date/time string into a localized format
+        function formatDateTime(dateTimeString) {
+            const options = {
+                weekday: 'short',
+                month: 'short',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: 'numeric',
+                timeZone: 'UTC'
+            };
+            return new Date(dateTimeString).toLocaleString('en-US', options);
+        }
+
+        // Toggle the visibility of event details
+        function toggleDetails(eventId) {
+            const detailsElement = document.getElementById(`details-${eventId}`);
+            const detailsButton = document.getElementById(`details-button-${eventId}`);
+            detailsElement.classList.toggle('event-details-hidden');
+            if (detailsElement.classList.value.includes('hidden')) {
+                detailsButton.textContent = 'Show Details';
+            } else {
+                detailsButton.textContent = 'Hide Details';
+            }
+        }
+
+        // Display an individual event
+        function displayEvent(event, index) {
+            if (event.isDraft) {
+                return
+            }
+            const eventsContainer = document.getElementById('events');
+            const eventContainer = document.createElement('div');
+            eventContainer.classList.add('event');
+
+            //Title
+            const title = document.createElement('h3');
+            title.classList.add('event-title');
+            title.textContent = event.title;
+            eventContainer.appendChild(title);
+
+            //Speaker
+            const speaker = document.createElement('p');
+            speaker.innerHTML = `<b>${event.speaker}</b> from ${event.speakerInstitute}`;
+            eventContainer.appendChild(speaker);
+
+            //Date and time
+            const dateContainer = document.createElement('div');
+            dateContainer.classList.add('date-container');
+            const date = document.createElement('p');
+            date.innerHTML = `on <b>${formatDateTime(event.startDate)}</b> at ${event.room}, ${event.location}`;
+            date.innerHTML = date.innerHTML.replace('Sitzungszimmer', 'SZ').replace('Mathematisches Institut', 'MI')
+            if (event.externalLinkUri.includes('zoom')) {
+                date.innerHTML += ` (zoom link available)`;
+            }
+            if (event.isRegistrationRequired) {
+                date.innerHTML += ` <font color="red">(REGISTRATION REQUIRED!)</font>`;
+            }
+            dateContainer.appendChild(date);
+            eventContainer.appendChild(dateContainer);
+
+            //Details
+            const details = document.createElement('p');
+            details.classList.add('event-details', 'event-details-hidden');
+            details.id = `details-${index}`;
+            details.innerHTML = ``;
+
+
+            //Abstract
+            if (event.details) {
+                details.innerHTML += `<b>Abstract:</b> ${event.details}<br><br>`;
+            }
+
+            //Host and Seminar
+            if (event.host) {
+                details.innerHTML += `<b>Host:</b> ${event.host} <br>`;
+            }
+            if (event.series) {
+                let hostinfo = `<b>Series:</b> ${event.series} <br>`;
+                details.innerHTML
+                    += hostinfo.replace('KolloquiumGRK', 'GRK Kolloquium')
+                        .replace("MathematischeGesellschaft", "Mathematische Gesellschaft")
+                        .replace("SonstigeVeranstaltungenMI", "Sonstige")
+                        .replace("NAMColloquium", "Nam Kolloquium");
+            }
+            //Contact
+            details.innerHTML += `<b>Contact:</b> ${event.contact}<br>`;
+
+            eventContainer.appendChild(details);
+            const toggleButton = document.createElement('span');
+            toggleButton.classList.add('toggle-details');
+            toggleButton.id = `details-button-${index}`;
+            toggleButton.textContent = 'Show Details';
+            toggleButton.setAttribute('onclick', `toggleDetails(${index})`);
+            eventContainer.appendChild(toggleButton);
+
+            eventsContainer.appendChild(eventContainer);
+        }
+
+        // Fetch and display upcoming talks
+        function fetchAndDisplayTalks() {
+            fetch('https://events.goettingen-campus.de/api/event/head_organization/19648/future')
+                .then(response => response.json())
+                .then(data => {
+                    const upcomingTalks = data.filter(event => isWithinNextWeeks(event.startDate, numWeeksToShow));
+                    const eventsContainer = document.getElementById('events');
+                    eventsContainer.innerHTML = '';
+                    if (upcomingTalks.length === 0) {
+                        eventsContainer.textContent = 'No more upcoming talks.';
+                    } else {
+                        upcomingTalks.forEach((event, index) => {
+                            displayEvent(event, index);
+                        });
+                        const showMoreButtonContainer = document.getElementById('show-more-button-container');
+                        if (data.length > upcomingTalks.length) {
+                            showMoreButtonContainer.style.display = 'block';
+                        } else {
+                            showMoreButtonContainer.style.display = 'none';
+                        }
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+
+        // Show more talks by increasing the number of weeks to display
+        function showMoreTalks() {
+            numWeeksToShow += 2;
+            fetchAndDisplayTalks();
+        }
+
+        // Initial fetch and display of talks
+        fetchAndDisplayTalks();
+
+        // Function to switch between tabs
+        function openTab(tabId, contentId) {
+            const tabButtons = document.getElementsByClassName('tab-button');
+            const tabs = document.getElementsByClassName('tab');
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove('active');
+            }
+            for (let i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove('active');
+            }
+            document.getElementById(tabId).classList.add('active');
+            document.getElementById(contentId).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>

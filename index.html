@@ -1,35 +1,183 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
-  <title>Tim Höpfner</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-    }
-    
-    h1 {
-      color: #333;
-    }
-    
-    p {
-      color: #666;
-    }
-  </style>
+    <title>Tim H&ouml;pfner</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #00008B;
+            font-size: 48px;
+        }
+
+        h2 {
+            color: #00008B;
+            font-size: 40px;
+            margin-top: 40px;
+        }
+
+        p {
+            color: black;
+            font-size: 18px;
+            text-align: justify;
+            line-height: 1.5;
+        }
+
+        a {
+            color: #00008B;
+            text-decoration: none;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+            .navbar ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+            }
+
+            .navbar li {
+                margin-right: 10px;
+            }
+
+            nav a {
+                text-decoration: underline;
+            }
+
+        .round-image {
+            width: 300px;
+            height: 300px;
+            margin-right: 20px;
+            border-radius: 50%;
+        }
+
+        .research-image {
+            width: 400px;
+            height: 400px;
+            margin-right: 60px;
+            margin-left: 60px;
+        }
+
+        .container-about {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .container-research {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .caption {
+            flex: 1;
+        }
+    </style>
 </head>
 <body>
-  <h1>Welcome to My Website</h1>
-  
-  <nav>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
-  
-  <p>Hello!</p>
-  
+    <h1>Hello, I'm Tim H&ouml;pfner.</h1>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#About">About Me</a></li>
+            <li><a href="#Research">Research</a></li>
+            <li><a href="#Teaching">Teaching</a></li>
+            <li><a href="#Interests">Personal Interests</a></li>
+            <li><a href="#Contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="upcoming_math.html">Math Events in G&ouml;ttingen</a></li>
+        </ul>
+    </nav>
+
+    <div class="container-about">
+        <img src="IMG_20230510_173016.jpg" alt="Picture" class="round-image">
+        <div class="caption">
+            <h2 id="About">About Me</h2>
+            <p>
+                My name is Tim H&ouml;pfner, and I was born in 1996 in Kiel, Germany, where I spent the first years of my life until I moved to Kassel, where I attended school.
+                There, I graduated from the Wilhelmsgymnasium Kassel with Abitur (german high school diploma).
+                Afterwards, I moved to G&ouml;ttingen to study mathematics at the Georg-August-Universit&aumlt G&ouml;ttingen from 2014 until 2023, obtaining my Bachelor, Master and Dr. rer. nat. (PhD) in pure mathematics.
+
+                My main research interest lies inbetween the fields of topology and differential geometry, though I am curious to learn about all mathematics that I encounter.
+                <br />
+
+                During my time as a doctoral student from 2019 until 2023, I was lucky to be part of the Research Training Group "RTG 2491 - Fourier Analysis and Spectral Theory" as an associated member,
+                allowing me to work and study with many excellent young researchers from all around the world and many areas of mathematics.
+                Furthermore, I was able to teach several courses at G&ouml;ttingen as an lecture assistant. In total I taught mathematics to around 1000 students over seven courses. Mainly, this includes students of mathematics, but also students of computer sciences, biology, geology and molecular medicine.
+
+                <br />
+                In my free time, I love to create (and sometimes solve) analytic problems. For example, I'm an avid chess player and a fan of many other competitive strategy games.
+                I enjoy playing tennis and I play the guitar.
+            </p>
+        </div>
+    </div>
+
+    <h2 id="Research">Research</h2>
+    <h3>PhD Thesis - "Novikov-Shubin Invariants of Nilpotent Lie Groups"</h3>
+    <p>[PhD Thesis text]</p>
+
+    <h3>Master Thesis - "The Mayer-Vietoris Spectral Sequence for Coarse Generalized Homology"</h3>
+    <div class="container-research">
+        <img src="Masters.jpg" alt="MasterImg" class="research-image">
+        <div class="caption">
+            <p>
+                In my Master Thesis, I studied coarse geometry. Here, we are interested in the large-scale properties of spaces - in contrast to topology, studying the small-scale structure.
+                In algebraic topology, we like to define invariants to describe and compare our spaces, that is, numbers or other simple objects.
+                If we are able to compute these invariants easily, we can (sometimes) use them to figure out whether two spaces are different.
+                In topology, one of the most classical type of invariants are homology theories.
+                One important tool to compute these is the Mayer-Vietoris sequence.
+                Given a complicated space, we can cut it into two smaller pieces.
+                If we understand each of the pieces and their intersection, we can recover the information of the total space.
+                Of course, we can iterate this procedure and thereby cut our space in any finite number of pieces.
+                The Mayer-Vietoris spectral sequence is a complex mathematical tool that takes this one step further, as it allows us to cut the space even into infinitely many pieces.
+                <br />
+                While all of this was known for a long time for topological spaces, for coarse spaces only the usual Mayer-Vietoris sequence was known.
+                A previous result indicated, that also the infinite version should hold, however, in my thesis I point out that this previous result is flawed.
+                While I establish a spectral sequence for easier computations for finite decomposition, I show that such an infinite decomposition cannot be used to compute coarse homology from infinite decompositions.
+                I also give an explicit counterexample to show precisely, why this argument fails.
+            </p>
+        </div>
+    </div>
+
+    <h3>Bachelor Thesis - "Explicit Motion Planning for Collision-Free Motion in R^n"</h3>
+    <div class="container-research">
+        <img src="Bachelors2.jpg" alt="BachelorImg2" class="research-image">
+        <div class="caption">
+            <p>
+                In my Bachelor thesis, I studied the problem of motion planning from a point of view of topology ("Topological Complexity"):
+                <br />
+                Let's say we have an empty stace with arbitrarily many (moving and non-moving) obstacles and any number of agents (e.g., robots) that need to move around freely without colliding with the obstacles or other agents.
+                I describe explicitely a (topological) algorithm that considers the current location and the target position of each of the agents and produces for each agent a path that they can move along.
+            </p>
+        </div>
+        <img src="Bachelors.jpg" alt="BachelorImg" class="research-image">
+    </div>
+
+    <h2 id="Teaching">Teaching</h2>
+    <p>[Teaching text]</p>
+
+    <h2 id="Interests">Personal Interests</h2>
+    <p>[Personal Interests text]</p>
+
+
+    <h2 id="Contact">Contact</h2>
+    <p>
+        Contact me by email: &nbsp;&nbsp; timhoepfner (at) outlook (dot) de
+    </p>
 </body>
 </html>
