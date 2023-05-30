@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display SVG files</title>
+    <style>
+        #container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #index-display {
+            text-align: center;
+            font-style: italic;
+        }
+
+        #animation-frame {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="animation-frame">
+            <img id="svg-img" src="torus-0000.svg">
+            <span id="index-display">t=0</span>
+        </div>
+    </div>
+    <script>
+        const svgImg = document.getElementById('svg-img');
+        const indexDisplay = document.getElementById('index-display');
+        let index = 0;
+        let remainingFrames = 50;
+        let displayFirstFrame = true;
+        let displayLastFrame = false;
+        let skip = 5;
+        setInterval(() => {
+            if (displayFirstFrame) {
+                remainingFrames -= skip;
+                if (remainingFrames === 0) {
+                    index = 0;
+                    remainingFrames = 50;
+                    displayFirstFrame = false;
+                }
+                const indexStr = index.toString().padStart(4, '0');
+                svgImg.src = `torus-${indexStr}.svg`;
+                indexDisplay.textContent = `t=${index}`;
+            } else {
+                if (displayLastFrame) {
+                    remainingFrames -= skip;
+                    if (remainingFrames === 0) {
+                        index = 1000;
+                        remainingFrames = 50;
+                        displayLastFrame = false;
+                        displayFirstFrame = true;
+                    }
+                } else {
+                    remainingFrames -= skip;
+                    const indexStr = index.toString().padStart(4, '0');
+                    svgImg.src = `torus-${indexStr}.svg`;
+                indexDisplay.textContent = `t=${index}`;
+                    index += skip;
+                    if (index > 1000) {
+                        index = 1000;
+                        remainingFrames = 50;
+                        displayLastFrame = true;
+                    }
+                }
+            }
+        }, 10);
+    </script>
+</body>
+</html>

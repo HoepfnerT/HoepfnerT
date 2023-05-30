@@ -2,6 +2,8 @@
 <html>
 <head>
     <title>Tim H&ouml;pfner</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -49,23 +51,29 @@
                 margin-right: 10px;
             }
 
-            nav a {
-                text-decoration: underline;
-            }
+        nav a {
+            text-decoration: underline;
+        }
 
         .round-image {
             width: 300px;
             height: 300px;
-            margin-right: 20px;
+            margin-right: 40px;
+            margin-left: 20px;
             border-radius: 50%;
         }
 
         .research-image {
             width: 400px;
             height: 400px;
-            margin-right: 60px;
-            margin-left: 60px;
+            margin-right: 20px;
+            margin-left: 20px;
         }
+
+            .research-image.torus {
+                width: 400px;
+                height: 400px;
+            }
 
         .container-about {
             display: flex;
@@ -76,7 +84,6 @@
         .container-research {
             display: flex;
             align-items: center;
-            margin-bottom: 40px;
         }
 
         .caption {
@@ -129,11 +136,60 @@
 
     <h2 id="Research">Research</h2>
     <h3>PhD Thesis - "Novikov-Shubin Invariants of Nilpotent Lie Groups"</h3>
-    <p>[PhD Thesis text]</p>
+    <div class="container-research" id="container-torus-heat">
+        <div id="animation-frame-torus-heat">
+            <img id="svg-img" class="research-image.torus" style="width: 440px; height: 330px;" src="frames/torus-0000.svg">
+        </div>
+        <p>
+            In my PhD thesis, I studied the so-called Novikov-Shubin invariants.
+            They describe the long-term asymptotic behaviour of the heat decay on infinite spaces.
+            For finite spaces, such as the torus on the left, studying how heat evolves over time is a classic problem of physics.
+            Indeed, for finite spaces, we know exactly how quickly the heat will spread out evenly.
+            The speed is exponential,  \( e^{-t\lambda_1} \), according to an extra parameter \(\lambda_1>0\).
+            This paramter appears in many areas of mathematics.<br>
+            It is the smallest non-zero eigenvalue of the Laplace operator, one of the most important operators in geometry and phyics.
+            Using the connection to the heat equation and physics, we can relate this paramter to other quantities.
+            For example, we can give bounds on \(\lambda_1\) in terms of a geometric qunatity, called Cheeger's constant, that measures how easily we can cut our space into two pieces of roughly the same size.
+            If this is easily possible, it is hard for heat to move from one side to the other.
+            Indeed, then the heat diffuses more slowly and hence \(\lambda_1\) is smaller.
+            Coming from a completely different point of view, we can recall that heat energy is nothing but kinetic energy of atoms.
+            Hence, if we want to understand how heat travels through space, we should understand the same for atoms first.
+            Physics tells us that atoms move according to a stochastic process called Brownian motion.
+            The mixing time of such a Brownian motion measures how long it takes until atoms distribute evenly throughout the space.
+            As this also means that the heat spreads out evenly, this mixing time is also related to \(\lambda_1\).
+        </p>
+    </div>
+    <div class="container-research">
+        <p>
+            On infinite spaces, the situation changes dramatically.
+            It can happen that we still have exponential decay \( e^{-t\lambda_1} \), according to a lower bound on the spectrum of the Laplace operator.
+            But it can also happen that no such lower bound exists and \(\lambda_1=0\) would be the only reasonable choice.
+            However, since \( e^{-t\cdot 0} = 1 \) is constant, this does not make sense. Indeed, it turns out that sometimes exponential decay is no longer the right model.
+            Instead, we see slower decay of heat.
+            If the decay is polynomial according to some polynomial \(t^{-\alpha_0/2}\), we call this new, extra parameter \(\alpha_0\) the zeroth Novikov-Shubin invariant.
+            This number is interesting, not only because it describes the heat decay but also because it again relates to many other important areas of mathematics.
+            Indeed, it again measures spectral properties of the Laplace operator acting on functions.
+            It measures, how much spectrum the operator has close to zero, which, for example, tells us something about invertibility of the Laplacian.
+            Naturally, we can therefore consider this kind of invariant also for other operators, for example, the higher Laplace operators acting of differential forms of our manifold, defining higher Novikov-Shubin invariants \(\alpha_k\).
+        </p>
+    </div>
+    <div class="container-research">
+        <p>
+            Classically, a result by N. Th. Varopoulos relates \(\alpha_0\) again to a stochastic quantity, the return probability of a random walk.
+            I developed a framework in which we obtain a generalisation of this result for the higher Novikov-Shubin invariants.
+            For this, I describe explicitly stochastic processes and their relation to the higher Laplace operators.
+            Here, we want to assume that our spaces comes with a so-called CW structure, meaning that we can view it as being build iteratively from blocks of increasing dimension.
+            The stochastic process relating to \(\alpha_k\) is a random walk, where the random walkers move around on the \(k\)-dimensional building blocks.
+            Interestingly, these building blocks can have either of two different orientations.
+            If two random walkers meet at the same block but with different orientations they cancel each other out, similar to how particles and anti-particles cancel out when they meet.
+            This opens a new avenue of studying the Laplace operators as well as their Novikov-Shubin invariants from the world of stochastics.
+        </p>
+        <img src="rw.jpg" alt="rwImg" style="width: 440px; height: 220px;" class="research-image">
+    </div>
+
 
     <h3>Master Thesis - "The Mayer-Vietoris Spectral Sequence for Coarse Generalized Homology"</h3>
     <div class="container-research">
-        <img src="Masters.jpg" alt="MasterImg" class="research-image">
         <div class="caption">
             <p>
                 In my Master Thesis, I studied coarse geometry. Here, we are interested in the large-scale properties of spaces - in contrast to topology, studying the small-scale structure.
@@ -152,9 +208,10 @@
                 I also give an explicit counterexample to show precisely, why this argument fails.
             </p>
         </div>
+        <img src="Masters.jpg" alt="MasterImg" class="research-image">
     </div>
 
-    <h3>Bachelor Thesis - "Explicit Motion Planning for Collision-Free Motion in R^n"</h3>
+    <h3>Bachelor Thesis - "Explicit Motion Planning for Collision-Free Motion in \(\mathbb{R}^n\)"</h3>
     <div class="container-research">
         <img src="Bachelors2.jpg" alt="BachelorImg2" class="research-image">
         <div class="caption">
@@ -179,5 +236,21 @@
     <p>
         Contact me by email: &nbsp;&nbsp; timhoepfner (at) outlook (dot) de
     </p>
+
+    <script>
+        const svgImg = document.getElementById('svg-img');
+        let index = 0;
+        let skip = 2;
+        let lastFrame = 500
+
+        setInterval(() => {
+            const indexStr = index.toString().padStart(4, '0');
+            svgImg.src = `frames/torus-${indexStr}.svg`;
+            index += skip;
+            if (index > lastFrame) {
+                index = 0;
+            }
+        }, 10);
+    </script>
 </body>
 </html>
