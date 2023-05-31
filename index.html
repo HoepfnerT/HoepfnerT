@@ -486,7 +486,7 @@
     <script>
         const svgImg = document.getElementById('svg-img');
         let index = 0;
-        let skip = 2;
+        let skip = 10;
         let lastFrame = 1000;
         let intervalId = null;
         let preload = new Image();
@@ -523,7 +523,7 @@
                         indexStr = (index+1).toString().padStart(4, '0');
                         preload.src = `frames/torus-${indexStr}.svg`;
                     }
-                }, 50);
+                }, 200);
             }
         }
 
