@@ -519,8 +519,10 @@
                     if (index > lastFrame) {
                         index = 1000;
                     }
-                    indexStr = (index+1).toString().padStart(4, '0');
-                    preload.src = `frames/torus-${indexStr}.svg`;
+                    else {
+                        indexStr = (index+1).toString().padStart(4, '0');
+                        preload.src = `frames/torus-${indexStr}.svg`;
+                    }
                 }, 50);
             }
         }
