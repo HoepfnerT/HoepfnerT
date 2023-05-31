@@ -490,6 +490,8 @@
         let lastFrame = 1000;
         let intervalId = null;
 
+
+
         //preload images
         function preload_image(im_url) {
             let img = new Image();
@@ -499,6 +501,7 @@
 
             }
         }
+        preload_image()
 
         const startBtnHE = document.getElementById('startBtnHE');
         const pauseBtnHE = document.getElementById('pauseBtnHE');
