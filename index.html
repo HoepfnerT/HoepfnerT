@@ -489,15 +489,14 @@
         let skip = 2;
         let lastFrame = 1000;
         let intervalId = null;
+        let preload = new Image();
 
 
 
         //preload images
         function preload_image(im_url) {
-            let img = new Image();
-            for (let index = 0; i < lastFrame; i++) {
+            for (let index = 0; index < lastFrame; index++) {
                 const indexStr = index.toString().padStart(4, '0');
-                img.src = `frames/torus-${indexStr}.svg`;
 
             }
         }
@@ -508,21 +507,20 @@
         const stopBtnHE = document.getElementById('stopBtnHE');
         startBtnHE.disabled = false;
         pauseBtnHE.disabled = true;
-        for (let index = 0; index < lastFrame; index++) {
-            const indexStr = index.toString().padStart(4, '0');
-        }
 
         function startAnimationHeatEquation() {
             if (intervalId === null) {
                 startBtnHE.disabled = true;
                 pauseBtnHE.disabled = false;
                 intervalId = setInterval(() => {
-                    const indexStr = index.toString().padStart(4, '0');
+                    let indexStr = index.toString().padStart(4, '0');
                     svgImg.src = `frames/torus-${indexStr}.svg`;
                     index += skip;
                     if (index > lastFrame) {
                         index = 1000;
                     }
+                    indexStr = (index+1).toString().padStart(4, '0');
+                    preload.src = `frames/torus-${indexStr}.svg`;
                 }, 50);
             }
         }
