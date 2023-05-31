@@ -2,11 +2,15 @@
 <html>
 <head>
     <title>Tim H&ouml;pfner</title>
+    <!-- Scripts for Math formulas -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    
+    <link rel="stylesheet" href="fonts/Sans/cmun-sans.css"></link>
+
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: "Computer Modern Sans", sans-serif;
             margin: 0;
             padding: 20px;
         }
@@ -32,6 +36,10 @@
         a {
             color: #00008B;
             text-decoration: none;
+        }
+
+        li {
+            margin-bottom: 10px; 
         }
 
         .navbar {
@@ -64,15 +72,14 @@
         }
 
         .research-image {
-            width: 400px;
-            height: 400px;
+            width: 33%;
+            max-width: 400px;
             margin-right: 20px;
             margin-left: 20px;
         }
 
             .research-image.torus {
-                width: 400px;
-                height: 400px;
+                width: 100%;
             }
 
         .container-about {
@@ -85,10 +92,15 @@
             display: flex;
             align-items: center;
         }
+        
+        .div-centered {
+          text-align: center;
+        }
 
         .caption {
             flex: 1;
         }
+
     </style>
 </head>
 <body>
@@ -137,32 +149,38 @@
     <h2 id="Research">Research</h2>
     <h3>PhD Thesis - "Novikov-Shubin Invariants of Nilpotent Lie Groups"</h3>
     <div class="container-research" id="container-torus-heat">
-        <div id="animation-frame-torus-heat">
-            <img id="svg-img" class="research-image.torus" style="width: 440px; height: 330px;" src="frames/torus-0000.svg">
+        <div id="animation-frame-torus-heat"  class="research-image">
+            <img id="svg-img" src="frames/torus-0000.svg" style="max-width: min(400px,33vw);">
         </div>
         <p>
-            In my PhD thesis, I studied the so-called Novikov-Shubin invariants.
-            They describe the long-term asymptotic behaviour of the heat decay on infinite spaces.
-            For finite spaces, such as the torus on the left, studying how heat evolves over time is a classic problem of physics.
-            Indeed, for finite spaces, we know exactly how quickly the heat will spread out evenly.
-            The speed is exponential,  \( e^{-t\lambda_1} \), according to an extra parameter \(\lambda_1>0\).
-            This paramter appears in many areas of mathematics.<br>
-            It is the smallest non-zero eigenvalue of the Laplace operator, one of the most important operators in geometry and phyics.
-            Using the connection to the heat equation and physics, we can relate this paramter to other quantities.
-            For example, we can give bounds on \(\lambda_1\) in terms of a geometric qunatity, called Cheeger's constant, that measures how easily we can cut our space into two pieces of roughly the same size.
-            If this is easily possible, it is hard for heat to move from one side to the other.
-            Indeed, then the heat diffuses more slowly and hence \(\lambda_1\) is smaller.
-            Coming from a completely different point of view, we can recall that heat energy is nothing but kinetic energy of atoms.
-            Hence, if we want to understand how heat travels through space, we should understand the same for atoms first.
-            Physics tells us that atoms move according to a stochastic process called Brownian motion.
-            The mixing time of such a Brownian motion measures how long it takes until atoms distribute evenly throughout the space.
-            As this also means that the heat spreads out evenly, this mixing time is also related to \(\lambda_1\).
+            In my PhD thesis, I focused on studying a mathematical concept known as Novikov-Shubin invariants. 
+            These invariants provide information about the long-term behavior of heat decay on infinite spaces. 
+            When dealing with finite spaces, like the torus shown on the left, 
+            the study of heat evolution over time is a classic problem in physics. 
+            In such cases, we know precisely how quickly heat will spread out uniformly. 
+            This spreading happens with exponential speed, \(e^{-t\lambda_1}\), depending on a parameter \(\lambda_1>0\),
+            which appears in various areas of mathematics.<br>
+            The value of \(\lambda_1\) is the smallest non-zero eigenvalue of the Laplace operator, 
+            which is an essential operator in both geometry and physics. 
+            By connecting this parameter to the heat equation and physics, 
+            we can establish relationships with other quantities. 
+            For instance, we can establish bounds on \(\lambda_1\) based on a geometric quantity known as Cheeger's constant. 
+            Cheeger's constant measures how easily a space can be divided into two approximately equal-sized pieces. 
+            If it is easy to do so, it becomes difficult for heat to move from one side to the other, 
+            resulting in slower heat diffusion and a smaller \(\lambda_1\).
+
+            Interestingly, we can approach the same topic from a different perspective by considering heat energy as the kinetic energy of atoms. 
+            Therefore, understanding how heat travels through space requires us to comprehend the movement of atoms first. 
+            Physics tells us that atoms move according to a stochastic process called Brownian motion. 
+            The mixing time of this Brownian motion corresponds to the time it takes for atoms to distribute evenly throughout space, 
+            which aligns with the even spreading of heat. 
+            Thus, the mixing time is also connected to \(\lambda_1\).
         </p>
     </div>
     <div class="container-research">
         <p>
             On infinite spaces, the situation changes dramatically.
-            It can happen that we still have exponential decay \( e^{-t\lambda_1} \), according to a lower bound on the spectrum of the Laplace operator.
+            It can happen that we still have exponential decay, \( e^{-t\lambda_1} \), according to a lower bound on the spectrum of the Laplace operator.
             But it can also happen that no such lower bound exists and \(\lambda_1=0\) would be the only reasonable choice.
             However, since \( e^{-t\cdot 0} = 1 \) is constant, this does not make sense. Indeed, it turns out that sometimes exponential decay is no longer the right model.
             Instead, we see slower decay of heat.
@@ -171,7 +189,8 @@
             Indeed, it again measures spectral properties of the Laplace operator acting on functions.
             It measures, how much spectrum the operator has close to zero, which, for example, tells us something about invertibility of the Laplacian.
             Naturally, we can therefore consider this kind of invariant also for other operators, for example, the higher Laplace operators acting of differential forms of our manifold, defining higher Novikov-Shubin invariants \(\alpha_k\).
-        </p>
+            These invariants are very interesting, however, they are also very hard to compute.
+         </p>
     </div>
     <div class="container-research">
         <p>
@@ -184,7 +203,23 @@
             If two random walkers meet at the same block but with different orientations they cancel each other out, similar to how particles and anti-particles cancel out when they meet.
             This opens a new avenue of studying the Laplace operators as well as their Novikov-Shubin invariants from the world of stochastics.
         </p>
-        <img src="rw.jpg" alt="rwImg" style="width: 440px; height: 220px;" class="research-image">
+        <img src="rw.jpg" alt="rwImg" class="research-image">
+    </div>
+
+    <div class="container-research">
+        <img src="2paramnsia0.jpg" alt="MasterImg" class="research-image">
+        <div class="caption">
+            <p>
+                Another approach to computing these invariants is a result by M. Rumin, who developed a way of computing estimates on Novikov-Shubin invariants in some situations.
+                Simplifying this result a bit further, I implemented this approach as a python program to compute estimates for all nilpotent Lie groups up to dimension six.
+                Unfortunately, it turns out that the approach often fails and cannot give any bounds on the invariants. <br>
+                Based on the method behind the proof of M. Rumin's result, I defined a new, more detailed version of Novikov-Shubin invariants.
+                The basic idea is the following observation: If we look at how heat spread out through space, we get the same result by waiting twice as long as we get from scaling all distances in our manifold by a factor 1/2.
+                We consider now spaces with multiple directions, so-called fibre bundles. 
+                In these spaces, we can start to scale different directions at different speeds and study how heat behaves on these scaled spaces. 
+                This tells us something about the contributions that the different directions have towards the Novikov-Shubin invariants of our space.
+            </p>
+        </div>
     </div>
 
 
@@ -226,11 +261,45 @@
     </div>
 
     <h2 id="Teaching">Teaching</h2>
-    <p>[Teaching text]</p>
+    <p>
+        During my time as a doctoral student at G&ouml;ttingen, I taught multiple courses as an assistent:
+        <ul>
+            <li>
+               <b>Winter 2022/23: Mathematisches Prop&auml;detikum</b> with Prof. Dr. Stefan Halverscheid<br>
+                The mathematical propaedeutic for all incoming students of mathematics, physics and computer science.
+            </li>
+            <li>
+                <b>Summer  2022: Analytische Geometrie und Lineare Algebra II f&uuml;r das Lehramt</b>  with Dr. Stefan Wiedmann<br>
+                 The second linear algebra course for didactics.
+            </li>
+            <li>
+               <b>Winter 2021/22: Diskrete Mathematik f&uuml;r Studierende der Informatik</b> with Prof. Dr. Evelina Viada<br>
+               A course on discrete mathematics for stundents of computer sciences.
+            </li>
+            <li>
+                <b>Summer  2021: Differenzial- und Integralrechnung II f&uuml;r das Lehramt</b> with Prof. Dr. Sebastian Bauer<br>
+                The second analysis course for didactics.
+            </li>
+            <li>
+                <b>Winter 2020/21: Mathematik f&uuml;r Studierende der Biologie und Geowissenschaften</b> with Dr. Stefan Wiedmann<br>
+                A course on mathematics for all students of biology, geology and molecular medicine.
+            </li>
+            <li>
+                <b>Summer  2020: Differenzial- und Integralrechnung II f&uuml;r das Lehramt</b> with Prof. Dr. Sebastian Bauer<br>
+                The second analysis course for didactics.
+            </li>
+            <li>
+                <b>Winter 2019/20: Differential- und Integralgralrechnung I</b> with Prof. Dr. Dorothea Bahns</br>
+                The first analysis course for students of mathematics.
+            </li>
+        </ul>
+    </p>
 
     <h2 id="Interests">Personal Interests</h2>
-    <p>[Personal Interests text]</p>
+    <iframe src="https://lichess.org/embed/game/uns4Krdq?theme=auto&bg=auto"
+width=600 height=397 frameborder=0></iframe>
 
+    
 
     <h2 id="Contact">Contact</h2>
     <p>
@@ -252,5 +321,7 @@
             }
         }, 10);
     </script>
+
+
 </body>
 </html>
