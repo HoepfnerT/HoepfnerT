@@ -520,7 +520,7 @@
                         index = 1000;
                     }
                     else {
-                        indexStr = (index+1).toString().padStart(4, '0');
+                        indexStr = (index+skip).toString().padStart(4, '0');
                         preload.src = `frames/torus-${indexStr}.svg`;
                     }
                 }, 200);
