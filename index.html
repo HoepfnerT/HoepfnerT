@@ -516,7 +516,7 @@
                     let indexStr = index.toString().padStart(4, '0');
                     svgImg.src = `frames/torus-${indexStr}.svg`;
                     index += skip;
-                    if (index > lastFrame) {
+                    if (index >= lastFrame) {
                         index = 1000;
                     }
                     else {
