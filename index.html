@@ -5,8 +5,9 @@
     <!-- Scripts for Math formulas -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
-    
+
     <link rel="stylesheet" href="fonts/Sans/cmun-sans.css"></link>
+
 
     <style>
 
@@ -16,10 +17,12 @@
             margin-bottom: 10px;
             position: fixed;
             top: 0;
+            left: 0;
             overflow: hidden;
             background-color: #FFF;
             width: 100%;
         }
+
             .navbar a {
                 float: left;
                 display: block;
@@ -28,10 +31,11 @@
                 padding-bottom: 5px;
             }
 
-            .navbar a:hover {
-                background: #ddd;
-                color: black;
-            }
+                .navbar a:hover {
+                    background: #ddd;
+                    color: black;
+                }
+
             .navbar ul {
                 list-style: none;
                 margin: 0;
@@ -45,7 +49,7 @@
 
 
         .main {
-            margin-top: 30px; 
+            margin-top: 30px;
         }
 
         body {
@@ -91,7 +95,7 @@
             font-size: 18px;
         }
 
-        
+
 
         a {
             text-decoration: underline;
@@ -142,15 +146,14 @@
                 object-fit: cover;
                 margin-right: 10px;
             }
-        
+
         .div-centered {
-          text-align: center;
+            text-align: center;
         }
 
         .caption {
             flex: 1;
         }
-
     </style>
 </head>
 <body>
@@ -487,11 +490,24 @@
         let lastFrame = 1000;
         let intervalId = null;
 
+        //preload images
+        function preload_image(im_url) {
+            let img = new Image();
+            for (let index = 0; i < lastFrame; i++) {
+                const indexStr = index.toString().padStart(4, '0');
+                img.src = `frames/torus-${indexStr}.svg`;
+
+            }
+        }
+
         const startBtnHE = document.getElementById('startBtnHE');
         const pauseBtnHE = document.getElementById('pauseBtnHE');
         const stopBtnHE = document.getElementById('stopBtnHE');
         startBtnHE.disabled = false;
         pauseBtnHE.disabled = true;
+        for (let index = 0; index < lastFrame; index++) {
+            const indexStr = index.toString().padStart(4, '0');
+        }
 
         function startAnimationHeatEquation() {
             if (intervalId === null) {
@@ -504,7 +520,7 @@
                     if (index > lastFrame) {
                         index = 1000;
                     }
-                }, 100);
+                }, 50);
             }
         }
 
@@ -539,6 +555,7 @@
         let y = canvas.height / 2;
         startBtnRW.disabled = false;
         pauseBtnRW.disabled = true;
+
 
         function initAnimationRandomWalk() {
             const context = canvas.getContext('2d');
@@ -590,6 +607,7 @@
         }
 
     </script>
+
 
 </body>
 </html>
