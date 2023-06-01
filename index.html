@@ -114,6 +114,13 @@
             text-align: justify;
         }
 
+        .container-buttons {
+            max-width: min(400px,33vw);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
 
 
         @media (min-aspect-ratio: 1.5/1) {
@@ -222,10 +229,11 @@
     </style>
 </head>
 <body>
+    <!--<a href="upcoming_math.html">Math Talks in G&ouml;ttingen</a>-->
 
     <h1>Hello, I'm Tim H&ouml;pfner.</h1>
 
-    <nav class="navbar">
+    <nav class="navbar" style="padding-left:20px; padding-right:20px;">
         <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#About">About Me</a></li>
@@ -234,17 +242,16 @@
             <li><a href="#Interests">Personal Interests</a></li>
             <li><a href="#Contact">Contact</a></li>
         </ul>
-        <ul>
-            <li><a href="upcoming_math.html">Math Talks in G&ouml;ttingen</a></li>
-        </ul>
     </nav>
 
     <!--About-->
     <div>
-        <h2 id="About">About Me</h2>
         <div class="container-about">
-            <img src="IMG_20230510_173016.jpg" class="round-image">
             <div>
+                <img src="IMG_20230510_173016.jpg" class="round-image">
+            </div>
+            <div>
+                <h2 id="About">About Me</h2>
                 <p>
                     My name is Tim H&ouml;pfner, and I was born in 1996 in Kiel, Germany, where I spent the first years of my life until I moved to Kassel, where I attended school.
                     There, I graduated from the Wilhelmsgymnasium Kassel with Abitur (german high school diploma).
@@ -300,7 +307,7 @@
                 </div>
                 <div class="container-research-right">
                     <img id="svg-img" src="frames/torus-0000.svg" class="research-image-torus">
-                    <div style="max-width: min(400px,33vw);">
+                    <div class="container-buttons">
                         <button id="startBtnHE" onclick="startAnimationHeatEquation()">Start Animation</button>
                         <button id="pauseBtnHE" onclick="pauseAnimationHeatEquation()">Pause</button>
                         <button id="stopBtnHE" onclick="stopAnimationHeatEquation()">Reset</button>
@@ -325,7 +332,7 @@
                         Thinking about when this happens can lead us to new descriptions of our parameter.
                     </p>
                 </div>
-                <div class="container-research-right" ></div>
+                <div class="container-research-right"></div>
             </div>
 
             <!--approaches-->
@@ -359,9 +366,9 @@
                         </ul>
                     </p>
                 </div>
-                <div  class="container-research-right">
+                <div class="container-research-right">
                     <canvas id="rw_canvas" class="canvas_rw"></canvas>
-                    <div>
+                    <div class="container-buttons">
                         <button id="startBtnRW" onclick="startAnimationRandomWalk()">Start Random Walk</button>
                         <button id="pauseBtnRW" onclick="pauseAnimationRandomWalk()">Pause</button>
                         <button id="stopBtnRW" onclick="stopAnimationRandomWalk()">Reset</button>
@@ -372,7 +379,7 @@
 
             <!--Non compact-->
             <div class="container-research">
-                <div  class="container-research-left" >
+                <div class="container-research-left">
                     <h4>What about infinite spaces?</h4>
                     <p>
                         So on finite spaces, we understand quite well what happens.
@@ -396,7 +403,7 @@
                         The content of my PhD thesis deals with the problem of computing these Novikov-Shubin invariants.
                     </p>
                 </div>
-                <div  class="container-research-right" ></div>
+                <div class="container-research-right"></div>
             </div>
 
 
@@ -427,64 +434,64 @@
                 </div>
             </div>
 
-                <!--Approach 1: RW-->
-                <div class="container-research">
-                    <div class="container-research-left">
-                        <h4> Approach 1: Stochastics </h4>
-                        <p>
-                            If our manifold is a nice CW complex, iteratively build up by disks of increasing dimensions, we can use the combinatorial data coming from this construction to approach the computation.
-                            For \(\alpha_0\), we have to understand how 1-disks (i.e., intervals) are attached to 0-disks (i.e., vertices).
-                            This so-called 1-skeleton of \(M\) is therefore nothing but a graph.
-                            A wonderful result by Varopoulos tells us, that we can compute \(\alpha_0\) in terms of the return probability of a random walk on this graph.
-                            In my thesis, I show that there are higher-dimensional analogues of these random walks, that relate to the higher \(\alpha_k\).
-                            These random walks take place on the \(k\)-dimensinal disks in our manifold.
-                            Contrary to vertices however, these disks can be oriented in two different ways.
-                            This leads to a more complicated random walk, where random walkers can move to every \(k\)-disk with either of the two orientations.
-                            And, if two random walkers meet at the same disk but with opposite orientations, they cancel each other out - not unsimilar to the cancelations between particles and anti-particles in physics.
-                            I explicitly describe these random walks and their relation to the higher Novikov-Shubin invariants, establishing a new approach to studying Novikov-Shubin invariants using stochastical methods.
-                        </p>
-                    </div>
-                    <div class="container-research-right">
-                        <img src="rw.jpg" class="research-image">
-                    </div>
+            <!--Approach 1: RW-->
+            <div class="container-research">
+                <div class="container-research-left">
+                    <h4> Approach 1: Stochastics </h4>
+                    <p>
+                        If our manifold is a nice CW complex, iteratively build up by disks of increasing dimensions, we can use the combinatorial data coming from this construction to approach the computation.
+                        For \(\alpha_0\), we have to understand how 1-disks (i.e., intervals) are attached to 0-disks (i.e., vertices).
+                        This so-called 1-skeleton of \(M\) is therefore nothing but a graph.
+                        A wonderful result by Varopoulos tells us, that we can compute \(\alpha_0\) in terms of the return probability of a random walk on this graph.
+                        In my thesis, I show that there are higher-dimensional analogues of these random walks, that relate to the higher \(\alpha_k\).
+                        These random walks take place on the \(k\)-dimensinal disks in our manifold.
+                        Contrary to vertices however, these disks can be oriented in two different ways.
+                        This leads to a more complicated random walk, where random walkers can move to every \(k\)-disk with either of the two orientations.
+                        And, if two random walkers meet at the same disk but with opposite orientations, they cancel each other out - not unsimilar to the cancelations between particles and anti-particles in physics.
+                        I explicitly describe these random walks and their relation to the higher Novikov-Shubin invariants, establishing a new approach to studying Novikov-Shubin invariants using stochastical methods.
+                    </p>
                 </div>
-
-                <!--Approach 2: Rumin-->
-                <div class="container-research">
-                    <div class="container-research-left">
-                        <h4> Approach 2: Computer Estimations </h4>
-                        <p>
-                            Another approach to computing these invariants is a result by Rumin, who developed a way of computing estimates on Novikov-Shubin invariants in some situations.
-                            Simplifying this result a bit further, I implemented this approach as a python program to compute estimates for all nilpotent Lie groups up to dimension six.
-                            This gives us quite a few new estimates on Novikov-Shubin invariants, but unfortunately, it turns out that the approach often fails and cannot give any bounds on the invariants.
-                            In order to understand the short-comings further, we move on to the third approach.
-                        </p>
-                    </div>
-                    <div class="container-research-right"></div>
-                </div>
-
-                <!--Approach 3: Diff Geo-->
-                <div class="container-research">
-                    <div class="container-research-left">
-                        <h4> Approach 3: Differential Geometry </h4>
-                        <p>
-                            Based on the method behind the proof of Rumin's result, I defined a new, more detailed version of Novikov-Shubin invariants.
-                            The basic idea is the following observation: If we look at how heat spread out through space, we get the same result by waiting twice as long as we get from scaling all distances in our manifold by a factor 1/2.
-                            We consider now spaces with multiple directions, so-called fibre bundles.
-                            In these spaces, we can start to scale different directions at different speeds and study how heat behaves on these scaled spaces.
-                            This tells us something about the contributions that the different directions have towards the Novikov-Shubin invariants of our space. <br />
-                            Defining these new invariants depends, a priori, on quite a bit of extra structure needed to talk about these different directions.
-                            I show that the resulting numbers are indeed invariant under many of these choices. <br />
-                            Then, I computed these new invariants for the 3-dimensional Heisenberg group, which is the three-dimensional Lie group with generators \(X,Y,Z\) and only non-zero commutator relation  \([X,Y]=Z\).
-                            If we scale the base directions \(X,Y\) with speed \(\lambda\) and vary the scaling speed of the fibre direction \(Z\) as \(\lambda^{1+\zeta}\) according to some parameter \(\zeta\), we find the graph on the left.
-                            Surprisingly, the contribution from the fibre direction seems to have opposing effects on the zeroth and the first Novikov-Shubin invariants´.
-                        </p>
-                    </div>
-                    <div class="container-research-right">
-                        <img src="2paramnsi.jpg" class="research-image-twographs">
-                    </div>
+                <div class="container-research-right">
+                    <img src="rw.jpg" class="research-image">
                 </div>
             </div>
+
+            <!--Approach 2: Rumin-->
+            <div class="container-research">
+                <div class="container-research-left">
+                    <h4> Approach 2: Computer Estimations </h4>
+                    <p>
+                        Another approach to computing these invariants is a result by Rumin, who developed a way of computing estimates on Novikov-Shubin invariants in some situations.
+                        Simplifying this result a bit further, I implemented this approach as a python program to compute estimates for all nilpotent Lie groups up to dimension six.
+                        This gives us quite a few new estimates on Novikov-Shubin invariants, but unfortunately, it turns out that the approach often fails and cannot give any bounds on the invariants.
+                        In order to understand the short-comings further, we move on to the third approach.
+                    </p>
+                </div>
+                <div class="container-research-right"></div>
+            </div>
+
+            <!--Approach 3: Diff Geo-->
+            <div class="container-research">
+                <div class="container-research-left">
+                    <h4> Approach 3: Differential Geometry </h4>
+                    <p>
+                        Based on the method behind the proof of Rumin's result, I defined a new, more detailed version of Novikov-Shubin invariants.
+                        The basic idea is the following observation: If we look at how heat spread out through space, we get the same result by waiting twice as long as we get from scaling all distances in our manifold by a factor 1/2.
+                        We consider now spaces with multiple directions, so-called fibre bundles.
+                        In these spaces, we can start to scale different directions at different speeds and study how heat behaves on these scaled spaces.
+                        This tells us something about the contributions that the different directions have towards the Novikov-Shubin invariants of our space. <br />
+                        Defining these new invariants depends, a priori, on quite a bit of extra structure needed to talk about these different directions.
+                        I show that the resulting numbers are indeed invariant under many of these choices. <br />
+                        Then, I computed these new invariants for the 3-dimensional Heisenberg group, which is the three-dimensional Lie group with generators \(X,Y,Z\) and only non-zero commutator relation  \([X,Y]=Z\).
+                        If we scale the base directions \(X,Y\) with speed \(\lambda\) and vary the scaling speed of the fibre direction \(Z\) as \(\lambda^{1+\zeta}\) according to some parameter \(\zeta\), we find the graph on the left.
+                        Surprisingly, the contribution from the fibre direction seems to have opposing effects on the zeroth and the first Novikov-Shubin invariants´.
+                    </p>
+                </div>
+                <div class="container-research-right">
+                    <img src="2paramnsi.jpg" class="research-image-twographs">
+                </div>
+            </div>
+        </div>
 
         <!--Master-->
         <div class="container-research">
@@ -574,7 +581,7 @@
             <p>
                 I am a huge chess fan and a chess player myself.
                 For tournament play I have been inactive for a while, playing mostly online - but here you can find my <a href="https://ratings.fide.com/profile/4638310/chart">fide-profile</a>.
-                My favorite chess game is the game between Short and Timman from 1991:
+                My favorite chess game is Nigel Short's victory over Jan Timman from 1991:
             </p>
             <iframe src="https://lichess.org/embed/game/uns4Krdq?theme=auto&bg=auto"
                     width=600 height=397 frameborder=0 style="padding:20px;"></iframe>
