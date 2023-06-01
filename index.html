@@ -55,6 +55,7 @@
         body {
             font-family: "Computer Modern Sans", sans-serif;
             margin: 0;
+            padding: 20px;
         }
 
         h1 {
@@ -109,6 +110,7 @@
             display: flex;
             align-items: center;
             margin-bottom: 40px;
+            padding: 20px;
             text-align: justify;
         }
 
@@ -119,6 +121,15 @@
                 display: flex;
                 text-align: justify;
                 align-items: center;
+            }
+
+            .container-research-left {
+                width: 66vw;
+                padding: 20px;
+            }
+            .container-research-right {
+                width: 33vw;
+                padding: 20px;
             }
 
             .research-image {
@@ -149,10 +160,6 @@
                 align-self: end;
                 border: 2px solid black;
             }
-            .p-research {
-                width: 66vw;
-                padding: 20px;
-            }
         }
 
         @media (max-aspect-ratio: 1.5/1) {
@@ -170,8 +177,17 @@
 
             .container-research {
                 text-align: justify;
-                align-content: center;
-                align-items:center;
+            }
+
+            .container-research-left {
+                padding: 20px;
+            }
+
+            .container-research-right {
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
             }
 
             .research-image-twographs {
@@ -187,10 +203,6 @@
                 max-width: 400px;
                 max-height: 400px;
                 border: 2px solid black;
-            }
-            .p-research {
-                width: 90vw;
-                padding: 20px;
             }
         }
 
@@ -232,7 +244,7 @@
         <h2 id="About">About Me</h2>
         <div class="container-about">
             <img src="IMG_20230510_173016.jpg" class="round-image">
-            <div class="caption">
+            <div>
                 <p>
                     My name is Tim H&ouml;pfner, and I was born in 1996 in Kiel, Germany, where I spent the first years of my life until I moved to Kassel, where I attended school.
                     There, I graduated from the Wilhelmsgymnasium Kassel with Abitur (german high school diploma).
@@ -254,18 +266,20 @@
 
     <!--Research-->
     <div>
-        <h2 id="Research" class="p-research">Research</h2>
+        <h2 id="Research">Research</h2>
         <div>
-            <h3 class="p-research" style="margin-bottom: 0;">Heat Decay on Non-Compact Manifolds</h3>
-            <p class="p-research">
-                This is part of my PhD thesis, which can be found here: <a href="http://dx.doi.org/10.53846/goediss-9907">T. H&ouml;pfner: Novikov-Shubin Invariants of Nilpotent Lie Groups</a>
-            </p>
+            <div class="container-research-left">
+                <h3 style="margin-bottom: 0;">Heat Decay on Non-Compact Manifolds</h3>
+                <p>
+                    This is part of my PhD thesis, which can be found here: <a href="http://dx.doi.org/10.53846/goediss-9907">T. H&ouml;pfner: Novikov-Shubin Invariants of Nilpotent Lie Groups</a>
+                </p>
+            </div>
 
             <!--compact heat-->
             <div class="container-research">
-                <div>
-                    <h4 class="p-research">The Problem of Heat Diffusion on Finite Spaces</h4>
-                    <p class="p-research">
+                <div class="container-research-left">
+                    <h4>The Problem of Heat Diffusion on Finite Spaces</h4>
+                    <p>
                         Let us say we have a small space fitting into a box of finite size, such as the torus on the left hand side.
                         On this torus, we can measure the temperature right now.
                         How will this temperature change over time as we wait?
@@ -284,23 +298,21 @@
                         How fast this exponential decay is, is governed by the extra parameter \(\lambda_1>0\).
                     </p>
                 </div>
-                <div id="animation-frame-torus-heat">
-                    <div style="display: flex; flex-direction: column; align-items: center;">
-                        <img id="svg-img" src="frames/torus-0000.svg" class="research-image-torus">
-                        <div style="max-width: min(400px,33vw);">
-                            <button id="startBtnHE" onclick="startAnimationHeatEquation()">Start Animation</button>
-                            <button id="pauseBtnHE" onclick="pauseAnimationHeatEquation()">Pause</button>
-                            <button id="stopBtnHE" onclick="stopAnimationHeatEquation()">Reset</button>
-                        </div>
+                <div class="container-research-right">
+                    <img id="svg-img" src="frames/torus-0000.svg" class="research-image-torus">
+                    <div style="max-width: min(400px,33vw);">
+                        <button id="startBtnHE" onclick="startAnimationHeatEquation()">Start Animation</button>
+                        <button id="pauseBtnHE" onclick="pauseAnimationHeatEquation()">Pause</button>
+                        <button id="stopBtnHE" onclick="stopAnimationHeatEquation()">Reset</button>
                     </div>
                 </div>
             </div>
 
             <!--lambda1-->
             <div class="container-research">
-                <div>
-                    <h4 class="p-research">What can we say about \(\lambda_1\)?</h4>
-                    <p class="p-research">
+                <div class="container-research-left">
+                    <h4>What can we say about \(\lambda_1\)?</h4>
+                    <p>
                         Naturally, we would like to learn more about this parameter \(\lambda_1\).
                         Our mathematical appreach using the heat operator \(e^{-t\Delta_x}\) tells us, that \(\lambda_1\) and this operator should be connected.
                         Indeed, for such an operator in mathematics, many of its important properties are captured by the so-called spectrum of the operator.
@@ -313,13 +325,14 @@
                         Thinking about when this happens can lead us to new descriptions of our parameter.
                     </p>
                 </div>
+                <div class="container-research-right" ></div>
             </div>
 
             <!--approaches-->
             <div class="container-research">
-                <div>
-                    <h4 class="p-research">How can we find \(\lambda_1\)?</h4>
-                    <p class="p-research">
+                <div class="container-research-left">
+                    <h4>How can we find \(\lambda_1\)?</h4>
+                    <p>
                         <ul>
                             <li>
                                 <b>Geometry:</b> If it is easy to cut our space into two halfs of roughly equal size at some very thin part,
@@ -346,7 +359,7 @@
                         </ul>
                     </p>
                 </div>
-                <div style="display: flex; flex-direction: column; align-items: center;">
+                <div  class="container-research-right">
                     <canvas id="rw_canvas" class="canvas_rw"></canvas>
                     <div>
                         <button id="startBtnRW" onclick="startAnimationRandomWalk()">Start Random Walk</button>
@@ -359,9 +372,9 @@
 
             <!--Non compact-->
             <div class="container-research">
-                <div>
-                    <h4 class="p-research">What about infinite spaces?</h4>
-                    <p class="p-research">
+                <div  class="container-research-left" >
+                    <h4>What about infinite spaces?</h4>
+                    <p>
                         So on finite spaces, we understand quite well what happens.
                         But what changes, if we look at infinite spaces?
                         Mathematically, things become a lot more complicated.
@@ -383,14 +396,15 @@
                         The content of my PhD thesis deals with the problem of computing these Novikov-Shubin invariants.
                     </p>
                 </div>
+                <div  class="container-research-right" ></div>
             </div>
 
 
             <!--Math content-->
             <div class="container-research">
-                <div>
-                    <h4 class="p-research">So let's talk math! What did I do?</h4>
-                    <p class="p-research">
+                <div class="container-research-left">
+                    <h4>So let's talk math! What did I do?</h4>
+                    <p>
                         If we study the heat problem on an infinite space, meaning a non-compact manifold \(M\),
                         we again consider the Laplace operator \(\Delta_0\) acting on the \(L^2\)-functions on \(M\),
                         but also the higher Laplace operators \(\Delta_k\) acting on the \(L^2\)-\(k\)-forms on \(M\).
@@ -409,67 +423,74 @@
                         So we would like to find new approaches.
                     </p>
                 </div>
-            </div>
-
-            <!--Approach 1: RW-->
-            <div class="container-research">
-                <div>
-                    <h4 class="p-research"> Approach 1: Stochastics </h4>
-                    <p class="p-research">
-                        If our manifold is a nice CW complex, iteratively build up by disks of increasing dimensions, we can use the combinatorial data coming from this construction to approach the computation.
-                        For \(\alpha_0\), we have to understand how 1-disks (i.e., intervals) are attached to 0-disks (i.e., vertices).
-                        This so-called 1-skeleton of \(M\) is therefore nothing but a graph.
-                        A wonderful result by Varopoulos tells us, that we can compute \(\alpha_0\) in terms of the return probability of a random walk on this graph.
-                        In my thesis, I show that there are higher-dimensional analogues of these random walks, that relate to the higher \(\alpha_k\).
-                        These random walks take place on the \(k\)-dimensinal disks in our manifold.
-                        Contrary to vertices however, these disks can be oriented in two different ways.
-                        This leads to a more complicated random walk, where random walkers can move to every \(k\)-disk with either of the two orientations.
-                        And, if two random walkers meet at the same disk but with opposite orientations, they cancel each other out - not unsimilar to the cancelations between particles and anti-particles in physics.
-                        I explicitly describe these random walks and their relation to the higher Novikov-Shubin invariants, establishing a new approach to studying Novikov-Shubin invariants using stochastical methods.
-                    </p>
-                </div>
-                <img src="rw.jpg" class="research-image">
-            </div>
-
-            <!--Approach 2: Rumin-->
-            <div class="container-research">
-                <div>
-                    <h4 class="p-research"> Approach 2: Computer Estimations </h4>
-                    <p class="p-research">
-                        Another approach to computing these invariants is a result by Rumin, who developed a way of computing estimates on Novikov-Shubin invariants in some situations.
-                        Simplifying this result a bit further, I implemented this approach as a python program to compute estimates for all nilpotent Lie groups up to dimension six.
-                        This gives us quite a few new estimates on Novikov-Shubin invariants, but unfortunately, it turns out that the approach often fails and cannot give any bounds on the invariants.
-                        In order to understand the short-comings further, we move on to the third approach.
-                    </p>
+                <div class="container-research-right">
                 </div>
             </div>
 
-            <!--Approach 3: Diff Geo-->
-            <div class="container-research">
-                <div>
-                    <h4 class="p-research"> Approach 3: Differential Geometry </h4>
-                    <p class="p-research">
-                        Based on the method behind the proof of Rumin's result, I defined a new, more detailed version of Novikov-Shubin invariants.
-                        The basic idea is the following observation: If we look at how heat spread out through space, we get the same result by waiting twice as long as we get from scaling all distances in our manifold by a factor 1/2.
-                        We consider now spaces with multiple directions, so-called fibre bundles.
-                        In these spaces, we can start to scale different directions at different speeds and study how heat behaves on these scaled spaces.
-                        This tells us something about the contributions that the different directions have towards the Novikov-Shubin invariants of our space. <br />
-                        Defining these new invariants depends, a priori, on quite a bit of extra structure needed to talk about these different directions.
-                        I show that the resulting numbers are indeed invariant under many of these choices. <br />
-                        Then, I computed these new invariants for the 3-dimensional Heisenberg group, which is the three-dimensional Lie group with generators \(X,Y,Z\) and only non-zero commutator relation  \([X,Y]=Z\).
-                        If we scale the base directions \(X,Y\) with speed \(\lambda\) and vary the scaling speed of the fibre direction \(Z\) as \(\lambda^{1+\zeta}\) according to some parameter \(\zeta\), we find the graph on the left.
-                        Surprisingly, the contribution from the fibre direction seems to have opposing effects on the zeroth and the first Novikov-Shubin invariants´.
-                    </p>
+                <!--Approach 1: RW-->
+                <div class="container-research">
+                    <div class="container-research-left">
+                        <h4> Approach 1: Stochastics </h4>
+                        <p>
+                            If our manifold is a nice CW complex, iteratively build up by disks of increasing dimensions, we can use the combinatorial data coming from this construction to approach the computation.
+                            For \(\alpha_0\), we have to understand how 1-disks (i.e., intervals) are attached to 0-disks (i.e., vertices).
+                            This so-called 1-skeleton of \(M\) is therefore nothing but a graph.
+                            A wonderful result by Varopoulos tells us, that we can compute \(\alpha_0\) in terms of the return probability of a random walk on this graph.
+                            In my thesis, I show that there are higher-dimensional analogues of these random walks, that relate to the higher \(\alpha_k\).
+                            These random walks take place on the \(k\)-dimensinal disks in our manifold.
+                            Contrary to vertices however, these disks can be oriented in two different ways.
+                            This leads to a more complicated random walk, where random walkers can move to every \(k\)-disk with either of the two orientations.
+                            And, if two random walkers meet at the same disk but with opposite orientations, they cancel each other out - not unsimilar to the cancelations between particles and anti-particles in physics.
+                            I explicitly describe these random walks and their relation to the higher Novikov-Shubin invariants, establishing a new approach to studying Novikov-Shubin invariants using stochastical methods.
+                        </p>
+                    </div>
+                    <div class="container-research-right">
+                        <img src="rw.jpg" class="research-image">
+                    </div>
                 </div>
-                <img src="2paramnsi.jpg" class="research-image-twographs">
+
+                <!--Approach 2: Rumin-->
+                <div class="container-research">
+                    <div class="container-research-left">
+                        <h4> Approach 2: Computer Estimations </h4>
+                        <p>
+                            Another approach to computing these invariants is a result by Rumin, who developed a way of computing estimates on Novikov-Shubin invariants in some situations.
+                            Simplifying this result a bit further, I implemented this approach as a python program to compute estimates for all nilpotent Lie groups up to dimension six.
+                            This gives us quite a few new estimates on Novikov-Shubin invariants, but unfortunately, it turns out that the approach often fails and cannot give any bounds on the invariants.
+                            In order to understand the short-comings further, we move on to the third approach.
+                        </p>
+                    </div>
+                    <div class="container-research-right"></div>
+                </div>
+
+                <!--Approach 3: Diff Geo-->
+                <div class="container-research">
+                    <div class="container-research-left">
+                        <h4> Approach 3: Differential Geometry </h4>
+                        <p>
+                            Based on the method behind the proof of Rumin's result, I defined a new, more detailed version of Novikov-Shubin invariants.
+                            The basic idea is the following observation: If we look at how heat spread out through space, we get the same result by waiting twice as long as we get from scaling all distances in our manifold by a factor 1/2.
+                            We consider now spaces with multiple directions, so-called fibre bundles.
+                            In these spaces, we can start to scale different directions at different speeds and study how heat behaves on these scaled spaces.
+                            This tells us something about the contributions that the different directions have towards the Novikov-Shubin invariants of our space. <br />
+                            Defining these new invariants depends, a priori, on quite a bit of extra structure needed to talk about these different directions.
+                            I show that the resulting numbers are indeed invariant under many of these choices. <br />
+                            Then, I computed these new invariants for the 3-dimensional Heisenberg group, which is the three-dimensional Lie group with generators \(X,Y,Z\) and only non-zero commutator relation  \([X,Y]=Z\).
+                            If we scale the base directions \(X,Y\) with speed \(\lambda\) and vary the scaling speed of the fibre direction \(Z\) as \(\lambda^{1+\zeta}\) according to some parameter \(\zeta\), we find the graph on the left.
+                            Surprisingly, the contribution from the fibre direction seems to have opposing effects on the zeroth and the first Novikov-Shubin invariants´.
+                        </p>
+                    </div>
+                    <div class="container-research-right">
+                        <img src="2paramnsi.jpg" class="research-image-twographs">
+                    </div>
+                </div>
             </div>
-        </div>
 
         <!--Master-->
-        <div>
-            <h3 class="p-research">Master Thesis - "The Mayer-Vietoris Spectral Sequence for Coarse Generalized Homology"</h3>
-            <div class="container-research">
-                <p class="p-research">
+        <div class="container-research">
+            <div class="container-research-left">
+                <h3>Master Thesis - "The Mayer-Vietoris Spectral Sequence for Coarse Generalized Homology"</h3>
+                <p>
                     In my Master Thesis, I studied coarse geometry. Here, we are interested in the large-scale properties of spaces - in contrast to topology, studying the small-scale structure.
                     In algebraic topology, we like to define invariants to describe and compare our spaces, that is, numbers or other simple objects.
                     If we are able to compute these invariants easily, we can (sometimes) use them to figure out whether two spaces are different.
@@ -485,20 +506,24 @@
                     While I establish a spectral sequence for easier computations for finite decomposition, I show that such an infinite decomposition cannot be used to compute coarse homology from infinite decompositions.
                     I also give an explicit counterexample to show precisely, why this argument fails.
                 </p>
+            </div>
+            <div class="container-research-right">
                 <img src="masters.jpg" class="research-image">
             </div>
         </div>
 
         <!--Bachelor-->
-        <div>
-            <h3 class="p-research">Bachelor Thesis - "Explicit Motion Planning for Collision-Free Motion in \(\mathbb{R}^n\)"</h3>
-            <div class="container-research">
-                <p class="p-research">
+        <div class="container-research">
+            <div class="container-research-left">
+                <h3>Bachelor Thesis - "Explicit Motion Planning for Collision-Free Motion in \(\mathbb{R}^n\)"</h3>
+                <p>
                     In my Bachelor thesis, I studied the problem of motion planning from a point of view of topology ("Topological Complexity"):
                     <br />
                     Let's say we have an empty stace with arbitrarily many (moving and non-moving) obstacles and any number of agents (e.g., robots) that need to move around freely without colliding with the obstacles or other agents.
                     I describe explicitely a (topological) algorithm that considers the current location and the target position of each of the agents and produces for each agent a path that they can move along.
                 </p>
+            </div>
+            <div class="container-research-right">
                 <img src="bachelors2.jpg" class="research-image">
             </div>
         </div>
@@ -507,7 +532,7 @@
     <!--Teaching-->
     <div>
         <h2 id="Teaching">Teaching</h2>
-        <p class="p-research">
+        <p>
             During my time as a doctoral student at G&ouml;ttingen, I taught multiple courses as an assistent:
             <ul>
                 <li>
