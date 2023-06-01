@@ -55,7 +55,6 @@
         body {
             font-family: "Computer Modern Sans", sans-serif;
             margin: 0;
-            padding: 20px;
         }
 
         h1 {
@@ -66,16 +65,20 @@
         h2 {
             color: #00008B;
             font-size: 48px;
+            margin-bottom: 0px;
         }
 
         h3 {
             color: #00008B;
             font-size: 32px;
+            margin-bottom: 0px;
         }
 
         h4 {
             color: #00008B;
             font-size: 20px;
+            margin-top: 0px;
+            margin-bottom: 0px;
         }
 
         p {
@@ -83,21 +86,13 @@
             font-size: 18px;
             text-align: justify;
             line-height: 1.5;
+            margin-top: 0px;
+            margin-bottom: 0px;
         }
+
 
         a {
             color: #00008B;
-            text-decoration: none;
-        }
-
-        li {
-            margin-bottom: 10px;
-            font-size: 18px;
-        }
-
-
-
-        a {
             text-decoration: underline;
         }
 
@@ -109,24 +104,6 @@
             border-radius: 50%;
         }
 
-        .research-image {
-            width: 33%;
-            max-width: 400px;
-            margin-right: 20px;
-            margin-left: 20px;
-        }
-
-
-            .research-image.torus {
-                width: 100%;
-            }
-
-        .research-image-twographs {
-            width: 50%;
-            max-width: 600px;
-            margin-right: 20px;
-            margin-left: 20px;
-        }
 
         .container-about {
             display: flex;
@@ -136,27 +113,107 @@
         }
 
 
-        .container-research {
-            display: flex;
-            text-align: justify;
-        }
 
-            .container-research img {
-                height: 100%;
-                object-fit: cover;
-                margin-right: 10px;
+        @media (min-aspect-ratio: 1.5/1) {
+            .container-research {
+                display: flex;
+                text-align: justify;
+                align-items: center;
+            }
+                .container-research.left {
+                    width: 66vw;
+                    padding: 20px;
+                }
+            .research-image {
+                width: 30vw;
+                max-width: 500px;
+                margin-right: 20px;
+                margin-left: 20px;
+            }
+            .research-image-torus {
+                max-width: min(500px,30vw);
+                padding-bottom: 0px;
             }
 
-        .div-centered {
-            text-align: center;
+            .research-image-twographs {
+                width: 30vw;
+                max-width: 500px;
+                margin-right: 20px;
+                margin-left: 20px;
+            }
+
+            .canvas_rw {
+                width: 30vw;
+                height: 30vw;
+                max-width: 500px;
+                max-height: 500px;
+                margin-right: 20px;
+                margin-left: 20px;
+                align-self: end;
+                border: 2px solid black;
+            }
+            .p-research {
+                width: 66vw;
+                padding: 20px;
+            }
         }
 
-        .caption {
-            flex: 1;
+        @media (max-aspect-ratio: 1.5/1) {
+            .research-image {
+                width: 75vw;
+                max-width: 500px;
+                margin-right: 20px;
+                margin-left: 20px;
+            }
+
+            .research-image-torus {
+                max-width: min(500px,75vw);
+                padding-bottom: 0px;
+            }
+
+            .container-research {
+                text-align: justify;
+                align-content: center;
+                align-items:center;
+            }
+
+            .research-image-twographs {
+                width: 75vw;
+                max-width: 600px;
+                margin-right: 20px;
+                margin-left: 20px;
+            }
+
+            .canvas_rw {
+                width: 75vw;
+                height: 75vw;
+                max-width: 400px;
+                max-height: 400px;
+                border: 2px solid black;
+            }
+            .p-research {
+                width: 90vw;
+                padding: 20px;
+            }
         }
+
+        .container-research img {
+            height: 100%;
+            object-fit: cover;
+            margin-right: 10px;
+        }
+
+            .div-centered {
+                text-align: center;
+            }
+
+            .caption {
+                flex: 1;
+            }
     </style>
 </head>
 <body>
+
     <h1>Hello, I'm Tim H&ouml;pfner.</h1>
 
     <nav class="navbar">
@@ -173,85 +230,100 @@
         </ul>
     </nav>
 
+    <!--About-->
+    <div>
+        <h2 id="About">About Me</h2>
+        <div class="container-about">
+            <img src="IMG_20230510_173016.jpg" class="round-image">
+            <div class="caption">
+                <p>
+                    My name is Tim H&ouml;pfner, and I was born in 1996 in Kiel, Germany, where I spent the first years of my life until I moved to Kassel, where I attended school.
+                    There, I graduated from the Wilhelmsgymnasium Kassel with Abitur (german high school diploma).
+                    Afterwards, I moved to G&ouml;ttingen to study mathematics at the Georg-August-Universit&aumlt G&ouml;ttingen from 2014 until 2023, obtaining my Bachelor, Master and Dr. rer. nat. (PhD, currently waiting for the official document) in pure mathematics.
 
-    <div class="container-about">
-        <img src="IMG_20230510_173016.jpg" class="round-image">
-        <div class="caption">
-            <h2 id="About">About Me</h2>
-            <p>
-                My name is Tim H&ouml;pfner, and I was born in 1996 in Kiel, Germany, where I spent the first years of my life until I moved to Kassel, where I attended school.
-                There, I graduated from the Wilhelmsgymnasium Kassel with Abitur (german high school diploma).
-                Afterwards, I moved to G&ouml;ttingen to study mathematics at the Georg-August-Universit&aumlt G&ouml;ttingen from 2014 until 2023, obtaining my Bachelor, Master and Dr. rer. nat. (PhD) in pure mathematics.
+                    My main research interest lies inbetween the fields of topology and differential geometry, though I am curious to learn about all mathematics that I encounter.
 
-                My main research interest lies inbetween the fields of topology and differential geometry, though I am curious to learn about all mathematics that I encounter.
+                    During my time as a doctoral student from 2019 until 2023, I was lucky to be part of the Research Training Group "<a href="https://www.uni-goettingen.de/de/607635.html">RTG 2491 - Fourier Analysis and Spectral Theory</a>" as an associated member,
+                    allowing me to work and study with many excellent young researchers coming to G&ouml;ttingen from all around the world and working many areas of mathematics.
+                    Furthermore, I was able to teach several courses at G&ouml;ttingen as an lecture assistant. In total I taught mathematics to around 1000 students over seven courses.
+                    <br />
 
-                During my time as a doctoral student from 2019 until 2023, I was lucky to be part of the Research Training Group "<a href="https://www.uni-goettingen.de/de/607635.html">RTG 2491 - Fourier Analysis and Spectral Theory</a>" as an associated member,
-                allowing me to work and study with many excellent young researchers coming to G&ouml;ttingen from all around the world and working many areas of mathematics.
-                Furthermore, I was able to teach several courses at G&ouml;ttingen as an lecture assistant. In total I taught mathematics to around 1000 students over seven courses. 
-                <br />
-
-                In my free time, I love to solve analytic problems. For example, I'm an avid chess player and a fan of many other competitive strategy games.
-                I also enjoy playing tennis and I play the guitar.
-            </p>
-        </div>
-    </div>
-
-    <h2 id="Research">Research</h2>
-    <h3 style="margin-bottom: 0;">Heat Decay on Non-Compact Manifolds</h3>
-    This is part of my PhD thesis, which can be found here: <a href="http://dx.doi.org/10.53846/goediss-9907">T. H&ouml;pfner: Novikov-Shubin Invariants of Nilpotent Lie Groups</a>
-
-    <div class="container-research">
-        <div id="animation-frame-torus-heat">
-            <div style="display: flex; flex-direction: column; align-items: center;">
-                <img id="svg-img" src="frames/torus-0000.svg" style="max-width: min(400px,33vw); padding-bottom: 0px;">
-                <div style="max-width: min(400px,33vw);">
-                    <button id="startBtnHE" onclick="startAnimationHeatEquation()">Start Animation</button>
-                    <button id="pauseBtnHE" onclick="pauseAnimationHeatEquation()">Pause</button>
-                    <button id="stopBtnHE" onclick="stopAnimationHeatEquation()">Reset</button>
-                </div>
+                    In my free time, I love to solve analytic problems. For example, I'm an avid chess player and a fan of many other competitive strategy games.
+                    I also enjoy playing tennis and I play the guitar.
+                </p>
             </div>
         </div>
-        <div>
-            <h4>The Problem of Heat Diffusion on Finite Spaces</h4>
-            <p>
-                Let us say we have a small space fitting into a box of finite size, such as the torus on the left hand side.
-                On this torus, we can measure the temperature right now.
-                How will this temperature change over time as we wait?
-                Intuitively it is relatively clear, that the heat should spread out evenly, until we have the same temperature everywhere.
-                We can use the so called heat equation from physics to simulate this process.
-                The heat equation is a partial differential equation, \(\partial_t f(x,t) = -\Delta_x f(x,t)\),
-                that is completely described by the Laplace operator \(\Delta_x\), which plays a central role in mathematics and physics.
-                Using this equation, we can simulate our problem of heat diffusion.<br />
-
-                With the magic of Fourier analysis and the Fourier transform,
-                we can actually solve this heat equation to predict precisely how the heat will behave at any point of time in the future.
-                Mathematically speaking, if we start out with heat \(g(x)\) at place \(x\) right now,
-                then we can find a function \(f(x,t)\) giving us the temperature at \(x\) after time \(t\) using the heat operator: \(f(x,t) = e^{-t\Delta_x}g(x)\).
-                This also tells us, how quickly the heat will spread out towards the uniform distribution of heat.
-                The differences in temperature will decrease exponentially fast, that is according to an exponential function \(Ce^{-t\lambda_1}\).
-                How fast this exponential decay is, is governed by the extra parameter \(\lambda_1>0\).
-            </p>
-        </div>
     </div>
 
-    <div class="container-research">
-        <div>
-            <h4>What can we say about \(\lambda_1\)?</h4>
+    <!--Research-->
+    <div>
+        <h2 id="Research" class="p-research">Research</h2>
+        <div class="container-research.left">
+            <h3 style="margin-bottom: 0;">Heat Decay on Non-Compact Manifolds</h3>
             <p>
-                Naturally, we would like to learn more about this parameter \(\lambda_1\).
-                Our mathematical appreach using the heat operator \(e^{-t\Delta_x}\) tells us, that \(\lambda_1\) and this operator should be connected.
-                Indeed, for such an operator in mathematics, many of its important properties are captured by the so-called spectrum of the operator.
-                For the Laplace operator here, the spectrum is a sequence of non-negative real numbers,
-                \[\sigma(\Delta_x) = \lbrace 0 &lt; \lambda_1\leq \lambda_2\leq \lambda_3\leq \cdots \rbrace,\]
-                and it is the smallest number besides zero that gives us the value we are looking for. <br />
+                This is part of my PhD thesis, which can be found here: <a href="http://dx.doi.org/10.53846/goediss-9907">T. H&ouml;pfner: Novikov-Shubin Invariants of Nilpotent Lie Groups</a>
+            </p>
 
-                But we shouldn't forget that we are studying a problem coming from physics!
-                After all, this parameter \(\lambda_1\) should be larger, if heat spreads out faster in our space.
-                Thinking about when this happens can lead us to new descriptions of our parameter.
+            <!--compact heat-->
+            <div class="container-research">
+                <div>
+                    <h4 class="p-research">The Problem of Heat Diffusion on Finite Spaces</h4>
+                    <p class="p-research">
+                        Let us say we have a small space fitting into a box of finite size, such as the torus on the left hand side.
+                        On this torus, we can measure the temperature right now.
+                        How will this temperature change over time as we wait?
+                        Intuitively it is relatively clear, that the heat should spread out evenly, until we have the same temperature everywhere.
+                        We can use the so called heat equation from physics to simulate this process.
+                        The heat equation is a partial differential equation, \(\partial_t f(x,t) = -\Delta_x f(x,t)\),
+                        that is completely described by the Laplace operator \(\Delta_x\), which plays a central role in mathematics and physics.
+                        Using this equation, we can simulate our problem of heat diffusion.<br />
 
-                <div class="container-research">
-                    <p>
-                        <ul style="padding-right:20px;">
+                        With the magic of Fourier analysis and the Fourier transform,
+                        we can actually solve this heat equation to predict precisely how the heat will behave at any point of time in the future.
+                        Mathematically speaking, if we start out with heat \(g(x)\) at place \(x\) right now,
+                        then we can find a function \(f(x,t)\) giving us the temperature at \(x\) after time \(t\) using the heat operator: \(f(x,t) = e^{-t\Delta_x}g(x)\).
+                        This also tells us, how quickly the heat will spread out towards the uniform distribution of heat.
+                        The differences in temperature will decrease exponentially fast, that is according to an exponential function \(Ce^{-t\lambda_1}\).
+                        How fast this exponential decay is, is governed by the extra parameter \(\lambda_1>0\).
+                    </p>
+                </div>
+                <div id="animation-frame-torus-heat">
+                    <div style="display: flex; flex-direction: column; align-items: center;">
+                        <img id="svg-img" src="frames/torus-0000.svg" class="research-image-torus">
+                        <div style="max-width: min(400px,33vw);">
+                            <button id="startBtnHE" onclick="startAnimationHeatEquation()">Start Animation</button>
+                            <button id="pauseBtnHE" onclick="pauseAnimationHeatEquation()">Pause</button>
+                            <button id="stopBtnHE" onclick="stopAnimationHeatEquation()">Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--lambda1-->
+            <div class="container-research">
+                <div>
+                    <h4 class="p-research">What can we say about \(\lambda_1\)?</h4>
+                    <p class="p-research">
+                        Naturally, we would like to learn more about this parameter \(\lambda_1\).
+                        Our mathematical appreach using the heat operator \(e^{-t\Delta_x}\) tells us, that \(\lambda_1\) and this operator should be connected.
+                        Indeed, for such an operator in mathematics, many of its important properties are captured by the so-called spectrum of the operator.
+                        For the Laplace operator here, the spectrum is a sequence of non-negative real numbers,
+                        \[\sigma(\Delta_x) = \lbrace 0 &lt; \lambda_1\leq \lambda_2\leq \lambda_3\leq \cdots \rbrace,\]
+                        and it is the smallest number besides zero that gives us the value we are looking for. <br />
+
+                        But we shouldn't forget that we are studying a problem coming from physics!
+                        After all, this parameter \(\lambda_1\) should be larger, if heat spreads out faster in our space.
+                        Thinking about when this happens can lead us to new descriptions of our parameter.
+                    </p>
+                </div>
+            </div>
+
+            <!--approaches-->
+            <div class="container-research">
+                <div>
+                    <h4 class="p-research">How can we find \(\lambda_1\)?</h4>
+                    <p class="p-research">
+                        <ul>
                             <li>
                                 <b>Geometry:</b> If it is easy to cut our space into two halfs of roughly equal size at some very thin part,
                                 then this means that heat will take a very long time to travel from one side to the other.
@@ -276,211 +348,226 @@
                             </li>
                         </ul>
                     </p>
-                    <div style="display: flex; flex-direction: column; align-items: center;">
-                        <canvas id="rw_canvas" style="width: min(400px,33vw); height: min(400px,33vw); border: 2px solid black;"></canvas>
-                        <div style="max-width: min(400px,33vw); padding-top:5px;">
-                            <button id="startBtnRW" onclick="startAnimationRandomWalk()">Start Random Walk</button>
-                            <button id="pauseBtnRW" onclick="pauseAnimationRandomWalk()">Pause</button>
-                            <button id="stopBtnRW" onclick="stopAnimationRandomWalk()">Reset</button>
-                        </div>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <canvas id="rw_canvas" class="canvas_rw"></canvas>
+                    <div>
+                        <button id="startBtnRW" onclick="startAnimationRandomWalk()">Start Random Walk</button>
+                        <button id="pauseBtnRW" onclick="pauseAnimationRandomWalk()">Pause</button>
+                        <button id="stopBtnRW" onclick="stopAnimationRandomWalk()">Reset</button>
                     </div>
                 </div>
-            </p>
-        </div>
-    </div>
+            </div>
 
-    <div class="container-research">
+
+            <!--Non compact-->
+            <div class="container-research">
+                <div>
+                    <h4 class="p-research">What about infinite spaces?</h4>
+                    <p class="p-research">
+                        So on finite spaces, we understand quite well what happens.
+                        But what changes, if we look at infinite spaces?
+                        Mathematically, things become a lot more complicated.
+                        Recall that our key object of interest turned out to be the parameter \(\lambda_1\),
+                        which we could find as the smallest non-zero value in the spectrum of the Laplace operator.
+                        This made sense, because the spectrum was just a sequence of non-decreasing real numbers, so we just had to look for the first one.
+                        For infinite spaces, we can still study the Laplace operator, however, unfortunately it turns out that the spectrum is usually a lot more complicated.
+                        For example, it might just contain all non-negative real numbers.
+                        Then we don't have a smallest non-zero value in this spectrum anymore.
+                        In this case, the only reasonable choice for our parameter seems to be \(\lambda_1=0\).
+                        But then we would predict that our heat decays as fast as \(Ce^{-t\cdot 0} = C\) decays, but that is just constant - so this doesn't seem to make sense...<br />
+                        The point is that our heat decay might no longer be exponential at all.
+                        It might be a lot slower.
+                        I am mainly interested in the case where it is of polynomial speed, decaying as fast as \(Ct^{-\alpha}\), where we now have a new parameter \(\alpha>0\).
+                        Instead of \(\lambda_1\) from before, our goal is now to understand how to find this parameter \(\alpha=\alpha_0\), called the zeroth Novikov-Shubin invariant.
+                        This poses a lot more delicate problem, and many new obstacles await along the way.
+                        It turns out that this zeroth Novikov-Shubin invariant we understand to some extend, due to results by Varopoulos that again uses random walks to study this problem.
+                        But it also turns out, that there are higher Novikov-Shubin invariants that are equally interesting to study but even less approachable.
+                        The content of my PhD thesis deals with the problem of computing these Novikov-Shubin invariants.
+                    </p>
+                </div>
+            </div>
+
+
+            <!--Math content-->
+            <div class="container-research">
+                <div>
+                    <h4 class="p-research">So let's talk math! What did I do?</h4>
+                    <p class="p-research">
+                        If we study the heat problem on an infinite space, meaning a non-compact manifold \(M\),
+                        we again consider the Laplace operator \(\Delta_0\) acting on the \(L^2\)-functions on \(M\),
+                        but also the higher Laplace operators \(\Delta_k\) acting on the \(L^2\)-\(k\)-forms on \(M\).
+                        We are interested in the case, where the spectrum \(\sigma(\Delta_k)\),
+                        which by self-adjointness and non-negativity of \(\Delta_k\) is contained in the non-negative real numbers,
+                        contains arbitrarily small values \(\varepsilon>0\).
+                        In this case, we want to measure how large the subspace of \(L^2\)-\(k\)-forms is, on which \(\Delta_k\) scales with a factor at most some factor \(\lambda>0\).
+                        As a vector space, this is infinite dimensional, so we need some extra symmetries.
+                        However, if we assume these, we can define a function \(F_k(\lambda)=\textrm{size of this subspace}\), called the spectral density function.
+                        If
+                        \[F(\lambda)-F(0) \sim \lambda^{\alpha_k} \qquad \textrm{as } \lambda\searrow 0,\]
+                        this formally (ok, not quite formally but close!) defines the \(k\)th Novikov-Shubin invariant of \(M\).
+                        These invariants still tell us a lot about heat-related questions on \(M\), in fact, \(\alpha_0\) is indeed the same as the \(\alpha_0\) from before (up to a factor of 2).
+                        They are called invariants because they are indeed homotopy invariants of \(M\), making them a very interesting object to study.
+                        The problem is that their definition in terms of spectral properties of \(\Delta_k\) is not very useful when we want to compute them (it's very hard to do so...).
+                        So we would like to find new approaches.
+                    </p>
+                </div>
+            </div>
+
+            <!--Approach 1: RW-->
+            <div class="container-research">
+                <div>
+                    <h4 class="p-research"> Approach 1: Stochastics </h4>
+                    <p class="p-research">
+                        If our manifold is a nice CW complex, iteratively build up by disks of increasing dimensions, we can use the combinatorial data coming from this construction to approach the computation.
+                        For \(\alpha_0\), we have to understand how 1-disks (i.e., intervals) are attached to 0-disks (i.e., vertices).
+                        This so-called 1-skeleton of \(M\) is therefore nothing but a graph.
+                        A wonderful result by Varopoulos tells us, that we can compute \(\alpha_0\) in terms of the return probability of a random walk on this graph.
+                        In my thesis, I show that there are higher-dimensional analogues of these random walks, that relate to the higher \(\alpha_k\).
+                        These random walks take place on the \(k\)-dimensinal disks in our manifold.
+                        Contrary to vertices however, these disks can be oriented in two different ways.
+                        This leads to a more complicated random walk, where random walkers can move to every \(k\)-disk with either of the two orientations.
+                        And, if two random walkers meet at the same disk but with opposite orientations, they cancel each other out - not unsimilar to the cancelations between particles and anti-particles in physics.
+                        I explicitly describe these random walks and their relation to the higher Novikov-Shubin invariants, establishing a new approach to studying Novikov-Shubin invariants using stochastical methods.
+                    </p>
+                </div>
+                <img src="rw.jpg" class="research-image">
+            </div>
+
+            <!--Approach 2: Rumin-->
+            <div class="container-research">
+                <div>
+                    <h4 class="p-research"> Approach 2: Computer Estimations </h4>
+                    <p class="p-research">
+                        Another approach to computing these invariants is a result by Rumin, who developed a way of computing estimates on Novikov-Shubin invariants in some situations.
+                        Simplifying this result a bit further, I implemented this approach as a python program to compute estimates for all nilpotent Lie groups up to dimension six.
+                        This gives us quite a few new estimates on Novikov-Shubin invariants, but unfortunately, it turns out that the approach often fails and cannot give any bounds on the invariants.
+                        In order to understand the short-comings further, we move on to the third approach.
+                    </p>
+                </div>
+            </div>
+
+            <!--Approach 3: Diff Geo-->
+            <div class="container-research">
+                <div>
+                    <h4 class="p-research"> Approach 3: Differential Geometry </h4>
+                    <p class="p-research">
+                        Based on the method behind the proof of Rumin's result, I defined a new, more detailed version of Novikov-Shubin invariants.
+                        The basic idea is the following observation: If we look at how heat spread out through space, we get the same result by waiting twice as long as we get from scaling all distances in our manifold by a factor 1/2.
+                        We consider now spaces with multiple directions, so-called fibre bundles.
+                        In these spaces, we can start to scale different directions at different speeds and study how heat behaves on these scaled spaces.
+                        This tells us something about the contributions that the different directions have towards the Novikov-Shubin invariants of our space. <br />
+                        Defining these new invariants depends, a priori, on quite a bit of extra structure needed to talk about these different directions.
+                        I show that the resulting numbers are indeed invariant under many of these choices. <br />
+                        Then, I computed these new invariants for the 3-dimensional Heisenberg group, which is the three-dimensional Lie group with generators \(X,Y,Z\) and only non-zero commutator relation  \([X,Y]=Z\).
+                        If we scale the base directions \(X,Y\) with speed \(\lambda\) and vary the scaling speed of the fibre direction \(Z\) as \(\lambda^{1+\zeta}\) according to some parameter \(\zeta\), we find the graph on the left.
+                        Surprisingly, the contribution from the fibre direction seems to have opposing effects on the zeroth and the first Novikov-Shubin invariants´.
+                    </p>
+                </div>
+                <img src="2paramnsi.jpg" class="research-image-twographs">
+            </div>
+        </div>
+
+        <!--Master-->
         <div>
-            <h4>What about infinite spaces?</h4>
-            <p>
-                So on finite spaces, we understand quite well what happens.
-                But what changes, if we look at infinite spaces?
-                Mathematically, things become a lot more complicated.
-                Recall that our key object of interest turned out to be the parameter \(\lambda_1\),
-                which we could find as the smallest non-zero value in the spectrum of the Laplace operator.
-                This made sense, because the spectrum was just a sequence of non-decreasing real numbers, so we just had to look for the first one.
-                For infinite spaces, we can still study the Laplace operator, however, unfortunately it turns out that the spectrum is usually a lot more complicated.
-                For example, it might just contain all non-negative real numbers.
-                Then we don't have a smallest non-zero value in this spectrum anymore.
-                In this case, the only reasonable choice for our parameter seems to be \(\lambda_1=0\).
-                But then we would predict that our heat decays as fast as \(Ce^{-t\cdot 0} = C\) decays, but that is just constant - so this doesn't seem to make sense...<br />
-                The point is that our heat decay might no longer be exponential at all.
-                It might be a lot slower.
-                I am mainly interested in the case where it is of polynomial speed, decaying as fast as \(Ct^{-\alpha}\), where we now have a new parameter \(\alpha>0\).
-                Instead of \(\lambda_1\) from before, our goal is now to understand how to find this parameter \(\alpha=\alpha_0\), called the zeroth Novikov-Shubin invariant.
-                This poses a lot more delicate problem, and many new obstacles await along the way.
-                It turns out that this zeroth Novikov-Shubin invariant we understand to some extend, due to results by Varopoulos that again uses random walks to study this problem.
-                But it also turns out, that there are higher Novikov-Shubin invariants that are equally interesting to study but even less approachable.
-                The content of my PhD thesis deals with the problem of computing these Novikov-Shubin invariants.
-            </p>
+            <h3 class="p-research">Master Thesis - "The Mayer-Vietoris Spectral Sequence for Coarse Generalized Homology"</h3>
+            <div class="container-research">
+                <p class="p-research">
+                    In my Master Thesis, I studied coarse geometry. Here, we are interested in the large-scale properties of spaces - in contrast to topology, studying the small-scale structure.
+                    In algebraic topology, we like to define invariants to describe and compare our spaces, that is, numbers or other simple objects.
+                    If we are able to compute these invariants easily, we can (sometimes) use them to figure out whether two spaces are different.
+                    In topology, one of the most classical type of invariants are homology theories.
+                    One important tool to compute these is the Mayer-Vietoris sequence.
+                    Given a complicated space, we can cut it into two smaller pieces.
+                    If we understand each of the pieces and their intersection, we can recover the information of the total space.
+                    Of course, we can iterate this procedure and thereby cut our space in any finite number of pieces.
+                    The Mayer-Vietoris spectral sequence is a complex mathematical tool that takes this one step further, as it allows us to cut the space even into infinitely many pieces.
+                    <br />
+                    While all of this was known for a long time for topological spaces, for coarse spaces only the usual Mayer-Vietoris sequence was known.
+                    A previous result indicated, that also the infinite version should hold, however, in my thesis I point out that this previous result is flawed.
+                    While I establish a spectral sequence for easier computations for finite decomposition, I show that such an infinite decomposition cannot be used to compute coarse homology from infinite decompositions.
+                    I also give an explicit counterexample to show precisely, why this argument fails.
+                </p>
+                <img src="masters.jpg" class="research-image">
+            </div>
         </div>
-    </div>
 
-
-    <div class="container-research">
+        <!--Bachelor-->
         <div>
-            <h4>So let's talk math! What did I do?</h4>
-            <p>
-                If we study the heat problem on an infinite space, meaning a non-compact manifold \(M\),
-                we again consider the Laplace operator \(\Delta_0\) acting on the \(L^2\)-functions on \(M\),
-                but also the higher Laplace operators \(\Delta_k\) acting on the \(L^2\)-\(k\)-forms on \(M\).
-                We are interested in the case, where the spectrum \(\sigma(\Delta_k)\),
-                which by self-adjointness and non-negativity of \(\Delta_k\) is contained in the non-negative real numbers,
-                contains arbitrarily small values \(\varepsilon>0\).
-                In this case, we want to measure how large the subspace of \(L^2\)-\(k\)-forms is, on which \(\Delta_k\) scales with a factor at most some factor \(\lambda>0\).
-                As a vector space, this is infinite dimensional, so we need some extra symmetries.
-                However, if we assume these, we can define a function \(F_k(\lambda)=\textrm{size of this subspace}\), called the spectral density function.
-                If
-                \[F(\lambda)-F(0) \sim \lambda^{\alpha_k} \qquad \textrm{as } \lambda\searrow 0,\]
-                this formally (ok, not quite formally but close!) defines the \(k\)th Novikov-Shubin invariant of \(M\).
-                These invariants still tell us a lot about heat-related questions on \(M\), in fact, \(\alpha_0\) is indeed the same as the \(\alpha_0\) from before (up to a factor of 2).
-                They are called invariants because they are indeed homotopy invariants of \(M\), making them a very interesting object to study.
-                The problem is that their definition in terms of spectral properties of \(\Delta_k\) is not very useful when we want to compute them (it's very hard to do so...).
-                So we would like to find new approaches.
-            </p>
+            <h3 class="p-research">Bachelor Thesis - "Explicit Motion Planning for Collision-Free Motion in \(\mathbb{R}^n\)"</h3>
+            <div class="container-research">
+                <p class="p-research">
+                    In my Bachelor thesis, I studied the problem of motion planning from a point of view of topology ("Topological Complexity"):
+                    <br />
+                    Let's say we have an empty stace with arbitrarily many (moving and non-moving) obstacles and any number of agents (e.g., robots) that need to move around freely without colliding with the obstacles or other agents.
+                    I describe explicitely a (topological) algorithm that considers the current location and the target position of each of the agents and produces for each agent a path that they can move along.
+                </p>
+                <img src="bachelors2.jpg" class="research-image">
+            </div>
         </div>
     </div>
 
-    <div class="container-research">
-        <img src="rw.jpg" class="research-image" style="align-self:end">
-        <div>
-            <h4> Approach 1: Stochastics </h4>
-            <p>
-                If our manifold is a nice CW complex, iteratively build up by disks of increasing dimensions, we can use the combinatorial data coming from this construction to approach the computation.
-                For \(\alpha_0\), we have to understand how 1-disks (i.e., intervals) are attached to 0-disks (i.e., vertices).
-                This so-called 1-skeleton of \(M\) is therefore nothing but a graph.
-                A wonderful result by Varopoulos tells us, that we can compute \(\alpha_0\) in terms of the return probability of a random walk on this graph.
-                In my thesis, I show that there are higher-dimensional analogues of these random walks, that relate to the higher \(\alpha_k\).
-                These random walks take place on the \(k\)-dimensinal disks in our manifold.
-                Contrary to vertices however, these disks can be oriented in two different ways.
-                This leads to a more complicated random walk, where random walkers can move to every \(k\)-disk with either of the two orientations.
-                And, if two random walkers meet at the same disk but with opposite orientations, they cancel each other out - not unsimilar to the cancelations between particles and anti-particles in physics.
-                I explicitly describe these random walks and their relation to the higher Novikov-Shubin invariants, establishing a new approach to studying Novikov-Shubin invariants using stochastical methods.
-            </p>
-        </div>
-    </div>
-
-    <div class="container-research">
-        <div>
-            <h4> Approach 2: Computer Estimations </h4>
-            <p>
-                Another approach to computing these invariants is a result by Rumin, who developed a way of computing estimates on Novikov-Shubin invariants in some situations.
-                Simplifying this result a bit further, I implemented this approach as a python program to compute estimates for all nilpotent Lie groups up to dimension six.
-                This gives us quite a few new estimates on Novikov-Shubin invariants, but unfortunately, it turns out that the approach often fails and cannot give any bounds on the invariants.
-                In order to understand the short-comings further, we move on to the third approach.
-            </p>
-        </div>
-    </div>
-
-    <div class="container-research">
-        <div>
-            <h4> Approach 3: Differential Geometry </h4>
-            <p>
-                Based on the method behind the proof of Rumin's result, I defined a new, more detailed version of Novikov-Shubin invariants.
-                The basic idea is the following observation: If we look at how heat spread out through space, we get the same result by waiting twice as long as we get from scaling all distances in our manifold by a factor 1/2.
-                We consider now spaces with multiple directions, so-called fibre bundles.
-                In these spaces, we can start to scale different directions at different speeds and study how heat behaves on these scaled spaces.
-                This tells us something about the contributions that the different directions have towards the Novikov-Shubin invariants of our space. <br />
-                Defining these new invariants depends, a priori, on quite a bit of extra structure needed to talk about these different directions.
-                I show that the resulting numbers are indeed invariant under many of these choices. <br />
-                Then, I computed these new invariants for the 3-dimensional Heisenberg group, which is the three-dimensional Lie group with generators \(X,Y,Z\) and only non-zero commutator relation  \([X,Y]=Z\).
-                If we scale the base directions \(X,Y\) with speed \(\lambda\) and vary the scaling speed of the fibre direction \(Z\) as \(\lambda^{1+\zeta}\) according to some parameter \(\zeta\), we find the graph on the left.
-                Surprisingly, the contribution from the fibre direction seems to have opposing effects on the zeroth and the first Novikov-Shubin invariants´.
-            </p>
-        </div>
-        <img src="2paramnsi.jpg" class="research-image-twographs" style="align-self:end">
-    </div>
-
-    <h3>Master Thesis - "The Mayer-Vietoris Spectral Sequence for Coarse Generalized Homology"</h3>
-    <div class="container-research">
-        <div class="caption">
-            <p>
-                In my Master Thesis, I studied coarse geometry. Here, we are interested in the large-scale properties of spaces - in contrast to topology, studying the small-scale structure.
-                In algebraic topology, we like to define invariants to describe and compare our spaces, that is, numbers or other simple objects.
-                If we are able to compute these invariants easily, we can (sometimes) use them to figure out whether two spaces are different.
-                In topology, one of the most classical type of invariants are homology theories.
-                One important tool to compute these is the Mayer-Vietoris sequence.
-                Given a complicated space, we can cut it into two smaller pieces.
-                If we understand each of the pieces and their intersection, we can recover the information of the total space.
-                Of course, we can iterate this procedure and thereby cut our space in any finite number of pieces.
-                The Mayer-Vietoris spectral sequence is a complex mathematical tool that takes this one step further, as it allows us to cut the space even into infinitely many pieces.
-                <br />
-                While all of this was known for a long time for topological spaces, for coarse spaces only the usual Mayer-Vietoris sequence was known.
-                A previous result indicated, that also the infinite version should hold, however, in my thesis I point out that this previous result is flawed.
-                While I establish a spectral sequence for easier computations for finite decomposition, I show that such an infinite decomposition cannot be used to compute coarse homology from infinite decompositions.
-                I also give an explicit counterexample to show precisely, why this argument fails.
-            </p>
-        </div>
-        <img src="masters.jpg" class="research-image">
-    </div>
-
-    <h3>Bachelor Thesis - "Explicit Motion Planning for Collision-Free Motion in \(\mathbb{R}^n\)"</h3>
-    <div class="container-research">
-        <img src="bachelors2.jpg" class="research-image">
-        <div class="caption">
-            <p>
-                In my Bachelor thesis, I studied the problem of motion planning from a point of view of topology ("Topological Complexity"):
-                <br />
-                Let's say we have an empty stace with arbitrarily many (moving and non-moving) obstacles and any number of agents (e.g., robots) that need to move around freely without colliding with the obstacles or other agents.
-                I describe explicitely a (topological) algorithm that considers the current location and the target position of each of the agents and produces for each agent a path that they can move along.
-            </p>
-        </div>
-        <img src="bachelors.jpg" class="research-image">
-    </div>
-
-    <h2 id="Teaching">Teaching</h2>
-    <p>
-        During my time as a doctoral student at G&ouml;ttingen, I taught multiple courses as an assistent:
-        <ul>
-            <li>
-                <b>Winter 2022/23: Mathematisches Prop&auml;detikum</b> with Prof. Dr. Stefan Halverscheid<br>
-                The mathematical propaedeutic for all incoming students of mathematics, physics and computer science.
-            </li>
-            <li>
-                <b>Summer  2022: Analytische Geometrie und Lineare Algebra II f&uuml;r das Lehramt</b>  with Dr. Stefan Wiedmann<br>
-                The second linear algebra course for students of mathematical didactics.
-            </li>
-            <li>
-                <b>Winter 2021/22: Diskrete Mathematik f&uuml;r Studierende der Informatik</b> with Prof. Dr. Evelina Viada<br>
-                A course on discrete mathematics for stundents of computer sciences.
-            </li>
-            <li>
-                <b>Summer  2021: Differenzial- und Integralrechnung II f&uuml;r das Lehramt</b> with Prof. Dr. Sebastian Bauer<br>
-                The second analysis course for students of mathematical didactics.
-            </li>
-            <li>
-                <b>Winter 2020/21: Mathematik f&uuml;r Studierende der Biologie und Geowissenschaften</b> with Dr. Stefan Wiedmann<br>
-                A course on mathematics for all students of biology, geology and molecular medicine.
-            </li>
-            <li>
-                <b>Summer  2020: Differenzial- und Integralrechnung II f&uuml;r das Lehramt</b> with Prof. Dr. Sebastian Bauer<br>
-                The second analysis course for students of mathematical didactics.
-            </li>
-            <li>
-                <b>Winter 2019/20: Differential- und Integralgralrechnung I</b> with Prof. Dr. Dorothea Bahns</br>
-                The first analysis course for students of mathematics.
-            </li>
-        </ul>
-    </p>
-
-    <h2 id="Interests">Personal Interests</h2>
+    <!--Teaching-->
     <div>
-        <p>
-            I am a huge chess fan and a chess player myself.
-            For tournament play I have been inactive for a while, playing mostly online - but here you can find my <a href="https://ratings.fide.com/profile/4638310/chart">fide-profile</a>.
-            My favorite chess game is the game between Short and Timman from 1991:
+        <h2 id="Teaching">Teaching</h2>
+        <p class="p-research">
+            During my time as a doctoral student at G&ouml;ttingen, I taught multiple courses as an assistent:
+            <ul>
+                <li>
+                    <b>Winter 2022/23: Mathematisches Prop&auml;detikum</b> with Prof. Dr. Stefan Halverscheid<br>
+                    The mathematical propaedeutic for all incoming students of mathematics, physics and computer science.
+                </li>
+                <li>
+                    <b>Summer  2022: Analytische Geometrie und Lineare Algebra II f&uuml;r das Lehramt</b>  with Dr. Stefan Wiedmann<br>
+                    The second linear algebra course for students of mathematical didactics.
+                </li>
+                <li>
+                    <b>Winter 2021/22: Diskrete Mathematik f&uuml;r Studierende der Informatik</b> with Prof. Dr. Evelina Viada<br>
+                    A course on discrete mathematics for stundents of computer sciences.
+                </li>
+                <li>
+                    <b>Summer  2021: Differenzial- und Integralrechnung II f&uuml;r das Lehramt</b> with Prof. Dr. Sebastian Bauer<br>
+                    The second analysis course for students of mathematical didactics.
+                </li>
+                <li>
+                    <b>Winter 2020/21: Mathematik f&uuml;r Studierende der Biologie und Geowissenschaften</b> with Dr. Stefan Wiedmann<br>
+                    A course on mathematics for all students of biology, geology and molecular medicine.
+                </li>
+                <li>
+                    <b>Summer  2020: Differenzial- und Integralrechnung II f&uuml;r das Lehramt</b> with Prof. Dr. Sebastian Bauer<br>
+                    The second analysis course for students of mathematical didactics.
+                </li>
+                <li>
+                    <b>Winter 2019/20: Differential- und Integralgralrechnung I</b> with Prof. Dr. Dorothea Bahns</br>
+                    The first analysis course for students of mathematics.
+                </li>
+            </ul>
         </p>
-        <iframe src="https://lichess.org/embed/game/uns4Krdq?theme=auto&bg=auto"
-                width=600 height=397 frameborder=0 style="padding:20px;"></iframe>
     </div>
-    My favorite chess players are <b>world champion Ding Liren</b> and Levon Aronian.
+
+    <!--Personal Interests-->
+    <div>
+        <h2 id="Interests">Personal Interests</h2>
+        <div>
+            <p>
+                I am a huge chess fan and a chess player myself.
+                For tournament play I have been inactive for a while, playing mostly online - but here you can find my <a href="https://ratings.fide.com/profile/4638310/chart">fide-profile</a>.
+                My favorite chess game is the game between Short and Timman from 1991:
+            </p>
+            <iframe src="https://lichess.org/embed/game/uns4Krdq?theme=auto&bg=auto"
+                    width=600 height=397 frameborder=0 style="padding:20px;"></iframe>
+        </div>
+        My favorite chess players are <b>world champion Ding Liren</b> and Levon Aronian.
+    </div>
 
 
-
-    <h2 id="Contact">Contact</h2>
-    <p>
-        Contact me by email: &nbsp;&nbsp; timhoepfner (at) outlook (dot) de
-    </p>
+    <!--Contact-->
+    <div>
+        <h2 id="Contact">Contact</h2>
+        <p>
+            Contact me by email: &nbsp;&nbsp; timhoepfner (at) outlook (dot) de
+        </p>
+    </div>
 
     <!--Script to animate torus heat equation-->
     <script>
@@ -511,7 +598,7 @@
                         index = 1000;
                     }
                     else {
-                        indexStr = (index+skip).toString().padStart(4, '0');
+                        indexStr = (index + skip).toString().padStart(4, '0');
                         preload.src = `frames/torus-${indexStr}.svg`;
                     }
                 }, 200);
@@ -547,6 +634,7 @@
         let animationId = null;
         let x = canvas.width / 2;
         let y = canvas.height / 2;
+        canvas.getContext('2d').lineWidth = 1;
         startBtnRW.disabled = false;
         pauseBtnRW.disabled = true;
 
@@ -593,7 +681,6 @@
             x = Math.max(0, Math.min(x, canvas.width));
             y += (Math.random() * 2 - 1) * 5;
             y = Math.max(0, Math.min(y, canvas.height));
-            ctx.lineWidth = 1;
             ctx.lineTo(x, y);
             ctx.stroke();
 
