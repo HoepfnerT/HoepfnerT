@@ -303,13 +303,13 @@
                         How will this temperature change over time as we wait?
                         Intuitively it is relatively clear, that the heat should spread out evenly, until we have the same temperature everywhere.
                         We can use the so called heat equation from physics to simulate this process.
-                        The heat equation is a partial differential equation, \(\partial_t f(x,t) = -\Delta_x f(x,t)\),
-                        that is completely described by the Laplace operator \(\Delta_x\), which plays a central role in mathematics and physics.
+                        The heat equation is a partial differential equation, $\partial_t f(x,t) = -\Delta_x f(x,t)$,
+                        that is completely described by the Laplace operator $\Delta_x$, which plays a central role in mathematics and physics.
                         Using this equation, we can simulate our problem of heat diffusion.<br />
 
                         With the magic of Fourier analysis and the Fourier transform,
                         we can actually solve this heat equation to predict precisely how the heat will behave at any point of time in the future.
-                        Mathematically speaking, if we start out with heat \(g(x)\) at place \(x\) right now,
+                        Mathematically speaking, if we start out with heat $g(x)$ at place $x$ right now,
                         then we can find a function \(f(x,t)\) giving us the temperature at \(x\) after time \(t\) using the heat operator: \(f(x,t) = e^{-t\Delta_x}g(x)\).
                         This also tells us, how quickly the heat will spread out towards the uniform distribution of heat.
                         The differences in temperature will decrease exponentially fast, that is according to an exponential function \(Ce^{-t\lambda_1}\).
