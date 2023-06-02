@@ -3,8 +3,12 @@
 <head>
     <title>Tim H&ouml;pfner</title>
     <!-- Scripts for Math formulas -->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript"
+      src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
 
     <link rel="stylesheet" href="fonts/Sans/cmun-sans.css"></link>
 
@@ -90,7 +94,14 @@
             margin-top: 0px;
             margin-bottom: 0px;
         }
-
+        li {
+            color: black;
+            font-size: 18px;
+            text-align: justify;
+            line-height: 1.5;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
 
         a {
             color: #00008B;
