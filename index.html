@@ -13,52 +13,59 @@
     <style>
         .navbar {
             display: flex;
-            justify-content: space-between;
             margin-bottom: 10px;
             position: fixed;
             top: 0;
             left: 0;
-            background-color: #FFF;
+            background-color: #EEE;
             width: 100%;
-            padding-left:20px; 
-            padding-right:20px;
+            padding-left: 20px;
+            padding-right: 20px;
+            z-index: 100;
         }
 
-            .navbar a {
-                float: left;
-                display: block;
-                text-align: center;
-                padding-top: 14px;
-                padding-bottom: 5px;
-                font-size: 22px;
-                text-decoration: none;
-            }
+        .navbar ul {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
 
-                .navbar a:hover {
-                    background: #ddd;
-                    color: black;
-                }
+        .navbar li {
+            flex-grow: 1;
+            flex-basis: 0;
+            text-align: center;
+        }
 
-            .navbar ul {
-                list-style: none;
-                margin: 0;
-                padding: 0;
-                display: flex;
-            }
+        .navbar a {
+            display: block;
+            padding-top: 14px;
+            padding-bottom: 5px;
+            font-size: 22px;
+            text-decoration: none;
+        }
 
-            .navbar li {
-                margin-right: 10px;
-            }
+        .navbar a:hover {
+            background: #ddd;
+            color: black;
+        }
+
+
 
 
         .main {
-            margin-top: 30px;
+            margin-top: 70px;
         }
 
         body {
             font-family: "Computer Modern Sans", sans-serif;
             margin: 0;
             padding: 20px;
+        }
+
+        section {
+            padding-top: 30px;
         }
 
         h1 {
@@ -255,13 +262,13 @@
     </nav>
 
     <!--About-->
-    <div>
+    <section id="About">
         <div class="container-about">
             <div>
                 <img src="IMG_20230510_173016.jpg" class="round-image">
             </div>
             <div>
-                <h2 id="About">About Me</h2>
+                <h2>About Me</h2>
                 <p>
                     My name is Tim H&ouml;pfner, and I was born in 1996 in Kiel, Germany, where I spent the first years of my life until I moved to Kassel, where I attended school.
                     There, I graduated from the Wilhelmsgymnasium Kassel with Abitur (german high school diploma).
@@ -279,11 +286,11 @@
                 </p>
             </div>
         </div>
-    </div>
+    </section>
 
     <!--Research-->
-    <div>
-        <h2 id="Research">Research</h2>
+    <section id="Research">
+        <h2>Research</h2>
         <div>
             <div class="container-research-left">
                 <h3 style="margin-bottom: 0;">Heat Decay on Non-Compact Manifolds</h3>
@@ -544,11 +551,11 @@
                 <img src="bachelors2.jpg" class="research-image">
             </div>
         </div>
-    </div>
+    </section>
 
     <!--Teaching-->
-    <div>
-        <h2 id="Teaching">Teaching</h2>
+    <section id="Teaching">
+        <h2>Teaching</h2>
         <p>
             During my time as a doctoral student at G&ouml;ttingen, I taught multiple courses as an assistent:
             <ul>
@@ -582,11 +589,11 @@
                 </li>
             </ul>
         </p>
-    </div>
+    </section>
 
     <!--Personal Interests-->
-    <div>
-        <h2 id="Interests">Personal Interests</h2>
+    <section id="Interests">
+        <h2>Personal Interests</h2>
         <div>
             <p>
                 I am a huge chess fan and a chess player myself.
@@ -597,16 +604,16 @@
                     width=600 height=397 frameborder=0 style="padding:20px;"></iframe>
         </div>
         My favorite chess players are <b>world champion Ding Liren</b> and Levon Aronian.
-    </div>
+    </section>
 
 
     <!--Contact-->
-    <div>
-        <h2 id="Contact">Contact</h2>
+    <section id="Contact">
+        <h2>Contact</h2>
         <p>
             Contact me by email: &nbsp;&nbsp; timhoepfner (at) outlook (dot) de
         </p>
-    </div>
+    </section>
 
     <!--Script to animate torus heat equation-->
     <script>
