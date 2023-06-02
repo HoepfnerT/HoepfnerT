@@ -270,19 +270,30 @@
             <div>
                 <h2>About Me</h2>
                 <p>
-                    My name is Tim H&ouml;pfner, and I was born in 1996 in Kiel, Germany, where I spent the first years of my life until I moved to Kassel, where I attended school.
-                    There, I graduated from the Wilhelmsgymnasium Kassel with Abitur (german high school diploma).
-                    Afterwards, I moved to G&ouml;ttingen to study mathematics at the Georg-August-Universit&aumlt G&ouml;ttingen from 2014 until 2023, obtaining my Bachelor, Master and Dr. rer. nat. (PhD, currently waiting for the official document) in pure mathematics.
-
-                    My main research interest lies inbetween the fields of topology and differential geometry, though I am curious to learn about all mathematics that I encounter.
-
-                    During my time as a doctoral student from 2019 until 2023, I was lucky to be part of the Research Training Group "<a href="https://www.uni-goettingen.de/de/607635.html">RTG 2491 - Fourier Analysis and Spectral Theory</a>" as an associated member,
-                    allowing me to work and study with many excellent young researchers coming to G&ouml;ttingen from all around the world and working many areas of mathematics.
-                    Furthermore, I was able to teach several courses at G&ouml;ttingen as an lecture assistant. In total I taught mathematics to around 1000 students over seven courses.
+                    My name is Tim Höpfner,
+                    and I was born in Kiel, in the north of Germany, in 1996.
+                    The very early years of my life were spent there before my family moved to Kassel,
+                    where I attended school.
+                    At the Wilhelmsgymnasium Kassel, I completed my schooling and obtained my Abitur, the German high school diploma, taking mathematics and chemistry as my major subjects.
                     <br />
 
-                    In my free time, I love to solve analytic problems. For example, I'm an avid chess player and a fan of many other competitive strategy games.
-                    I also enjoy playing tennis and I play the guitar.
+                    Driven by a passion for mathematics,
+                    I furthered my academic pursuits at the esteemed Georg-August-Universität Göttingen.
+                    From 2014 to 2023, I immersed myself in the fascinating realm of mathematics, earning my Bachelor's, Master's, and (very soon), my Doctorate (Dr. rer. nat.).
+                    My research interests predominantly revolve around the intersection of topology and differential geometry.
+                    Nevertheless, I maintain an insatiable curiosity for all branches of mathematics that cross my path.
+                    <br />
+
+                    During my time as a doctoral student from 2019 to 2023,
+                    I had the privilege of being an associated member of the Research Training Group "<a href="https://www.uni-goettingen.de/de/607635.html">RTG 2491 - Fourier Analysis and Spectral Theory</a>".
+                    This invaluable opportunity allowed me to work and study with exceptional young researchers from diverse backgrounds,
+                    each contributing their expertise to the vibrant mathematical community in Göttingen.
+                    Additionally, I had the pleasure of teaching numerous courses at Göttingen, serving as a lecture assistant and sharing my knowledge with over 1000 students.
+                    <br />
+
+                    Beyond the realm of academia, I find joy in solving intricate analytic problems.
+                    Chess has always held a special place in my heart, serving as a constant source of fascination and competition.
+                    Moreover, I have a deep appreciation for various other strategic games that challenge my intellect but also for many social games and activities.
                 </p>
             </div>
         </div>
@@ -304,22 +315,32 @@
                 <div class="container-research-left">
                     <h4>The Problem of Heat Diffusion on Finite Spaces</h4>
                     <p>
-                        Let us say we have a small space fitting into a box of finite size, such as the torus on the left hand side.
-                        On this torus, we can measure the temperature right now.
+                        Imagine we have a confined space, represented by a finite-sized box, like the torus on the left-hand side.
+                        Within this space, we are able to measure the current temperature.
+                        Then, the question arises naturally:
                         How will this temperature change over time as we wait?
-                        Intuitively it is relatively clear, that the heat should spread out evenly, until we have the same temperature everywhere.
-                        We can use the so called heat equation from physics to simulate this process.
-                        The heat equation is a partial differential equation, \(\partial_t f(x,t) = -\Delta_x f(x,t)\),
-                        that is completely described by the Laplace operator \(\Delta_x\), which plays a central role in mathematics and physics.
-                        Using this equation, we can simulate our problem of heat diffusion.<br />
+                        <br />
 
-                        With the magic of Fourier analysis and the Fourier transform,
-                        we can actually solve this heat equation to predict precisely how the heat will behave at any point of time in the future.
-                        Mathematically speaking, if we start out with heat \(g(x)\) at place \(x\) right now,
-                        then we can find a function \(f(x,t)\) giving us the temperature at \(x\) after time \(t\) using the heat operator: \(f(x,t) = e^{-t\Delta_x}g(x)\).
-                        This also tells us, how quickly the heat will spread out towards the uniform distribution of heat.
-                        The differences in temperature will decrease exponentially fast, that is according to an exponential function \(Ce^{-t\lambda_1}\).
-                        How fast this exponential decay is, is governed by the extra parameter \(\lambda_1>0\).
+                        Intuitively, it seems apparent that heat should gradually spread out evenly until we reach a state of equilibrium with the same temperature everywhere.
+                        To simulate this process, we can turn to the heat equation from physics.
+                        <br />
+
+                        The heat equation, a partial differential equation, is denoted as \(\partial_t f(x,t) = -\Delta_x f(x,t)\),
+                        can be fully described by the Laplace operator \(\Delta_x\), which holds a crucial role in both mathematics and physics.
+                        Utilizing this equation, we can simulate the diffusion of heat in our given problem.
+                        <br />
+
+                        Through the remarkable, magical concepts of Fourier analysis and the Fourier transform,
+                        we can actually solve this heat equation,
+                        enabling precise predictions of how heat will behave at any given point in the future.
+                        Mathematically speaking, if we begin with an initial distribution of heat \(g(x)\)  at a location \(x\),
+                        we can determine a function \(f(x,t)\) that provides the temperature at \(x\) after time \(t\) using the heat operator:
+                        \(f(x,t) = e^{-t\Delta_x}g(x)\).
+                        <br />
+
+                        This solution not only informs us about the temperature at any point of space and time, but also reveals the speed at which heat spreads towards a uniform distribution.
+                        The temperature differences will decrease exponentially fast, following an exponential function \(Ce^{-t\lambda_1}\).
+                        The rate of this exponential decay is governed by an additional parameter \(\lambda_1>0\).
                     </p>
                 </div>
                 <div class="container-research-right">
@@ -338,15 +359,17 @@
                     <h4>What can we say about \(\lambda_1\)?</h4>
                     <p>
                         Naturally, we would like to learn more about this parameter \(\lambda_1\).
-                        Our mathematical appreach using the heat operator \(e^{-t\Delta_x}\) tells us, that \(\lambda_1\) and this operator should be connected.
-                        Indeed, for such an operator in mathematics, many of its important properties are captured by the so-called spectrum of the operator.
-                        For the Laplace operator here, the spectrum is a sequence of non-negative real numbers,
-                        \[\sigma(\Delta_x) = \lbrace 0 &lt; \lambda_1\leq \lambda_2\leq \lambda_3\leq \cdots \rbrace,\]
-                        and it is the smallest number besides zero that gives us the value we are looking for. <br />
+                        Our mathematical approach reveals that this parameter and the operator are intricately linked. 
+                        In fact, many essential properties of such operators in mathematics are captured by their spectrum.
+                        In the case of the Laplace operator, the spectrum is a sequence of non-negative real numbers given by
+                        \[\sigma(\Delta_x) = \lbrace 0 &lt; \lambda_1\leq \lambda_2\leq \lambda_3\leq \cdots \rbrace.\]
+                        The parameter \(\lambda_1\) holds significance as it represents the smallest non-zero value in this sequence.
+                        <br />
 
-                        But we shouldn't forget that we are studying a problem coming from physics!
-                        After all, this parameter \(\lambda_1\) should be larger, if heat spreads out faster in our space.
-                        Thinking about when this happens can lead us to new descriptions of our parameter.
+                        However, it is crucial to bear in mind that we are dealing with a problem rooted in physics.
+                        After all, this parameter \(\lambda_1\) should be larger if heat spreads more rapidly in our space. 
+                        By pondering under what circumstances this occurs, 
+                        we can arrive at novel descriptions and insights regarding our parameter.
                     </p>
                 </div>
                 <div class="container-research-right"></div>
@@ -357,30 +380,42 @@
                 <div class="container-research-left">
                     <h4>How can we find \(\lambda_1\)?</h4>
                     <p>
+                        There are various perspectives through which we can gain insights into the parameter
+                        \(\lambda_1\) and its relationship to heat diffusion:
+                    </p>
+                    <p>
                         <ul>
                             <li>
-                                <b>Geometry:</b> If it is easy to cut our space into two halfs of roughly equal size at some very thin part,
-                                then this means that heat will take a very long time to travel from one side to the other.
-                                It should therefore take longer for heat to spread out and hence \(\lambda_1\) should be smaller.
-                                Indeed, J. Cheeger defined the so-called Cheeger constant \(h\), that measures how easy the cutting above is,
-                                and there are very nice relations between \(h\) and \(\lambda_1\).
+                                <b>Geometry:</b>
+                                If our space can be easily divided into two halves of approximately equal size at a narrow section, heat will take a considerable amount of time to travel from one side to the other.
+                                Consequently, it will take longer for heat to spread out.
+                                Therefore, \(\lambda_1\) should be smaller.
+                                Indeed, J. Cheeger defined the so-called Cheeger constant \(h\) to measure the ease of such division,
+                                and there are interesting connections between \(h\) and \(\lambda_1\).
                             </li>
                             <li>
-                                <b>Stochastics:</b> Heat energy is nothing but kinetic energy of atoms. So heat spreads out simply because atoms travel through space.
-                                The way atoms move seems random, but we can study it as a stochastic process, called Brownian motion.
-                                Due to the randomness, just by chance atoms will spread out evenly over time.
-                                The time it takes for our atoms to spread out over time should be directly connected to how long it takes our heat to spread out, and indeed, it is.
+                                <b>Stochastics:</b>
+                                Heat energy is essentially the kinetic energy of atoms,
+                                and heat spreads due to the movement of atoms through space.
+                                Although atom movement appears random, we can study it as a stochastic process known as Brownian motion.
+                                Due to this randomness, atoms will eventually spread out uniformly over time.
+                                The time it takes for atoms to disperse correlates directly with the time it takes for heat to spread,
+                                establishing a connection between the two.
                             </li>
                             <li>
-                                <b>Graph Theory:</b> Studying atoms is quite hard, because it is a continuous problem: They can be at infinitely many places in space.
-                                Luckily, it turns out that we can model Brownian motions very well by a discrete analogue: Random walks on graphs.
-                                There are a lot easier to study using tools of discrete mathematics and especially graph theory.
-                                Again, there are quantaties we can find here that relate directly to our mysterious parameter \(\lambda_1\).
-                            </li>
-                            <li>
-                                and many others...!
+                                <b>Graph Theory:</b>
+                                Modeling the continuous problem of atom movement can be challenging since atoms can occupy infinitely many positions in space.
+                                Fortunately, it has been discovered that discrete analogs, such as random walks on graphs,
+                                provide an excellent representation of Brownian motion.
+                                Studying these discrete models using tools from discrete mathematics, particularly graph theory,
+                                offers valuable insights and quantities that relate directly to the elusive parameter  \(\lambda_1\).
                             </li>
                         </ul>
+                    </p>
+                    <p>
+                        These are just a few examples, and many other perspectives shed light on the nature of \(\lambda_1\)
+                        and its implications in heat diffusion. 
+                        It is a fascinating area of study that finds connections to various fields and disciplines.
                     </p>
                 </div>
                 <div class="container-research-right">
@@ -399,25 +434,35 @@
                 <div class="container-research-left">
                     <h4>What about infinite spaces?</h4>
                     <p>
-                        So on finite spaces, we understand quite well what happens.
-                        But what changes, if we look at infinite spaces?
-                        Mathematically, things become a lot more complicated.
-                        Recall that our key object of interest turned out to be the parameter \(\lambda_1\),
-                        which we could find as the smallest non-zero value in the spectrum of the Laplace operator.
-                        This made sense, because the spectrum was just a sequence of non-decreasing real numbers, so we just had to look for the first one.
-                        For infinite spaces, we can still study the Laplace operator, however, unfortunately it turns out that the spectrum is usually a lot more complicated.
-                        For example, it might just contain all non-negative real numbers.
-                        Then we don't have a smallest non-zero value in this spectrum anymore.
-                        In this case, the only reasonable choice for our parameter seems to be \(\lambda_1=0\).
-                        But then we would predict that our heat decays as fast as \(Ce^{-t\cdot 0} = C\) decays, but that is just constant - so this doesn't seem to make sense...<br />
-                        The point is that our heat decay might no longer be exponential at all.
-                        It might be a lot slower.
-                        I am mainly interested in the case where it is of polynomial speed, decaying as fast as \(Ct^{-\alpha}\), where we now have a new parameter \(\alpha>0\).
-                        Instead of \(\lambda_1\) from before, our goal is now to understand how to find this parameter \(\alpha=\alpha_0\), called the zeroth Novikov-Shubin invariant.
-                        This poses a lot more delicate problem, and many new obstacles await along the way.
-                        It turns out that this zeroth Novikov-Shubin invariant we understand to some extend, due to results by Varopoulos that again uses random walks to study this problem.
-                        But it also turns out, that there are higher Novikov-Shubin invariants that are equally interesting to study but even less approachable.
-                        The content of my PhD thesis deals with the problem of computing these Novikov-Shubin invariants.
+                        When considering infinite spaces, the understanding of heat diffusion becomes significantly more intricate.
+                        Mathematically, complexities arise due to the fact that our parameter of interest,
+                        \(\lambda_1\),
+                        which was previously determined as the smallest non-zero value in the spectrum of the Laplace operator,
+                        undergoes changes. In the case of infinite spaces, the spectrum of the Laplace operator is often far more complex.
+                        For instance, it may encompass all non-negative real numbers, eliminating the existence of a smallest non-zero value.
+
+
+                        In such scenarios, assigning \(\lambda_1=0\) a value of 0 seems to be the only reasonable choice.
+                        However, this raises a puzzling issue:
+                        If the heat were to decay at a rate of  \(Ce^{-t\cdot 0} = C\) , it would remain constant,
+                        which contradicts our understanding.
+
+                        The key realization is that heat decay in infinite spaces may not follow an exponential pattern at all;
+                        instead, it can exhibit significantly slower rates.
+                        Of particular interest to me is the case where heat decays at a polynomial speed, such as
+                        \(Ct^{-\alpha}\),  introducing a new parameter \(\alpha>0\).
+                        Thus, our objective now shifts towards comprehending how to determine the value of this parameter,
+                        denoted as \(\alpha=\alpha_0\),
+                        also known as the zeroth Novikov-Shubin invariant.
+
+                        The determination of this zeroth Novikov-Shubin invariant is a considerably more delicate problem,
+                        presenting numerous challenges along the way. While some understanding of this invariant has been achieved,
+                        thanks to Varopoulos' results utilizing random walks,
+                        higher Novikov-Shubin invariants also emerge as intriguing subjects of study,
+                        yet they prove even more challenging to approach.
+
+                        My PhD thesis revolves around the investigation of computing these Novikov-Shubin invariants, 
+                        as they offer rich and complex avenues of exploration.
                     </p>
                 </div>
                 <div class="container-research-right"></div>
@@ -430,9 +475,9 @@
                     <h4>So let's talk math! What did I do?</h4>
                     <p>
                         If we study the heat problem on an infinite space, meaning a non-compact manifold \(M\),
-                        we again consider the Laplace operator \(\Delta_0\) acting on the \(L^2\)-functions on \(M\),
-                        but also the higher Laplace operators \(\Delta_k\) acting on the \(L^2\)-\(k\)-forms on \(M\).
-                        We are interested in the case, where the spectrum \(\sigma(\Delta_k)\),
+                        we again consider the Laplace operator \(\Delta_0\) acting on the \(L^2\)-functions on \(M\).
+                        Furthermore, we also the higher Laplace operators \(\Delta_k\) acting on the \(L^2\)-\(k\)-forms on \(M\).
+                        We are interested in the case where the spectrum \(\sigma(\Delta_k)\),
                         which by self-adjointness and non-negativity of \(\Delta_k\) is contained in the non-negative real numbers,
                         contains arbitrarily small values \(\varepsilon>0\).
                         In this case, we want to measure how large the subspace of \(L^2\)-\(k\)-forms is, on which \(\Delta_k\) scales with a factor at most some factor \(\lambda>0\).
@@ -594,16 +639,35 @@
     <!--Personal Interests-->
     <section id="Interests">
         <h2>Personal Interests</h2>
-        <div>
-            <p>
-                I am a huge chess fan and a chess player myself.
-                For tournament play I have been inactive for a while, playing mostly online - but here you can find my <a href="https://ratings.fide.com/profile/4638310/chart">fide-profile</a>.
-                My favorite chess game is Nigel Short's victory over Jan Timman from 1991:
-            </p>
-            <iframe src="https://lichess.org/embed/game/uns4Krdq?theme=auto&bg=auto"
-                    width=600 height=397 frameborder=0 style="padding:20px;"></iframe>
+        <div class="container-research">
+            <div class="container-research-left">
+                <p>
+                    As an avid chess enthusiast and player, I have developed a deep passion for the game.
+                    While my recent focus has been on online play, I have a rich background in tournament chess.
+                    During my youth, I achieved considerable success at the national level,
+                    including my victory at the Hesse State Championship in 2008, in the under 12 age group.
+                    Additionally, in 2012, I secured a commendable sixth place in the open part of the German National Championship under 25.
+                    You can explore my FIDE profile for more details on my chess journey:
+                    <a href="https://ratings.fide.com/profile/4638310/chart">FIDE profile</a>.
+                </p>
+                <p>
+                    I draw inspiration from remarkable chess players, particularly world champion Ding Liren and the talented Levon Aronian.
+                    Among the countless memorable games, Nigel Short's triumphant encounter against Jan Timman in 1991 holds a special place in my heart.
+                    It features one of the most beautiful and creative attacks in chess history.
+                </p>
+                <p>
+                    While chess holds a prominent position in my gaming repertoire,
+                    I also derive great enjoyment from other competitive games.
+                    For instance, I love engaging in thrilling matches of the card game Dominion or delving into the strategic world of Settlers of Catan, a captivating board game.
+                    Of course, it's important to note that games serve not only as a platform for competition but also as a source of pure fun and entertainment.
+                    I relish the social dynamics of board game evenings and cherish the immersive experiences offered by tabletop games like Dungeons & Dragons.
+                </p>
+            </div>
+            <div class="container-research-right">
+                <iframe src="https://lichess.org/embed/game/uns4Krdq?theme=auto&bg=auto"
+                        width=600 height=397 frameborder=0 style="padding:20px;"></iframe>
+            </div>
         </div>
-        My favorite chess players are <b>world champion Ding Liren</b> and Levon Aronian.
     </section>
 
 
