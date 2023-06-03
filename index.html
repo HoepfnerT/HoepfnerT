@@ -7,7 +7,7 @@
       src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
     </script>
 
-    <link rel="stylesheet" href="fonts/Sans/cmun-sans.css"></link>
+    <link rel="stylesheet" href="fonts/Sans/cmun-sans.css">
 
 
     <style>
@@ -53,11 +53,6 @@
 
 
 
-
-        .main {
-            margin-top: 70px;
-        }
-
         body {
             font-family: "Computer Modern Sans", sans-serif;
             margin: 0;
@@ -69,6 +64,7 @@
         }
 
         h1 {
+            padding-top: 30px;
             color: #00008B;
             font-size: 48px;
         }
@@ -123,13 +119,6 @@
         }
 
 
-        .container-about {
-            display: flex;
-            align-items: center;
-            margin-bottom: 40px;
-            padding: 20px;
-            text-align: justify;
-        }
 
         .container-buttons {
             max-width: min(400px,33vw);
@@ -141,6 +130,15 @@
 
 
         @media (min-aspect-ratio: 1.5/1) {
+
+            .container-about {
+                display: flex;
+                align-items: center;
+                margin-bottom: 40px;
+                padding: 20px;
+                text-align: justify;
+            }
+
             .container-research {
                 display: flex;
                 text-align: justify;
@@ -187,6 +185,11 @@
         }
 
         @media (max-aspect-ratio: 1.5/1) {
+
+            .container-about {
+                text-align: justify;
+            }
+
             .research-image {
                 width: 75vw;
                 max-width: 500px;
@@ -246,7 +249,6 @@
     </style>
 </head>
 <body>
-    <!--<a href="upcoming_math.html">Math Talks in G&ouml;ttingen</a>-->
 
     <h1>Hello, I'm Tim H&ouml;pfner.</h1>
 
@@ -664,7 +666,7 @@
                     The second analysis course for students of mathematical didactics.
                 </li>
                 <li>
-                    <b>Winter 2019/20: Differential- und Integralgralrechnung I</b> with Prof. Dr. Dorothea Bahns</br>
+                    <b>Winter 2019/20: Differential- und Integralgralrechnung I</b> with Prof. Dr. Dorothea Bahns<br>
                     The first analysis course for students of mathematics.
                 </li>
             </ul>
