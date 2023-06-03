@@ -270,30 +270,40 @@
             <div>
                 <h2>About Me</h2>
                 <p>
-                    My name is Tim Höpfner,
-                    and I was born in Kiel, in the north of Germany, in 1996.
-                    The very early years of my life were spent there before my family moved to Kassel,
-                    where I attended school.
-                    At the Wilhelmsgymnasium Kassel, I completed my schooling and obtained my Abitur, the German high school diploma, taking mathematics and chemistry as my major subjects.
-                    <br />
+                    Hello there! My name is Tim Höpfner, and I'm delighted to share a little about myself with you.
+                    I was born in the Kiel, located in the beautiful north of Germany at the baltic sea, back in 1996.
+                    As a young child, I spent my early years there before my family relocated to Kassel, where I attended school.
+                </p>
 
-                    Driven by a passion for mathematics,
-                    I furthered my academic pursuits at the esteemed Georg-August-Universität Göttingen.
-                    From 2014 to 2023, I immersed myself in the fascinating realm of mathematics, earning my Bachelor's, Master's, and (very soon), my Doctorate (Dr. rer. nat.).
-                    My research interests predominantly revolve around the intersection of topology and differential geometry.
-                    Nevertheless, I maintain an insatiable curiosity for all branches of mathematics that cross my path.
-                    <br />
+                <p>
+                    I completed my schooling at the Wilhelmsgymnasium Kassel, where I successfully obtained my Abitur, the German high school diploma.
+                    During my time there, I developed a strong passion for natural sciences and especially mathematics, which led me to pursue further academic endeavors at the esteemed Georg-August-Universität Göttingen.
+                </p>
 
-                    During my time as a doctoral student from 2019 to 2023,
-                    I had the privilege of being an associated member of the Research Training Group "<a href="https://www.uni-goettingen.de/de/607635.html">RTG 2491 - Fourier Analysis and Spectral Theory</a>".
-                    This invaluable opportunity allowed me to work and study with exceptional young researchers from diverse backgrounds,
-                    each contributing their expertise to the vibrant mathematical community in Göttingen.
-                    Additionally, I had the pleasure of teaching numerous courses at Göttingen, serving as a lecture assistant and sharing my knowledge with over 1000 students.
-                    <br />
+                <p>
+                    From 2014 to 2023, I fully immersed myself in the captivating realm of mathematics at Göttingen.
+                    I successfully earned my Bachelor's and Master's degrees, and I'm currently on the verge of completing my Doctorate (Dr. rer. nat.).
+                    Throughout my academic journey, my focus has primarily been on the intersection of topology and differential geometry, subjects that have continually piqued my interest.
+                    However, I've always maintained an insatiable curiosity for all branches of mathematics that come my way.
+                </p>
 
-                    Beyond the realm of academia, I find joy in solving intricate analytic problems.
-                    Chess has always held a special place in my heart, serving as a constant source of fascination and competition.
-                    Moreover, I have a deep appreciation for various other strategic games that challenge my intellect but also for many social games and activities.
+                <p>
+                    During my time as a doctoral student, spanning from 2019 to 2023, I had the privilege of being an associated member of the
+                    Research Training Group "<a href="https://www.uni-goettingen.de/de/607635.html">RTG 2491 - Fourier Analysis and Spectral Theory</a>".
+                    This incredible opportunity allowed me to collaborate with exceptional young researchers from diverse backgrounds, each bringing their own expertise to the vibrant mathematical community in Göttingen.
+                    Additionally, I had the pleasure of sharing my knowledge by teaching numerous courses to over 1000 students, serving as a lecture assistant.
+                </p>
+
+                <p>
+                    Beyond my academic pursuits, I find immense joy in solving intricate analytic problems.
+                    Chess has always held a special place in my heart, providing endless fascination and a healthy dose of competition.
+                    Moreover, I deeply appreciate various other strategic games that challenge my intellect, as well as engaging in social games and activities.
+                </p>
+
+                <p>
+                    Thank you for taking the time to learn a bit about me.
+                    I'm eager to continue my journey, explore new horizons, and make meaningful contributions to the world of mathematics and beyond.
+                    If you have any questions or would like to connect, please feel free to reach out.
                 </p>
             </div>
         </div>
@@ -315,9 +325,9 @@
                 <div class="container-research-left">
                     <h4>The Problem of Heat Diffusion on Finite Spaces</h4>
                     <p>
-                        Imagine we have a confined space, represented by a finite-sized box, like the torus on the left-hand side.
+                        Imagine we have a confined space, contained in a finite-sized box, like the torus on the left-hand side.
                         Within this space, we are able to measure the current temperature.
-                        Then, the question arises naturally:
+                        Then, a question arises naturally:
                         How will this temperature change over time as we wait?
                         <br />
 
@@ -325,7 +335,7 @@
                         To simulate this process, we can turn to the heat equation from physics.
                         <br />
 
-                        The heat equation, a partial differential equation, is denoted as \(\partial_t f(x,t) = -\Delta_x f(x,t)\),
+                        The heat equation, a partial differential equation given by the formula \(\partial_t f(x,t) = -\Delta_x f(x,t)\),
                         can be fully described by the Laplace operator \(\Delta_x\), which holds a crucial role in both mathematics and physics.
                         Utilizing this equation, we can simulate the diffusion of heat in our given problem.
                         <br />
@@ -387,7 +397,8 @@
                         <ul>
                             <li>
                                 <b>Geometry:</b>
-                                If our space can be easily divided into two halves of approximately equal size at a narrow section, heat will take a considerable amount of time to travel from one side to the other.
+                                If our space can be easily divided into two halves of approximately equal size at a narrow section, 
+                                heat will take a considerable amount of time to travel from one side to the other as it has to pass through this tight bottleneck.
                                 Consequently, it will take longer for heat to spread out.
                                 Therefore, \(\lambda_1\) should be smaller.
                                 Indeed, J. Cheeger defined the so-called Cheeger constant \(h\) to measure the ease of such division,
@@ -438,11 +449,11 @@
                         Mathematically, complexities arise due to the fact that our parameter of interest,
                         \(\lambda_1\),
                         which was previously determined as the smallest non-zero value in the spectrum of the Laplace operator,
-                        undergoes changes. In the case of infinite spaces, the spectrum of the Laplace operator is often far more complex.
+                        undergoes changes. In the case of infinite spaces, the spectrum of the Laplace operator is usually far more complex.
                         For instance, it may encompass all non-negative real numbers, eliminating the existence of a smallest non-zero value.
 
 
-                        In such scenarios, assigning \(\lambda_1=0\) a value of 0 seems to be the only reasonable choice.
+                        In such scenarios, assigning \(\lambda_1=0\) seems to be the only reasonable choice.
                         However, this raises a puzzling issue:
                         If the heat were to decay at a rate of  \(Ce^{-t\cdot 0} = C\) , it would remain constant,
                         which contradicts our understanding.
@@ -472,21 +483,24 @@
             <!--Math content-->
             <div class="container-research">
                 <div class="container-research-left">
-                    <h4>So let's talk math! What did I do?</h4>
+                    <h4>Understanding Heat Problems on Infinite Spaces</h4>
                     <p>
-                        If we study the heat problem on an infinite space, meaning a non-compact manifold \(M\),
-                        we again consider the Laplace operator \(\Delta_0\) acting on the \(L^2\)-functions on \(M\).
-                        Furthermore, we also the higher Laplace operators \(\Delta_k\) acting on the \(L^2\)-\(k\)-forms on \(M\).
-                        We are interested in the case where the spectrum \(\sigma(\Delta_k)\),
-                        which by self-adjointness and non-negativity of \(\Delta_k\) is contained in the non-negative real numbers,
-                        contains arbitrarily small values \(\varepsilon>0\).
+                        What happens, if we study the heat problem on an infinite space, meaning a non-compact manifold \(M\)?
+                        Again, we consider the Laplace operator \(\Delta_0\) acting on the \(L^2\)-functions on \(M\),
+                        but also the higher Laplace operators \(\Delta_k\) acting on the \(L^2\)-\(k\)-forms on \(M\).
+                        As before, we are interested in the the spectrum \(\sigma(\Delta_k)\),
+                        which by self-adjointness and non-negativity of \(\Delta_k\) is contained in the non-negative real numbers.
+                        Based on what we saw before, the small values in the spectrum should tell us about the long-term asymptotic behaviour of heat.
+                        However, it now might happen that the spectrum contains arbitrarily small values \(\varepsilon>0\).
+
                         In this case, we want to measure how large the subspace of \(L^2\)-\(k\)-forms is, on which \(\Delta_k\) scales with a factor at most some factor \(\lambda>0\).
-                        As a vector space, this is infinite dimensional, so we need some extra symmetries.
-                        However, if we assume these, we can define a function \(F_k(\lambda)=\textrm{size of this subspace}\), called the spectral density function.
-                        If
-                        \[F(\lambda)-F(0) \sim \lambda^{\alpha_k} \qquad \textrm{as } \lambda\searrow 0,\]
+                        As a vector space, this space will be infinite dimensional, so this is not a viable way of measuring size.
+                        If we have extra structure coming from symmetries of our space, we might be able to take a different, more rough dimension.
+                        If we assume these symmetries, we can define a function \(F_k(\lambda)=\textrm{size of this subspace}\), called the spectral density function.
+                        If \(F_k(\lambda)\) approaches \(F_k(0)\) as \(\lambda\searrow 0\) as fast as the polynomial \(\lambda^{\alpha}\) converges to 0,
                         this formally (ok, not quite formally but close!) defines the \(k\)th Novikov-Shubin invariant of \(M\).
-                        These invariants still tell us a lot about heat-related questions on \(M\), in fact, \(\alpha_0\) is indeed the same as the \(\alpha_0\) from before (up to a factor of 2).
+                        These invariants still tell us a lot about heat-related questions on \(M\). 
+                        In fact, \(\alpha_0\) is indeed the same as the \(\alpha_0\) from before (up to a factor of 2).
                         They are called invariants because they are indeed homotopy invariants of \(M\), making them a very interesting object to study.
                         The problem is that their definition in terms of spectral properties of \(\Delta_k\) is not very useful when we want to compute them (it's very hard to do so...).
                         So we would like to find new approaches.
@@ -501,7 +515,9 @@
                 <div class="container-research-left">
                     <h4> Approach 1: Stochastics </h4>
                     <p>
-                        If our manifold is a nice CW complex, iteratively build up by disks of increasing dimensions, we can use the combinatorial data coming from this construction to approach the computation.
+                        If our manifold can be constructed combinatorially by glueing together pieces of inceasing dimension,
+                        that is \(M\) is a so-called CW complex, 
+                        we can use the combinatorial data coming from this construction to approach the computation.
                         For \(\alpha_0\), we have to understand how 1-disks (i.e., intervals) are attached to 0-disks (i.e., vertices).
                         This so-called 1-skeleton of \(M\) is therefore nothing but a graph.
                         A wonderful result by Varopoulos tells us, that we can compute \(\alpha_0\) in terms of the return probability of a random walk on this graph.
@@ -560,20 +576,30 @@
             <div class="container-research-left">
                 <h3>Master Thesis - "The Mayer-Vietoris Spectral Sequence for Coarse Generalized Homology"</h3>
                 <p>
-                    In my Master Thesis, I studied coarse geometry. Here, we are interested in the large-scale properties of spaces - in contrast to topology, studying the small-scale structure.
-                    In algebraic topology, we like to define invariants to describe and compare our spaces, that is, numbers or other simple objects.
-                    If we are able to compute these invariants easily, we can (sometimes) use them to figure out whether two spaces are different.
-                    In topology, one of the most classical type of invariants are homology theories.
-                    One important tool to compute these is the Mayer-Vietoris sequence.
-                    Given a complicated space, we can cut it into two smaller pieces.
-                    If we understand each of the pieces and their intersection, we can recover the information of the total space.
-                    Of course, we can iterate this procedure and thereby cut our space in any finite number of pieces.
-                    The Mayer-Vietoris spectral sequence is a complex mathematical tool that takes this one step further, as it allows us to cut the space even into infinitely many pieces.
-                    <br />
-                    While all of this was known for a long time for topological spaces, for coarse spaces only the usual Mayer-Vietoris sequence was known.
-                    A previous result indicated, that also the infinite version should hold, however, in my thesis I point out that this previous result is flawed.
-                    While I establish a spectral sequence for easier computations for finite decomposition, I show that such an infinite decomposition cannot be used to compute coarse homology from infinite decompositions.
-                    I also give an explicit counterexample to show precisely, why this argument fails.
+                    In my Master's thesis, 
+                    I delved into the field of coarse geometry,
+                    which focuses on understanding the large-scale properties of spaces, 
+                    as opposed to studying their small-scale structure as in traditional topology.
+                    In algebraic topology, 
+                    we often seek to define invariants that describe and compare spaces using numbers or other simple objects. 
+                    These invariants can be powerful tools for distinguishing between different spaces, 
+                    provided we can compute them easily.
+                    One of the most classical types of invariants in topology are homology theories.
+                    They allow us to capture essential features of a space. To compute these invariants, 
+                    we often rely on the Mayer-Vietoris sequence, which is an important mathematical tool. 
+                    This sequence enables us to decompose a complex space into two smaller pieces 
+                    and understand the information of the total space by examining each piece and their intersection.
+                    We can apply this decomposition procedure iteratively, 
+                    cutting our space into any finite number of pieces. 
+                    However, the Mayer-Vietoris spectral sequence takes it a step further by allowing us to decompose the space into infinitely many pieces.
+                    While this knowledge has been well-established for topological spaces, 
+                    for coarse spaces, only the standard Mayer-Vietoris sequence was known. 
+                    Previous research suggested that the infinite version of this sequence would also hold for coarse spaces. 
+                    However, in my thesis, I uncovered a flaw in this previous result.
+                    Although I established a spectral sequence for easier computations using finite decompositions, 
+                    I demonstrated that such an infinite decomposition cannot be used to compute coarse homology accurately. 
+                    To illustrate this limitation, I provided an explicit counterexample, 
+                    highlighting precisely why the previous argument fails.
                 </p>
             </div>
             <div class="container-research-right">
@@ -586,10 +612,19 @@
             <div class="container-research-left">
                 <h3>Bachelor Thesis - "Explicit Motion Planning for Collision-Free Motion in \(\mathbb{R}^n\)"</h3>
                 <p>
-                    In my Bachelor thesis, I studied the problem of motion planning from a point of view of topology ("Topological Complexity"):
+                    In my Bachelor's thesis,
+                    I investigated the challenging problem of motion planning from a topological standpoint.
+                    Specifically, I focused on understanding "topological complexity" in motion planning scenarios.
                     <br />
-                    Let's say we have an empty stace with arbitrarily many (moving and non-moving) obstacles and any number of agents (e.g., robots) that need to move around freely without colliding with the obstacles or other agents.
-                    I describe explicitely a (topological) algorithm that considers the current location and the target position of each of the agents and produces for each agent a path that they can move along.
+                    Imagine an empty space filled with numerous obstacles, some of which are in motion, while others remain stationary.
+                    Additionally, there are multiple agents, such as robots,
+                    that need to navigate freely without colliding with any obstacles or each other.
+                    To address this problem, I developed an explicit topological algorithm that takes into account the current location and target position of each agent.
+                    The algorithm generates a path for each agent,
+                    ensuring that they can move safely towards their respective targets.
+
+                    Using principles from topology, which studies the properties of spaces preserved under continuous transformations, 
+                    my algorithm offers a systematic approach to motion planning.
                 </p>
             </div>
             <div class="container-research-right">
@@ -661,6 +696,33 @@
                     For instance, I love engaging in thrilling matches of the card game Dominion or delving into the strategic world of Settlers of Catan, a captivating board game.
                     Of course, it's important to note that games serve not only as a platform for competition but also as a source of pure fun and entertainment.
                     I relish the social dynamics of board game evenings and cherish the immersive experiences offered by tabletop games like Dungeons & Dragons.
+                </p>
+                <p>
+                    My favorite mathematical puzzle is the <a href="https://en.wikipedia.org/wiki/100_prisoners_problem">100 prisoners problem</a> 
+                    <button id="btn-modal-prisoners">(show)</button>.
+                    <dialog id="modal-prisoners">
+                        <div style="width:50vw">
+                            <p>
+                                The director of a prison offers 100 death row prisoners,
+                                who are numbered from 1 to 100, a last chance.
+                                A room contains a cupboard with 100 drawers.
+                                The director randomly puts one prisoner's number in each closed drawer.
+                                The prisoners enter the room, one after another. Each prisoner may open and look into 50 drawers in any order.
+                                The drawers are closed again afterwards. If, during this search, every prisoner finds their number in one of the drawers,
+                                all prisoners are pardoned. If even one prisoner does not find their number, all prisoners die.
+                                Before the first prisoner enters the room, the prisoners may discuss strategy — but may not communicate once the first prisoner enters to look in the drawers.
+                                What is the prisoners' best strategy? <br />
+                                (Version due to P. Flajolet and R. Sedgewick.)
+                            </p>
+                        </div>
+                    </dialog>
+                </p>
+                <p>
+                    Originally proposed by P. B. Miltersen as a problem with no good solution, it turns out that there is a surprising solution that seems to good to be true.
+                    Working this out leads you on a surprising journey through the world of stochastics, discrete mathematics, graph theory and information theory.
+                    This problem is also a great way to introduce people to research mathematics.
+                    For example, I used this problem during the propaedeutic for all incoming students, working out the solution step by step with the pupils.
+                    If you just want to see the solution, I recommend <a href="https://www.youtube.com/watch?v=iSNsgj1OCLA">this video by Veritasium on youtube</a>, though, have a go at it yourself first!
                 </p>
             </div>
             <div class="container-research-right">
@@ -797,6 +859,27 @@
             animationId = window.requestAnimationFrame(draw);
         }
 
+    </script>
+
+    <script>
+        const btnModalPrisoners = document.getElementById("btn-modal-prisoners");
+        const modal = document.getElementById("modal-prisoners");
+
+        btnModalPrisoners.addEventListener("click", () => {
+            modal.showModal();
+        })
+
+        modal.addEventListener("click", e => {
+            const dialogDimensions = modal.getBoundingClientRect()
+            if (
+                e.clientX < dialogDimensions.left ||
+                e.clientX > dialogDimensions.right ||
+                e.clientY < dialogDimensions.top ||
+                e.clientY > dialogDimensions.bottom
+            ) {
+                modal.close()
+            }
+        })
     </script>
 
 
