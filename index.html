@@ -358,7 +358,7 @@
                 <div class="container-research-right">
                     <img id="svg-img" src="frames/torus-0000.svg" class="research-image-torus">
                     <div class="container-buttons">
-                        <button id="startBtnHE" onclick="startAnimationHeatEquation()">Start Animation</button>
+                        <button id="startBtnHE" onclick="startAnimationHeatEquation()">Start animation</button>
                         <button id="pauseBtnHE" onclick="pauseAnimationHeatEquation()">Pause</button>
                         <button id="stopBtnHE" onclick="stopAnimationHeatEquation()">Reset</button>
                     </div>
@@ -434,7 +434,7 @@
                 <div class="container-research-right">
                     <canvas id="rw_canvas" class="canvas_rw"></canvas>
                     <div class="container-buttons">
-                        <button id="startBtnRW" onclick="startAnimationRandomWalk()">Start Random Walk</button>
+                        <button id="startBtnRW" onclick="startAnimationRandomWalk()">Start random walk on torus</button>
                         <button id="pauseBtnRW" onclick="pauseAnimationRandomWalk()">Pause</button>
                         <button id="stopBtnRW" onclick="stopAnimationRandomWalk()">Reset</button>
                     </div>
@@ -853,26 +853,26 @@
             ctx.moveTo(x, y);
             x += (Math.random() * 2 - 1) * 5;
             //x = Math.max(0, Math.min(x, canvas.width));
-            flag = false;
+            y += (Math.random() * 2 - 1) * 5;
+            //y = Math.max(0, Math.min(y, canvas.height));
+            flag = true; // stayed inside rectangle
             if (x > canvas.width) {
                 x = x - canvas.width;
-                flag = true;
+                flag = false;
             }
             else if (x < 0) {
                 x = canvas.width + x;
-                flag = true;
+                flag = false;
             }
-            y += (Math.random() * 2 - 1) * 5;
-            //y = Math.max(0, Math.min(y, canvas.height));
             if (y > canvas.height) {
                 y = y - canvas.width;
-                flag = true;
+                flag = false;
             }
             else if (y < 0) {
                 y = canvas.height + y;
-                flag = true;
+                flag = false;
             }
-            if (flag == false) {
+            if (flag) {
                 ctx.lineTo(x, y);
                 ctx.stroke();
             }
