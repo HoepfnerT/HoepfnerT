@@ -853,14 +853,29 @@
             ctx.moveTo(x, y);
             x += (Math.random() * 2 - 1) * 5;
             //x = Math.max(0, Math.min(x, canvas.width));
-            if (x > canvas.width) { x = 0; }
-            else if (x < 0) { x = canvas.width; }
+            flag = false;
+            if (x > canvas.width) {
+                x = x - canvas.width;
+                flag = true;
+            }
+            else if (x < 0) {
+                x = canvas.width + x;
+                flag = true;
+            }
             y += (Math.random() * 2 - 1) * 5;
             //y = Math.max(0, Math.min(y, canvas.height));
-            if (y > canvas.height) { y = 0; }
-            else if (y < 0) { y = canvas.height; }
-            ctx.lineTo(x, y);
-            ctx.stroke();
+            if (y > canvas.height) {
+                y = y - canvas.width;
+                flag = true;
+            }
+            else if (y < 0) {
+                y = canvas.height + y;
+                flag = true;
+            }
+            if (flag == false) {
+                ctx.lineTo(x, y);
+                ctx.stroke();
+            }
 
             animationId = window.requestAnimationFrame(draw);
         }
