@@ -852,9 +852,13 @@
             ctx.beginPath();
             ctx.moveTo(x, y);
             x += (Math.random() * 2 - 1) * 5;
-            x = Math.max(0, Math.min(x, canvas.width));
+            //x = Math.max(0, Math.min(x, canvas.width));
+            if (x > canvas.width) { x = 0; }
+            else if (x < 0) { x = canvas.width; }
             y += (Math.random() * 2 - 1) * 5;
-            y = Math.max(0, Math.min(y, canvas.height));
+            //y = Math.max(0, Math.min(y, canvas.height));
+            if (y > canvas.height) { y = 0; }
+            else if (y < 0) { y = canvas.height; }
             ctx.lineTo(x, y);
             ctx.stroke();
 
