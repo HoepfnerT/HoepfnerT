@@ -434,9 +434,14 @@
                 <div class="container-research-right">
                     <canvas id="rw_canvas" class="canvas_rw"></canvas>
                     <div class="container-buttons">
-                        <button id="startBtnRW" onclick="startAnimationRandomWalk()">Start random walk on torus</button>
+                        <button id="startBtnRW" onclick="startAnimationRandomWalk()">Start random walk </button>
                         <button id="pauseBtnRW" onclick="pauseAnimationRandomWalk()">Pause</button>
                         <button id="stopBtnRW" onclick="stopAnimationRandomWalk()">Reset</button>
+                        <select id="DdRW" onchange="RW_boundary_type()">
+                            <option value=0>Square</option>
+                            <option value=1>Torus</option>
+                            <option value=2>Klein Bottle</option>
+                        </select>
                     </div>
                 </div>
             </div>
@@ -805,6 +810,15 @@
         const startBtnRW = document.getElementById('startBtnRW');
         const pauseBtnRW = document.getElementById('pauseBtnRW');
         const stopBtnRW = document.getElementById('stopBtnRW');
+
+        var boundary_mode = 0; // 0 = square, 1 = torus, 2 = Klein bottle
+        function RW_boundary_type() {
+            dd = document.getElementById("DdRW");
+            boundary_mode = dd.options[dd.selectedIndex].value;
+            stopAnimationRandomWalk()
+        } 
+
+
         let animationId = null;
         let x = canvas.width / 2;
         let y = canvas.height / 2;
@@ -851,28 +865,39 @@
 
             ctx.beginPath();
             ctx.moveTo(x, y);
-            x += (Math.random() * 2 - 1) * 5;
-            //x = Math.max(0, Math.min(x, canvas.width));
-            y += (Math.random() * 2 - 1) * 5;
-            //y = Math.max(0, Math.min(y, canvas.height));
-            flag = true; // stayed inside rectangle
-            if (x > canvas.width) {
-                x = x - canvas.width;
-                flag = false;
+            let dx = (Math.random() * 2 - 1) * 5;
+            let dy = (Math.random() * 2 - 1) * 5;
+
+            if (boundary_mode == 0) { // square
+                x = Math.max(0, Math.min(x+dx, canvas.width));
+                y = Math.max(0, Math.min(y+dy, canvas.height));
+                ctx.lineTo(x, y);
+                ctx.stroke();
             }
-            else if (x < 0) {
-                x = canvas.width + x;
-                flag = false;
+
+            else if (boundary_mode == 1) { // torus
+                ctx.lineTo(x + dx, y + dy);
+                ctx.stroke();
+                x -= canvas.width * Math.floor((x+dx) / canvas.width);
+                y -= canvas.height * Math.floor((y+dy) / canvas.height); 
+                ctx.moveTo(x, y);
+                x += dx;
+                y += dy;
+                ctx.lineTo(x, y);
+                ctx.stroke();
             }
-            if (y > canvas.height) {
-                y = y - canvas.width;
-                flag = false;
-            }
-            else if (y < 0) {
-                y = canvas.height + y;
-                flag = false;
-            }
-            if (flag) {
+
+            else if (boundary_mode == 2) { //klein bottle
+                ctx.lineTo(x + dx, y + dy);
+                ctx.stroke();
+                if (Math.floor((x + dx) / canvas.width) % 2 == 1) {
+                    y = canvas.width - y;
+                }
+                x -= canvas.width * Math.floor((x + dx) / canvas.width);
+                y -= canvas.height * Math.floor((y + dy) / canvas.height);
+                ctx.moveTo(x, y);
+                x += dx;
+                y += dy;
                 ctx.lineTo(x, y);
                 ctx.stroke();
             }
