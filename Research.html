@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tim H&ouml;pfner</title>
+    <!-- Scripts for Math formulas -->
+    <script type="text/javascript" id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+
+    <link rel="stylesheet" href="fonts/Sans/cmun-sans.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#About">About Me</a></li>
+            <li><a href="#">Research</a></li>
+            <li><a href="Teaching.html">Teaching</a></li>
+            <li><a href="Interests.html">Personal Interests</a></li>
+            <li><a href="#Contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!--Research-->
+    <section id="Research">
+        <h2>Research</h2>
+        <div>
+            <div class="container-research-left">
+                <h3 style="margin-bottom: 0;">Heat Decay on Non-Compact Manifolds</h3>
+                <p>
+                    This is part of my PhD thesis, which can be found here: <a href="http://dx.doi.org/10.53846/goediss-9907">T. H&ouml;pfner: Novikov-Shubin Invariants of Nilpotent Lie Groups</a>
+                </p>
+            </div>
+
+            <!--compact heat-->
+            <div class="container-research">
+                <div class="container-research-left">
+                    <h4>The Problem of Heat Diffusion on Finite Spaces</h4>
+                    <p>
+                        Imagine we have a confined space, contained in a finite-sized box, like the torus on the left-hand side.
+                        Within this space, we are able to measure the current temperature.
+                        Then, a question arises naturally:
+                        How will this temperature change over time as we wait?
+                        <br />
+
+                        Intuitively, it seems apparent that heat should gradually spread out evenly until we reach a state of equilibrium with the same temperature everywhere.
+                        To simulate this process, we can turn to the heat equation from physics.
+                        <br />
+
+                        The heat equation, a partial differential equation given by the formula \(\partial_t f(x,t) = -\Delta_x f(x,t)\),
+                        can be fully described by the Laplace operator \(\Delta_x\), which holds a crucial role in both mathematics and physics.
+                        Utilizing this equation, we can simulate the diffusion of heat in our given problem.
+                        <br />
+
+                        Through the remarkable, magical concepts of Fourier analysis and the Fourier transform,
+                        we can actually solve this heat equation,
+                        enabling precise predictions of how heat will behave at any given point in the future.
+                        Mathematically speaking, if we begin with an initial distribution of heat \(g(x)\)  at a location \(x\),
+                        we can determine a function \(f(x,t)\) that provides the temperature at \(x\) after time \(t\) using the heat operator:
+                        \(f(x,t) = e^{-t\Delta_x}g(x)\).
+                        <br />
+
+                        This solution not only informs us about the temperature at any point of space and time, but also reveals the speed at which heat spreads towards a uniform distribution.
+                        The temperature differences will decrease exponentially fast, following an exponential function \(Ce^{-t\lambda_1}\).
+                        The rate of this exponential decay is governed by an additional parameter \(\lambda_1>0\).
+                    </p>
+                </div>
+                <div class="container-research-right">
+                    <img id="svg-img" src="frames/torus-0000.svg" class="research-image-torus">
+                    <div class="container-buttons">
+                        <button id="startBtnHE" onclick="startAnimationHeatEquation()">Start animation</button>
+                        <button id="pauseBtnHE" onclick="pauseAnimationHeatEquation()">Pause</button>
+                        <button id="stopBtnHE" onclick="stopAnimationHeatEquation()">Reset</button>
+                    </div>
+                </div>
+            </div>
+
+            <!--lambda1-->
+            <div class="container-research">
+                <div class="container-research-left">
+                    <h4>What can we say about \(\lambda_1\)?</h4>
+                    <p>
+                        Naturally, we would like to learn more about this parameter \(\lambda_1\).
+                        Our mathematical approach reveals that this parameter and the operator are intricately linked.
+                        In fact, many essential properties of such operators in mathematics are captured by their spectrum.
+                        In the case of the Laplace operator, the spectrum is a sequence of non-negative real numbers given by
+                        \[\sigma(\Delta_x) = \lbrace 0 &lt; \lambda_1\leq \lambda_2\leq \lambda_3\leq \cdots \rbrace.\]
+                        The parameter \(\lambda_1\) holds significance as it represents the smallest non-zero value in this sequence.
+                        <br />
+
+                        However, it is crucial to bear in mind that we are dealing with a problem rooted in physics.
+                        After all, this parameter \(\lambda_1\) should be larger if heat spreads more rapidly in our space.
+                        By pondering under what circumstances this occurs,
+                        we can arrive at novel descriptions and insights regarding our parameter.
+                    </p>
+                </div>
+            </div>
+
+            <!--approaches-->
+            <div class="container-research">
+                <div class="container-research-left">
+                    <h4>How can we find \(\lambda_1\)?</h4>
+                    <p>
+                        There are various perspectives through which we can gain insights into the parameter
+                        \(\lambda_1\) and its relationship to heat diffusion:
+                    </p>
+                </div>
+            </div>
+            <div class="container-research">
+                <div class="container-research-left">
+                    <p>
+                        <ul>
+                            <li>
+                                <b>Geometry:</b>
+                                If our space can be easily divided into two halves of approximately equal size at a narrow section,
+                                heat will take a considerable amount of time to travel from one side to the other as it has to pass through this tight bottleneck.
+                                Consequently, it will take longer for heat to spread out.
+                                Therefore, \(\lambda_1\) should be smaller.
+                                Indeed, J. Cheeger defined the so-called Cheeger constant \(h\) to measure the ease of such division,
+                                and there are interesting connections between \(h\) and \(\lambda_1\).
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+            <div class="container-research">
+                <div class="container-research-left">
+                    <p>
+                        <ul>
+                            <li>
+                                <b>Stochastics:</b>
+                                Heat energy is essentially the kinetic energy of atoms,
+                                and heat spreads due to the movement of atoms through space.
+                                Although atom movement appears random, we can study it as a stochastic process known as Brownian motion.
+                                Due to this randomness, atoms will eventually spread out uniformly over time.
+                                The time it takes for atoms to disperse correlates directly with the time it takes for heat to spread,
+                                establishing a connection between the two.
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+                <div class="container-research-right">
+                    <canvas id="rw_canvas" class="canvas_rw"></canvas>
+                    <div class="container-buttons">
+                        <button id="startBtnRW" onclick="startAnimationRandomWalk()">Start random walk </button>
+                        <button id="pauseBtnRW" onclick="pauseAnimationRandomWalk()">Pause</button>
+                        <button id="stopBtnRW" onclick="stopAnimationRandomWalk()">Reset</button>
+                        <select id="DdRW" onchange="RW_boundary_type()">
+                            <option value=0>Square</option>
+                            <option value=1>Torus</option>
+                            <option value=2>Klein Bottle</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-research">
+                <div class="container-research-left">
+                    <p>
+                        <ul>
+                            <li>
+                                <b>Graph Theory:</b>
+                                Modeling the continuous problem of atom movement can be challenging since atoms can occupy infinitely many positions in space.
+                                Fortunately, it has been discovered that discrete analogs, such as random walks on graphs,
+                                provide an excellent representation of Brownian motion.
+                                Studying these discrete models using tools from discrete mathematics, particularly graph theory,
+                                offers valuable insights and quantities that relate directly to the elusive parameter  \(\lambda_1\).
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+            <div class="container-research">
+                <div class="container-research-left">
+                    <p>
+                        These are just a few examples, and many other perspectives shed light on the nature of \(\lambda_1\)
+                        and its implications in heat diffusion.
+                        It is a fascinating area of study that finds connections to various fields and disciplines.
+                    </p>
+                </div>
+            </div>
+
+
+            <!--Non compact-->
+            <div class="container-research">
+                <div class="container-research-left">
+                    <h4>What about infinite spaces?</h4>
+                    <p>
+                        When considering infinite spaces, the understanding of heat diffusion becomes significantly more intricate.
+                        Mathematically, complexities arise due to the fact that our parameter of interest,
+                        \(\lambda_1\),
+                        which was previously determined as the smallest non-zero value in the spectrum of the Laplace operator,
+                        undergoes changes. In the case of infinite spaces, the spectrum of the Laplace operator is usually far more complex.
+                        For instance, it may encompass all non-negative real numbers, eliminating the existence of a smallest non-zero value.
+
+
+                        In such scenarios, assigning \(\lambda_1=0\) seems to be the only reasonable choice.
+                        However, this raises a puzzling issue:
+                        If the heat were to decay at a rate of  \(Ce^{-t\cdot 0} = C\) , it would remain constant,
+                        which contradicts our understanding.
+
+                        The key realization is that heat decay in infinite spaces may not follow an exponential pattern at all;
+                        instead, it can exhibit significantly slower rates.
+                        Of particular interest to me is the case where heat decays at a polynomial speed, such as
+                        \(Ct^{-\alpha}\),  introducing a new parameter \(\alpha>0\).
+                        Thus, our objective now shifts towards comprehending how to determine the value of this parameter,
+                        denoted as \(\alpha=\alpha_0\),
+                        also known as the zeroth Novikov-Shubin invariant.
+
+                        The determination of this zeroth Novikov-Shubin invariant is a considerably more delicate problem,
+                        presenting numerous challenges along the way. While some understanding of this invariant has been achieved,
+                        thanks to Varopoulos' results utilizing random walks,
+                        higher Novikov-Shubin invariants also emerge as intriguing subjects of study,
+                        yet they prove even more challenging to approach.
+
+                        My PhD thesis revolves around the investigation of computing these Novikov-Shubin invariants,
+                        as they offer rich and complex avenues of exploration.
+                    </p>
+                </div>
+            </div>
+
+
+            <!--Math content-->
+            <div class="container-research">
+                <div class="container-research-left">
+                    <h4>Understanding Heat Problems on Infinite Spaces</h4>
+                    <p>
+                        What happens, if we study the heat problem on an infinite space, meaning a non-compact manifold \(M\)?
+                        Again, we consider the Laplace operator \(\Delta_0\) acting on the \(L^2\)-functions on \(M\),
+                        but also the higher Laplace operators \(\Delta_k\) acting on the \(L^2\)-\(k\)-forms on \(M\).
+                        As before, we are interested in the the spectrum \(\sigma(\Delta_k)\),
+                        which by self-adjointness and non-negativity of \(\Delta_k\) is contained in the non-negative real numbers.
+                        Based on what we saw before, the small values in the spectrum should tell us about the long-term asymptotic behaviour of heat.
+                        However, it now might happen that the spectrum contains arbitrarily small values \(\varepsilon>0\).
+
+                        In this case, we want to measure how large the subspace of \(L^2\)-\(k\)-forms is, on which \(\Delta_k\) scales with a factor at most some factor \(\lambda>0\).
+                        As a vector space, this space will be infinite dimensional, so this is not a viable way of measuring size.
+                        If we have extra structure coming from symmetries of our space, we might be able to take a different, more rough dimension.
+                        If we assume these symmetries, we can define a function \(F_k(\lambda)=\textrm{size of this subspace}\), called the spectral density function.
+                        If \(F_k(\lambda)\) approaches \(F_k(0)\) as \(\lambda\searrow 0\) as fast as the polynomial \(\lambda^{\alpha}\) converges to 0,
+                        this formally (ok, not quite formally but close!) defines the \(k\)th Novikov-Shubin invariant of \(M\).
+                        These invariants still tell us a lot about heat-related questions on \(M\).
+                        In fact, \(\alpha_0\) is indeed the same as the \(\alpha_0\) from before (up to a factor of 2).
+                        They are called invariants because they are indeed homotopy invariants of \(M\), making them a very interesting object to study.
+                        The problem is that their definition in terms of spectral properties of \(\Delta_k\) is not very useful when we want to compute them (it's very hard to do so...).
+                        So we would like to find new approaches.
+                    </p>
+                </div>
+            </div>
+
+            <!--Approach 1: RW-->
+            <div class="container-research">
+                <div class="container-research-left">
+                    <h4> Approach 1: Stochastics </h4>
+                    <p>
+                        If our manifold can be constructed combinatorially by glueing together pieces of inceasing dimension,
+                        that is \(M\) is a so-called CW complex,
+                        we can use the combinatorial data coming from this construction to approach the computation.
+                        For \(\alpha_0\), we have to understand how 1-disks (i.e., intervals) are attached to 0-disks (i.e., vertices).
+                        This so-called 1-skeleton of \(M\) is therefore nothing but a graph.
+                        A wonderful result by Varopoulos tells us, that we can compute \(\alpha_0\) in terms of the return probability of a random walk on this graph.
+                        In my thesis, I show that there are higher-dimensional analogues of these random walks, that relate to the higher \(\alpha_k\).
+                        These random walks take place on the \(k\)-dimensinal disks in our manifold.
+                        Contrary to vertices however, these disks can be oriented in two different ways.
+                        This leads to a more complicated random walk, where random walkers can move to every \(k\)-disk with either of the two orientations.
+                        And, if two random walkers meet at the same disk but with opposite orientations, they cancel each other out - not unsimilar to the cancelations between particles and anti-particles in physics.
+                        I explicitly describe these random walks and their relation to the higher Novikov-Shubin invariants, establishing a new approach to studying Novikov-Shubin invariants using stochastical methods.
+                    </p>
+                </div>
+                <div class="container-research-right">
+                    <img src="rw.jpg" class="research-image">
+                </div>
+            </div>
+
+            <!--Approach 2: Rumin-->
+            <div class="container-research">
+                <div class="container-research-left">
+                    <h4> Approach 2: Computer Estimations </h4>
+                    <p>
+                        Another approach to computing these invariants is a result by Rumin, who developed a way of computing estimates on Novikov-Shubin invariants in some situations.
+                        Simplifying this result a bit further, I implemented this approach as a python program to compute estimates for all nilpotent Lie groups up to dimension six.
+                        This gives us quite a few new estimates on Novikov-Shubin invariants, but unfortunately, it turns out that the approach often fails and cannot give any bounds on the invariants.
+                        In order to understand the short-comings further, we move on to the third approach.
+                    </p>
+                </div>
+            </div>
+
+            <!--Approach 3: Diff Geo-->
+            <div class="container-research">
+                <div class="container-research-left">
+                    <h4> Approach 3: Differential Geometry </h4>
+                    <p>
+                        Based on the method behind the proof of Rumin's result, I defined a new, more detailed version of Novikov-Shubin invariants.
+                        The basic idea is the following observation: If we look at how heat spread out through space, we get the same result by waiting twice as long as we get from scaling all distances in our manifold by a factor 1/2.
+                        We consider now spaces with multiple directions, so-called fibre bundles.
+                        In these spaces, we can start to scale different directions at different speeds and study how heat behaves on these scaled spaces.
+                        This tells us something about the contributions that the different directions have towards the Novikov-Shubin invariants of our space. <br />
+                        Defining these new invariants depends, a priori, on quite a bit of extra structure needed to talk about these different directions.
+                        I show that the resulting numbers are indeed invariant under many of these choices. <br />
+                        Then, I computed these new invariants for the 3-dimensional Heisenberg group, which is the three-dimensional Lie group with generators \(X,Y,Z\) and only non-zero commutator relation  \([X,Y]=Z\).
+                        If we scale the base directions \(X,Y\) with speed \(\lambda\) and vary the scaling speed of the fibre direction \(Z\) as \(\lambda^{1+\zeta}\) according to some parameter \(\zeta\), we find the graph on the left.
+                        Surprisingly, the contribution from the fibre direction seems to have opposing effects on the zeroth and the first Novikov-Shubin invariants´.
+                    </p>
+                </div>
+                <div class="container-research-right">
+                    <img src="2paramnsi.jpg" class="research-image-twographs">
+                </div>
+            </div>
+        </div>
+
+        <!--Master-->
+        <div class="container-research">
+            <div class="container-research-left">
+                <h3>Master Thesis - "The Mayer-Vietoris Spectral Sequence for Coarse Generalized Homology"</h3>
+                <p>
+                    In my Master's thesis,
+                    I delved into the field of coarse geometry,
+                    which focuses on understanding the large-scale properties of spaces,
+                    as opposed to studying their small-scale structure as in traditional topology.
+                    In algebraic topology,
+                    we often seek to define invariants that describe and compare spaces using numbers or other simple objects.
+                    These invariants can be powerful tools for distinguishing between different spaces,
+                    provided we can compute them easily.
+                    One of the most classical types of invariants in topology are homology theories.
+                    They allow us to capture essential features of a space. To compute these invariants,
+                    we often rely on the Mayer-Vietoris sequence, which is an important mathematical tool.
+                    This sequence enables us to decompose a complex space into two smaller pieces
+                    and understand the information of the total space by examining each piece and their intersection.
+                    We can apply this decomposition procedure iteratively,
+                    cutting our space into any finite number of pieces.
+                    However, the Mayer-Vietoris spectral sequence takes it a step further by allowing us to decompose the space into infinitely many pieces.
+                    While this knowledge has been well-established for topological spaces,
+                    for coarse spaces, only the standard Mayer-Vietoris sequence was known.
+                    Previous research suggested that the infinite version of this sequence would also hold for coarse spaces.
+                    However, in my thesis, I uncovered a flaw in this previous result.
+                    Although I established a spectral sequence for easier computations using finite decompositions,
+                    I demonstrated that such an infinite decomposition cannot be used to compute coarse homology accurately.
+                    To illustrate this limitation, I provided an explicit counterexample,
+                    highlighting precisely why the previous argument fails.
+                </p>
+            </div>
+            <div class="container-research-right">
+                <img src="masters.jpg" class="research-image">
+            </div>
+        </div>
+
+        <!--Bachelor-->
+        <div class="container-research">
+            <div class="container-research-left">
+                <h3>Bachelor Thesis - "Explicit Motion Planning for Collision-Free Motion in \(\mathbb{R}^n\)"</h3>
+                <p>
+                    In my Bachelor's thesis,
+                    I investigated the challenging problem of motion planning from a topological standpoint.
+                    Specifically, I focused on understanding "topological complexity" in motion planning scenarios.
+                    <br />
+                    Imagine an empty space filled with numerous obstacles, some of which are in motion, while others remain stationary.
+                    Additionally, there are multiple agents, such as robots,
+                    that need to navigate freely without colliding with any obstacles or each other.
+                    To address this problem, I developed an explicit topological algorithm that takes into account the current location and target position of each agent.
+                    The algorithm generates a path for each agent,
+                    ensuring that they can move safely towards their respective targets.
+
+                    Using principles from topology, which studies the properties of spaces preserved under continuous transformations,
+                    my algorithm offers a systematic approach to motion planning.
+                </p>
+            </div>
+            <div class="container-research-right">
+                <img src="bachelors2.jpg" class="research-image">
+            </div>
+        </div>
+    </section>
+
+
+    <!--Contact-->
+    <section id="Contact">
+        <h2>Contact</h2>
+        <p>
+            Contact me by email: &nbsp;&nbsp; timhoepfner (at) outlook (dot) de
+        </p>
+    </section>
+
+</body>

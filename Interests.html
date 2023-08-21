@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tim H&ouml;pfner</title>
+    <!-- Scripts for Math formulas -->
+    <script type="text/javascript" id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+
+    <link rel="stylesheet" href="fonts/Sans/cmun-sans.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#About">About Me</a></li>
+            <li><a href="Research.html">Research</a></li>
+            <li><a href="Teaching.html">Teaching</a></li>
+            <li><a href="#">Personal Interests</a></li>
+            <li><a href="index.html#Contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!--Personal Interests-->
+    <section id="Interests">
+        <h2>Personal Interests</h2>
+        <div>
+            <div>
+                <p>
+                    As an avid chess enthusiast and player, I have developed a deep passion for the game.
+                    While my recent focus has been on online play, I have a rich background in tournament chess.
+                    During my youth, I achieved considerable success at the national level,
+                    including my victory at the Hesse State Championship in 2008, in the under 12 age group.
+                    Additionally, in 2012, I secured a commendable sixth place in the open part of the German National Championship under 25.
+                    You can explore my FIDE profile for more details on my chess journey:
+                    <a href="https://ratings.fide.com/profile/4638310/chart">FIDE profile</a>.
+                </p>
+            </div>
+        </div>
+        <div class="container-research">
+            <div class="container-research-left">
+                <p>
+                    I draw inspiration from remarkable chess players, particularly world champion Ding Liren and the talented Levon Aronian.
+                    Among the countless memorable games, Nigel Short's triumphant encounter against Jan Timman in 1991 holds a special place in my heart.
+                    It features one of the most beautiful and creative attacks in chess history.
+                </p>
+            </div>
+            <div class="container-research-right">
+                <iframe src="https://lichess.org/embed/game/uns4Krdq?theme=auto&bg=auto"
+                        width=600 height=397 frameborder=0 style="padding:20px;"></iframe>
+            </div>
+        </div>
+
+        <div>
+            <div>
+
+                <p>
+                    While chess holds a prominent position in my gaming repertoire,
+                    I also derive great enjoyment from other competitive games.
+                    For instance, I love engaging in thrilling matches of the card game Dominion or delving into the strategic world of Settlers of Catan, a captivating board game.
+                    Of course, it's important to note that games serve not only as a platform for competition but also as a source of pure fun and entertainment.
+                    I relish the social dynamics of board game evenings and cherish the immersive experiences offered by tabletop games like Dungeons & Dragons.
+                </p>
+                <p>
+                    My favorite mathematical puzzle is the <a href="https://en.wikipedia.org/wiki/100_prisoners_problem">100 prisoners problem</a>
+                    <button id="btn-modal-prisoners">(show)</button>.
+                    <dialog id="modal-prisoners">
+                        <div style="width:50vw">
+                            <p>
+                                The director of a prison offers 100 death row prisoners,
+                                who are numbered from 1 to 100, a last chance.
+                                A room contains a cupboard with 100 drawers.
+                                The director randomly puts one prisoner's number in each closed drawer.
+                                The prisoners enter the room, one after another. Each prisoner may open and look into 50 drawers in any order.
+                                The drawers are closed again afterwards. If, during this search, every prisoner finds their number in one of the drawers,
+                                all prisoners are pardoned. If even one prisoner does not find their number, all prisoners die.
+                                Before the first prisoner enters the room, the prisoners may discuss strategy — but may not communicate once the first prisoner enters to look in the drawers.
+                                What is the prisoners' best strategy? <br />
+                                (Version due to P. Flajolet and R. Sedgewick.)
+                            </p>
+                        </div>
+                    </dialog>
+                </p>
+                <p>
+                    Originally proposed by P. B. Miltersen as a problem with no good solution, it turns out that there is a surprising solution that seems to good to be true.
+                    Working this out leads you on a surprising journey through the world of stochastics, discrete mathematics, graph theory and information theory.
+                    This problem is also a great way to introduce people to research mathematics.
+                    For example, I used this problem during the propaedeutic for all incoming students, working out the solution step by step with the pupils.
+                    If you just want to see the solution, I recommend <a href="https://www.youtube.com/watch?v=iSNsgj1OCLA">this video by Veritasium on youtube</a>, though, have a go at it yourself first!
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+</body>
