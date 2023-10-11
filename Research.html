@@ -47,10 +47,10 @@
                 <dialog id="modal-2PNSI-Abstract">
                     <div style="width:50vw">
                         <p>
-                            In this paper we construct a two-parameter version of spectral density functions and Novikov-Shubin invariants on fibre bundles. 
-                            The aim of this approach is to gain a better understanding of how the near-zero spectrum of the Hodge Laplace operators on the fibre 
-                            and the base of a fibre bundle contribute separately to the near-zero spectrum of the Laplace operators of the total space. 
-                            We show that this two-parameter generalisation of the classical spectral density function still satisfies several invariance properties. 
+                            In this paper we construct a two-parameter version of spectral density functions and Novikov-Shubin invariants on fibre bundles.
+                            The aim of this approach is to gain a better understanding of how the near-zero spectrum of the Hodge Laplace operators on the fibre
+                            and the base of a fibre bundle contribute separately to the near-zero spectrum of the Laplace operators of the total space.
+                            We show that this two-parameter generalisation of the classical spectral density function still satisfies several invariance properties.
                             As an example, we compute it explicitly for the three-dimensional Heisenberg group.
                         </p>
                     </div>
@@ -487,5 +487,163 @@
                 modal2PNSI.close()
             }
         })
+    </script>
+
+    <!--Script to animate torus heat equation-->
+    <script>
+        const svgImg = document.getElementById('svg-img');
+        let index = 0;
+        let skip = 10;
+        let lastFrame = 1000;
+        let intervalId = null;
+        let preload = new Image();
+
+
+
+        const startBtnHE = document.getElementById('startBtnHE');
+        const pauseBtnHE = document.getElementById('pauseBtnHE');
+        const stopBtnHE = document.getElementById('stopBtnHE');
+        startBtnHE.disabled = false;
+        pauseBtnHE.disabled = true;
+
+        function startAnimationHeatEquation() {
+            if (intervalId === null) {
+                startBtnHE.disabled = true;
+                pauseBtnHE.disabled = false;
+                intervalId = setInterval(() => {
+                    let indexStr = index.toString().padStart(4, '0');
+                    svgImg.src = `frames/torus-${indexStr}.svg`;
+                    index += skip;
+                    if (index >= lastFrame) {
+                        index = 1000;
+                    }
+                    else {
+                        indexStr = (index + skip).toString().padStart(4, '0');
+                        preload.src = `frames/torus-${indexStr}.svg`;
+                    }
+                }, 200);
+            }
+        }
+
+        function pauseAnimationHeatEquation() {
+            if (intervalId !== null) {
+                startBtnHE.disabled = false;
+                pauseBtnHE.disabled = true;
+                clearInterval(intervalId);
+                intervalId = null;
+            }
+        }
+
+        function stopAnimationHeatEquation() {
+            startBtnHE.disabled = false;
+            pauseBtnHE.disabled = true;
+            clearInterval(intervalId);
+            intervalId = null;
+            index = 0;
+            const indexStr = index.toString().padStart(4, '0');
+            svgImg.src = `frames/torus-${indexStr}.svg`;
+        }
+    </script>
+
+    <!--Script to animate random walk-->
+    <script>
+        const canvas = document.getElementById('rw_canvas');
+        const startBtnRW = document.getElementById('startBtnRW');
+        const pauseBtnRW = document.getElementById('pauseBtnRW');
+        const stopBtnRW = document.getElementById('stopBtnRW');
+
+        var boundary_mode = 0; // 0 = square, 1 = torus, 2 = Klein bottle
+        function RW_boundary_type() {
+            dd = document.getElementById("DdRW");
+            boundary_mode = dd.options[dd.selectedIndex].value;
+            stopAnimationRandomWalk()
+        }
+
+
+        let animationId = null;
+        let x = canvas.width / 2;
+        let y = canvas.height / 2;
+        canvas.getContext('2d').lineWidth = 1;
+        startBtnRW.disabled = false;
+        pauseBtnRW.disabled = true;
+
+
+        function initAnimationRandomWalk() {
+            const context = canvas.getContext('2d');
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            x = canvas.width / 2;
+            y = canvas.height / 2;
+        }
+        function startAnimationRandomWalk() {
+            if (animationId === null) {
+                startBtnRW.disabled = true;
+                pauseBtnRW.disabled = false;
+                animationId = window.requestAnimationFrame(draw);
+            }
+        }
+
+        function pauseAnimationRandomWalk() {
+            if (animationId !== null) {
+                startBtnRW.disabled = false;
+                pauseBtnRW.disabled = true;
+                cancelAnimationFrame(animationId);
+                animationId = null;
+            }
+        }
+
+        function stopAnimationRandomWalk() {
+            cancelAnimationFrame(animationId);
+            animationId = null;
+            initAnimationRandomWalk();
+            startBtnRW.disabled = false;
+            pauseBtnRW.disabled = true;
+        }
+
+        function draw() {
+            const ctx = canvas.getContext('2d');
+            const nextX = Math.random();
+            const nextY = Math.random();
+
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            let dx = (Math.random() * 2 - 1) * 5;
+            let dy = (Math.random() * 2 - 1) * 5;
+
+            if (boundary_mode == 0) { // square
+                x = Math.max(0, Math.min(x + dx, canvas.width));
+                y = Math.max(0, Math.min(y + dy, canvas.height));
+                ctx.lineTo(x, y);
+                ctx.stroke();
+            }
+
+            else if (boundary_mode == 1) { // torus
+                ctx.lineTo(x + dx, y + dy);
+                ctx.stroke();
+                x -= canvas.width * Math.floor((x + dx) / canvas.width);
+                y -= canvas.height * Math.floor((y + dy) / canvas.height);
+                ctx.moveTo(x, y);
+                x += dx;
+                y += dy;
+                ctx.lineTo(x, y);
+                ctx.stroke();
+            }
+
+            else if (boundary_mode == 2) { //klein bottle
+                ctx.lineTo(x + dx, y + dy);
+                ctx.stroke();
+                if (Math.floor((x + dx) / canvas.width) % 2 == 1) {
+                    y = canvas.width - y;
+                }
+                x -= canvas.width * Math.floor((x + dx) / canvas.width);
+                y -= canvas.height * Math.floor((y + dy) / canvas.height);
+                ctx.moveTo(x, y);
+                x += dx;
+                y += dy;
+                ctx.lineTo(x, y);
+                ctx.stroke();
+            }
+
+            animationId = window.requestAnimationFrame(draw);
+        }
     </script>
 </body>
