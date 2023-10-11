@@ -72,8 +72,8 @@
         </div>
     </section>
 
-    
-   
+
+
 
 
     <!--Contact-->
@@ -152,7 +152,7 @@
             dd = document.getElementById("DdRW");
             boundary_mode = dd.options[dd.selectedIndex].value;
             stopAnimationRandomWalk()
-        } 
+        }
 
 
         let animationId = null;
@@ -205,8 +205,8 @@
             let dy = (Math.random() * 2 - 1) * 5;
 
             if (boundary_mode == 0) { // square
-                x = Math.max(0, Math.min(x+dx, canvas.width));
-                y = Math.max(0, Math.min(y+dy, canvas.height));
+                x = Math.max(0, Math.min(x + dx, canvas.width));
+                y = Math.max(0, Math.min(y + dy, canvas.height));
                 ctx.lineTo(x, y);
                 ctx.stroke();
             }
@@ -214,8 +214,8 @@
             else if (boundary_mode == 1) { // torus
                 ctx.lineTo(x + dx, y + dy);
                 ctx.stroke();
-                x -= canvas.width * Math.floor((x+dx) / canvas.width);
-                y -= canvas.height * Math.floor((y+dy) / canvas.height); 
+                x -= canvas.width * Math.floor((x + dx) / canvas.width);
+                y -= canvas.height * Math.floor((y + dy) / canvas.height);
                 ctx.moveTo(x, y);
                 x += dx;
                 y += dy;
@@ -242,28 +242,6 @@
         }
 
     </script>
-
-    <script>
-        const btnModalPrisoners = document.getElementById("btn-modal-prisoners");
-        const modal = document.getElementById("modal-prisoners");
-
-        btnModalPrisoners.addEventListener("click", () => {
-            modal.showModal();
-        })
-
-        modal.addEventListener("click", e => {
-            const dialogDimensions = modal.getBoundingClientRect()
-            if (
-                e.clientX < dialogDimensions.left ||
-                e.clientX > dialogDimensions.right ||
-                e.clientY < dialogDimensions.top ||
-                e.clientY > dialogDimensions.bottom
-            ) {
-                modal.close()
-            }
-        })
-    </script>
-
 
 </body>
 </html>

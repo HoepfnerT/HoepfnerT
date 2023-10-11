@@ -15,10 +15,10 @@
     <nav class="navbar">
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#About">About Me</a></li>
+            <li><a href="index.html#About">About</a></li>
             <li><a href="Research.html">Research</a></li>
             <li><a href="Teaching.html">Teaching</a></li>
-            <li><a href="#">Personal Interests</a></li>
+            <li><a href="#">Interests</a></li>
             <li><a href="index.html#Contact">Contact</a></li>
         </ul>
     </nav>
@@ -95,4 +95,24 @@
 
     </section>
 
+    <script>
+        const btnModalPrisoners = document.getElementById("btn-modal-prisoners");
+        const modal = document.getElementById("modal-prisoners");
+
+        btnModalPrisoners.addEventListener("click", () => {
+            modal.showModal();
+        })
+
+        modal.addEventListener("click", e => {
+            const dialogDimensions = modal.getBoundingClientRect()
+            if (
+                e.clientX < dialogDimensions.left ||
+                e.clientX > dialogDimensions.right ||
+                e.clientY < dialogDimensions.top ||
+                e.clientY > dialogDimensions.bottom
+            ) {
+                modal.close()
+            }
+        })
+    </script>
 </body>

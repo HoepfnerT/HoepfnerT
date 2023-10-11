@@ -15,15 +15,69 @@
     <nav class="navbar">
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#About">About Me</a></li>
+            <li><a href="index.html#About">About</a></li>
             <li><a href="#">Research</a></li>
             <li><a href="Teaching.html">Teaching</a></li>
-            <li><a href="Interests.html">Personal Interests</a></li>
+            <li><a href="Interests.html">Interests</a></li>
             <li><a href="#Contact">Contact</a></li>
         </ul>
     </nav>
 
-
+    <section id="Publications">
+        <h2>Publications and Past Talks</h2>
+        <h4>arXiv preprints:</h4>
+        <ul>
+            <li>
+                <a href="https://arxiv.org/abs/2309.15509">(arXiv:2309.15509) T. H&ouml;pfner: Laplacians and Random Walks on CW Complexes</a>.
+                <button id="btn-modal-RW-Abstract">(Abstract)</button>
+                <dialog id="modal-RW-Abstract">
+                    <div style="width:50vw">
+                        <p>
+                            We construct random walks taking place on the k-cells of free G-CW complexes of finite type.
+                            These random walks define operators acting on the cellular k-chains that relate nicely to the (upper) cellular k-Laplacian.
+                            As an application, we use this relation to show that the Novikov-Shubin invariants of a free G-CW complex X of finite type
+                            can be recovered from quantities related to return probabilities of the random walks on the cells of X.
+                        </p>
+                    </div>
+                </dialog>
+            </li>
+            <li>
+                <a href="https://arxiv.org/abs/2310.00969">(arXiv:2310.00969) T. H&ouml;pfner: Two-Parameter Novikov-Shubin Invariants for Fibre Bundles</a>.
+                <button id="btn-modal-2PNSI-Abstract">(Abstract)</button>
+                <dialog id="modal-2PNSI-Abstract">
+                    <div style="width:50vw">
+                        <p>
+                            In this paper we construct a two-parameter version of spectral density functions and Novikov-Shubin invariants on fibre bundles. 
+                            The aim of this approach is to gain a better understanding of how the near-zero spectrum of the Hodge Laplace operators on the fibre 
+                            and the base of a fibre bundle contribute separately to the near-zero spectrum of the Laplace operators of the total space. 
+                            We show that this two-parameter generalisation of the classical spectral density function still satisfies several invariance properties. 
+                            As an example, we compute it explicitly for the three-dimensional Heisenberg group.
+                        </p>
+                    </div>
+                </dialog>
+            </li>
+        </ul>
+        <h4>
+            PhD Thesis:
+        </h4>
+        <ul>
+            <li>
+                <a href="http://dx.doi.org/10.53846/goediss-9907">T. H&ouml;pfner: Novikov-Shubin Invariants of Nilpotent Lie Groups</a>
+            </li>
+        </ul>
+        <h4>Past Talks:</h4>
+        <ul>
+            <li>
+                (06/2023) <b>Spectra of Manifolds and Random Walks</b> at the LKS Seminar in Regensburg
+            </li>
+            <li>
+                (10/2022) <b>Heat Decay on Non-Compact Manifolds</b> at the School on Random Walks and Related Topics
+            </li>
+            <li>
+                (09/2021) <b>Higher Random Walks on CW Complexes</b> at the DMV-&Ouml;MG-Jahrestagung, Sektion Geometrie und Topologie
+            </li>
+        </ul>
+    </section>
     <!--Research-->
     <section id="Research">
         <h2>Research</h2>
@@ -31,7 +85,18 @@
             <div class="container-research-left">
                 <h3 style="margin-bottom: 0;">Heat Decay on Non-Compact Manifolds</h3>
                 <p>
-                    This is part of my PhD thesis, which can be found here: <a href="http://dx.doi.org/10.53846/goediss-9907">T. H&ouml;pfner: Novikov-Shubin Invariants of Nilpotent Lie Groups</a>
+                    This is part of my PhD thesis, which can be found here: <a href="http://dx.doi.org/10.53846/goediss-9907">T. H&ouml;pfner: Novikov-Shubin Invariants of Nilpotent Lie Groups</a>.
+                </p>
+                <p>
+                    The novelties of my thesis are also contained in the following two arXiv preprints:
+                    <ul>
+                        <li>
+                            <a href="https://arxiv.org/abs/2309.15509">(arXiv:2309.15509) T. H&ouml;pfner: Laplacians and Random Walks on CW Complexes</a>
+                        </li>
+                        <li>
+                            <a href="https://arxiv.org/abs/2310.00969">(arXiv:2310.00969) T. H&ouml;pfner: Two-Parameter Novikov-Shubin Invariants for Fibre Bundles</a>
+                        </li>
+                    </ul>
                 </p>
             </div>
 
@@ -382,4 +447,45 @@
         </p>
     </section>
 
+    <script>
+        const btnModalRW = document.getElementById("btn-modal-RW-Abstract");
+        const modalRW = document.getElementById("modal-RW-Abstract");
+
+        btnModalRW.addEventListener("click", () => {
+            modalRW.showModal();
+        })
+
+        modalRW.addEventListener("click", e => {
+            const dialogDimensions = modalRW.getBoundingClientRect()
+            if (
+                e.clientX < dialogDimensions.left ||
+                e.clientX > dialogDimensions.right ||
+                e.clientY < dialogDimensions.top ||
+                e.clientY > dialogDimensions.bottom
+            ) {
+                modalRW.close()
+            }
+        })
+    </script>
+
+    <script>
+        const btnModal2PNSI = document.getElementById("btn-modal-2PNSI-Abstract");
+        const modal2PNSI = document.getElementById("modal-2PNSI-Abstract");
+
+        btnModal2PNSI.addEventListener("click", () => {
+            modal2PNSI.showModal();
+        })
+
+        modal2PNSI.addEventListener("click", e => {
+            const dialogDimensions = modal2PNSI.getBoundingClientRect()
+            if (
+                e.clientX < dialogDimensions.left ||
+                e.clientX > dialogDimensions.right ||
+                e.clientY < dialogDimensions.top ||
+                e.clientY > dialogDimensions.bottom
+            ) {
+                modal2PNSI.close()
+            }
+        })
+    </script>
 </body>

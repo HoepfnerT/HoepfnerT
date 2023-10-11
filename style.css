@@ -146,6 +146,15 @@
         margin-bottom: 0px;
     }
 
+    ul {
+        color: black;
+        font-size: 18px;
+        text-align: justify;
+        line-height: 1.5;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
     li {
         color: black;
         font-size: 18px;
