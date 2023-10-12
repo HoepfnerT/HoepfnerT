@@ -61,6 +61,7 @@
         flex-direction: row;
         position: fixed;
         left: 0;
+        right: 0;
         top: 0;
         background-color: #EEE;
         width: 100%;
@@ -119,7 +120,8 @@
 
     h3 {
         color: #00008B;
-        font-size: 32px;
+        font-size: 24px;
+        margin-top: 20px;
         margin-bottom: 0px;
     }
 
@@ -169,21 +171,20 @@
     }
 
 
-    .round-image {
-        width: min(300px, 25vw);
-        height: min(300px, 25vw);
-        margin-right: 40px;
-        margin-left: 20px;
-        border-radius: 50%;
-    }
-
-
 
     .container-buttons {
         max-width: min(400px,33vw);
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    .round-image {
+        width: max(200px, min(400px,33vw));
+        height: max(200px, min(400px,33vw));
+        margin-right: 40px;
+        margin-left: 20px;
+        border-radius: 50%;
     }
 
 
@@ -211,6 +212,23 @@
         .container-research-right {
             width: 33vw;
             padding-left: 20px;
+        }
+
+
+        .about-map-image {
+            width: min(400px, 25vw);
+            height: min(400px, 25vw);
+            margin-right: 40px;
+            margin-left: 20px;
+            border-radius: 30%;
+        }
+
+        .about-rtglogo-image {
+            width: min(480px, 24vw);
+            height: min(300px, 15vw);
+            margin-right: 40px;
+            margin-left: 20px;
+            border-radius: 30%;
         }
 
         .research-image {
@@ -248,6 +266,23 @@
 
         .container-about {
             text-align: justify;
+        }
+
+
+        .about-map-image {
+            width: min(500px, 50vw);
+            height: min(500px, 50vw);
+            margin-right: 40px;
+            margin-left: 20px;
+            border-radius: 30%;
+        }
+
+        .about-rtglogo-image {
+            width: min(480px, 48vw);
+            height: min(300px, 30vw);
+            margin-right: 40px;
+            margin-left: 20px;
+            border-radius: 30%;
         }
 
         .research-image {

@@ -25,14 +25,17 @@
 
     <section id="Publications">
         <h2>Publications and Past Talks</h2>
-        <h4>arXiv preprints:</h4>
+        <h3>arXiv Pre-Prints:</h3>
         <ul>
             <li>
                 <a href="https://arxiv.org/abs/2309.15509">(arXiv:2309.15509) T. H&ouml;pfner: Laplacians and Random Walks on CW Complexes</a>.
+                <br />
                 <button id="btn-modal-RW-Abstract">(Abstract)</button>
                 <dialog id="modal-RW-Abstract">
-                    <div style="width:50vw">
+                    <div style="width:60vw">
                         <p>
+                            <b>Laplacians and Random Walks on CW Complexes</b>
+                            <br />
                             We construct random walks taking place on the k-cells of free G-CW complexes of finite type.
                             These random walks define operators acting on the cellular k-chains that relate nicely to the (upper) cellular k-Laplacian.
                             As an application, we use this relation to show that the Novikov-Shubin invariants of a free G-CW complex X of finite type
@@ -43,10 +46,13 @@
             </li>
             <li>
                 <a href="https://arxiv.org/abs/2310.00969">(arXiv:2310.00969) T. H&ouml;pfner: Two-Parameter Novikov-Shubin Invariants for Fibre Bundles</a>.
+                <br />
                 <button id="btn-modal-2PNSI-Abstract">(Abstract)</button>
                 <dialog id="modal-2PNSI-Abstract">
-                    <div style="width:50vw">
+                    <div style="width:60vw">
                         <p>
+                            <b>Two-Parameter Novikov-Shubin Invariants for Fibre Bundles</b>
+                            <br />
                             In this paper we construct a two-parameter version of spectral density functions and Novikov-Shubin invariants on fibre bundles.
                             The aim of this approach is to gain a better understanding of how the near-zero spectrum of the Hodge Laplace operators on the fibre
                             and the base of a fibre bundle contribute separately to the near-zero spectrum of the Laplace operators of the total space.
@@ -57,24 +63,61 @@
                 </dialog>
             </li>
         </ul>
-        <h4>
+        <h3>
             PhD Thesis:
-        </h4>
+        </h3>
         <ul>
             <li>
                 <a href="http://dx.doi.org/10.53846/goediss-9907">T. H&ouml;pfner: Novikov-Shubin Invariants of Nilpotent Lie Groups</a>
+                <br />
+                <button id="btn-modal-Diss-Abstract">(Abstract)</button>
+                <dialog id="modal-Diss-Abstract">
+                    <div style="width:60vw">
+                        <p>
+                            <b>Novikov-Shubin Invariants of Nilpotent Lie Groups</b>
+                            <br />
+                            Novikov-Shubin invariants are so-called L2-invariants of non-compact manifolds.
+                            They are defined using the Laplace operators and measure the density of their spectra near zero.
+                            This near-zero part of the spectrum is particularly interesting,
+                            as it gives us a lot of information about the Laplace operator itself,
+                            for example, whether it is invertible.
+                            It turns out that it also can be used to describe the long-term asymptotic behaviour of solutions to the heat equation.
+                            While these invariants are very interesting, in general, they are rather hard to compute.
+                            In this thesis, we approach the computation of Novikov-Shubin invariants from different angles:
+                            Firstly, we show that for suitable CW complexes, they can be understood as quantities arising from stochastic processes,
+                            described explicitly in terms of the CW structure.
+                            This gives us a new potential way of computing Novikov-Shubin invariants by understanding these stochastic processes better.
+                            Secondly, we take a look at an approach by M. Rumin that allows us to estimate Novikov-Shubin invariants of nilpotent
+                            Lie groups in some cases.
+                            We compute these estimates for low-dimensional nilpotent Lie groups up to dimension six with the help of a Python program
+                            and give some further remarks on this approach.
+                            Thirdly, we develop a more detailed approach to Novikov-Shubin invariants on fibre bundles.
+                            This leads to the definition of a new, two-parameter version of Novikov-Shubin invariants.
+                            The goal is to better understand how the fibre and the basis contribute separately to the
+                            Novikov-Shubin invariants of the total space.
+                            We show that these newly defined numbers satisfy multiple suitable invariance properties
+                            and compute them in an explicit example of the three-dimensional Heisenberg group.
+                        </p>
+                    </div>
+                </dialog>
             </li>
         </ul>
-        <h4>Past Talks:</h4>
+        <h3>Past Talks:</h3>
         <ul>
             <li>
-                (06/2023) <b>Spectra of Manifolds and Random Walks</b> at the LKS Seminar in Regensburg
+                <b>Spectra of Manifolds and Random Walks</b>
+                <br />
+                at the LKS Seminar in Regensburg (06/2023)
             </li>
             <li>
-                (10/2022) <b>Heat Decay on Non-Compact Manifolds</b> at the School on Random Walks and Related Topics
+                <b>Heat Decay on Non-Compact Manifolds</b>
+                <br />
+                at the School on Random Walks and Related Topics (10/2022)
             </li>
             <li>
-                (09/2021) <b>Higher Random Walks on CW Complexes</b> at the DMV-&Ouml;MG-Jahrestagung, Sektion Geometrie und Topologie
+                <b>Higher Random Walks on CW Complexes</b>
+                <br />
+                at the DMV-&Ouml;MG-Jahrestagung, Sektion Geometrie und Topologie (09/2021)
             </li>
         </ul>
     </section>
@@ -485,6 +528,27 @@
                 e.clientY > dialogDimensions.bottom
             ) {
                 modal2PNSI.close()
+            }
+        })
+    </script>
+
+    <script>
+        const btnModal = document.getElementById("btn-modal-Diss-Abstract");
+        const modal = document.getElementById("modal-Diss-Abstract");
+
+        btnModal.addEventListener("click", () => {
+            modal.showModal();
+        })
+
+        modal.addEventListener("click", e => {
+            const dialogDimensions = modal.getBoundingClientRect()
+            if (
+                e.clientX < dialogDimensions.left ||
+                e.clientX > dialogDimensions.right ||
+                e.clientY < dialogDimensions.top ||
+                e.clientY > dialogDimensions.bottom
+            ) {
+                modal.close()
             }
         })
     </script>
