@@ -258,7 +258,7 @@
                         <button id="stopBtnRW" onclick="stopAnimationRandomWalk()">Reset</button>
                         <select id="DdRW" onchange="RW_boundary_type()">
                             <option value=0>Square</option>
-                            <option value=1>Torus</option>
+                            <option value=1 selected>Torus</option>
                             <option value=2>Klein Bottle</option>
                         </select>
                     </div>
@@ -414,7 +414,7 @@
                     </p>
                 </div>
                 <div class="container-research-right">
-                    <img src="2paramnsi.jpg" class="research-image-twographs">
+                    <img src="2paramnsi.jpg" class="research-image">
                 </div>
             </div>
         </div>
@@ -616,7 +616,7 @@
         const pauseBtnRW = document.getElementById('pauseBtnRW');
         const stopBtnRW = document.getElementById('stopBtnRW');
 
-        var boundary_mode = 0; // 0 = square, 1 = torus, 2 = Klein bottle
+        var boundary_mode = 1; // 0 = square, 1 = torus, 2 = Klein bottle
         function RW_boundary_type() {
             dd = document.getElementById("DdRW");
             boundary_mode = dd.options[dd.selectedIndex].value;

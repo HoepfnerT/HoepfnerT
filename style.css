@@ -243,13 +243,6 @@
             padding-bottom: 0px;
         }
 
-        .research-image-twographs {
-            width: 30vw;
-            max-width: 500px;
-            margin-right: 20px;
-            margin-left: 20px;
-        }
-
         .canvas_rw {
             width: 30vw;
             height: 30vw;
@@ -268,6 +261,11 @@
             text-align: justify;
         }
 
+        .container-centered {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
         .about-map-image {
             width: min(500px, 50vw);
@@ -286,14 +284,13 @@
         }
 
         .research-image {
-            width: 75vw;
+            width: 70vw;
             max-width: 500px;
-            margin-right: 20px;
-            margin-left: 20px;
         }
 
         .research-image-torus {
-            max-width: min(500px,75vw);
+            width: 100vw;
+            max-width: 500px;
             padding-bottom: 0px;
         }
 
@@ -312,18 +309,11 @@
             align-items: center;
         }
 
-        .research-image-twographs {
-            width: 75vw;
-            max-width: 600px;
-            margin-right: 20px;
-            margin-left: 20px;
-        }
-
         .canvas_rw {
-            width: 75vw;
-            height: 75vw;
-            max-width: 400px;
-            max-height: 400px;
+            width: 60vw;
+            height: 60vw;
+            max-width: 500px;
+            max-height: 500px;
             border: 2px solid black;
         }
     }
