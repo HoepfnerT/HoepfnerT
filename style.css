@@ -3,7 +3,7 @@
     body {
         font-family: "Computer Modern Sans", sans-serif;
         margin-left: max(10em, 170px);
-        margin-right: min(20em, 200px);
+        margin-right: min(20em, 20px);
         margin-top: 40px;
         margin-bottom: 100px;
     }
@@ -216,23 +216,20 @@
 
 
         .about-map-image {
-            width: min(400px, 25em);
-            height: min(400px, 25em);
+            width: max(10vw, min(400px, 25vw));
             margin-right: 40px;
             margin-left: 20px;
             border-radius: 30%;
         }
 
         .about-dfine-image {
-            width: min(400px, 25em);
-            height: min(133px, 8em);
+            width: max(10vw, min(400px, 25vw));
             margin-right: 40px;
             margin-left: 20px;
         }
 
         .about-rtglogo-image {
-            width: min(480px, 24em);
-            height: min(300px, 15em);
+            width: max(10vw, min(400px, 25vw));
             margin-right: 40px;
             margin-left: 20px;
             border-radius: 30%;
@@ -276,8 +273,7 @@
         }
 
         .about-map-image {
-            width: min(500px, 50em);
-            height: min(500px, 50em);
+            width: min(300px, 30em);
             margin-right: 40px;
             margin-left: 20px;
             border-radius: 30%;
@@ -285,15 +281,13 @@
 
 
         .about-dfine-image {
-            width: min(500px, 50em);
-            height: min(166px, 16em);
+            width: min(300px, 30em);
             margin-right: 40px;
             margin-left: 20px;
         }
 
         .about-rtglogo-image {
-            width: min(480px, 48em);
-            height: min(300px, 30em);
+            width: min(300px, 30em);
             margin-right: 40px;
             margin-left: 20px;
             border-radius: 30%;
