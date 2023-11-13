@@ -216,20 +216,20 @@
 
 
         .about-map-image {
-            width: max(10vw, min(400px, 25vw));
+            width: min(400px, 15rem);
             margin-right: 40px;
             margin-left: 20px;
             border-radius: 30%;
         }
 
         .about-dfine-image {
-            width: max(10vw, min(400px, 25vw));
+            width: min(400px, 15rem);
             margin-right: 40px;
             margin-left: 20px;
         }
 
         .about-rtglogo-image {
-            width: max(10vw, min(400px, 25vw));
+            width: min(400px, 15rem);
             margin-right: 40px;
             margin-left: 20px;
             border-radius: 30%;
