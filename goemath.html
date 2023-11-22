@@ -85,6 +85,11 @@
         <!-- Instructions and Python code for displaying upcoming math defenses -->
         <div class="event">
             <h3>To see upcoming math defenses, run the following Python Code:</h3>
+            <pre>
+<code class="language-python">
+    (requires urllib3 and beautifulsoup4 libraries)
+</code>
+</pre>
             <pre><code class="language-python">import re, urllib.request, bs4
 url = "https://ggnb.gwdg.de/disputationen/promotionen.php"
 data = urllib.request.urlopen(url)
