@@ -694,8 +694,8 @@
             else if (boundary_mode == 2) { //klein bottle
                 ctx.lineTo(x + dx, y + dy);
                 ctx.stroke();
-                if (Math.floor((x + dx) / canvas.width) % 2 == 1) {
-                    y = canvas.width - y;
+                if (Math.abs(Math.floor((x + dx) / canvas.width) % 2) == 1) {
+                    y = canvas.height - y;
                 }
                 x -= canvas.width * Math.floor((x + dx) / canvas.width);
                 y -= canvas.height * Math.floor((y + dy) / canvas.height);
